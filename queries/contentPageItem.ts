@@ -20,8 +20,21 @@ const getDynamicData = `
             ... on LayoutCoachingBlok {
               title
               subtitle
+              link {
+                ... on CoachingPage {
+                  slug
+                }
+                ... on ContactPage {
+                  slug
+                }
+                ... on LecturePage{
+                  slug
+                }
+                ... on ContentPage{
+                  slug
+                }
+              }
             }
-          
             ... on LayoutImageArea {
               imagesCollection {
                 items {

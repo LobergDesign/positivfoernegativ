@@ -12,17 +12,29 @@ const query = `query {
       bodytext {
         json
       }
-      contentAreaCollection {
+      contentAreaCollection(limit: 30) {
         items {
           __typename
-        }
-        items {
           ... on LayoutCoachingBlok {
             title
             subtitle
+            link {
+              ... on CoachingPage {
+                slug
+              }
+              ... on ContactPage {
+                slug
+              }
+              ... on LecturePage{
+                slug
+              }
+              ... on ContentPage{
+                slug
+              }
+            }
           }
           ... on LayoutImageArea {
-            imagesCollection {
+            imagesCollection(limit: 10) {
               items {
                 title
                 description
