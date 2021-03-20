@@ -6,10 +6,11 @@ import { getDynamicData } from "~/queries/coachingPageItem";
 @Component
 export default class CoachingPageClass extends Vue {
 	async asyncData({ $dataApi, error, route }: Context) {
-		const routePath = route.params.slug;
+		const routePath = route.name as string;
 		const variables = { slug: routePath };
 		const response = await $dataApi.getDynamicData(getDynamicData, variables);
 		const responseData = response.data?.pageData?.items[0];
+		
 		if (!responseData) {
 			return error({
 				statusCode: response.status,

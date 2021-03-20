@@ -1,7 +1,7 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 // import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { pageQuery } from "~/queries/coaching";
+import { query } from "~/queries/coaching";
 
 @Component
 export default class CoachingPageClass extends Vue {
@@ -13,7 +13,7 @@ export default class CoachingPageClass extends Vue {
 	}
 
 	async asyncData({ $dataApi, error }: Context) {
-		const response = await $dataApi.getData(pageQuery);
+		const response = await $dataApi.getData(query);
 		const responseData = response.data;
 		if(!responseData?.coachingPage){
 			return error({
