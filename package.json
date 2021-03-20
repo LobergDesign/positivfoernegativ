@@ -10,11 +10,12 @@
     "generatemodern": "nuxt generate --modern",
     "generatepreview": "nuxt generate --quite",
     "generatedev": "nuxt generate",
-    "generateprod": "nuxt generate --quite --fail-on-error"
+    "generateprod": "nuxt generate --quite --modern --fail-on-error"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.2",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/robots": "^2.5.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "nuxt-property-decorator": "^2.9.1",

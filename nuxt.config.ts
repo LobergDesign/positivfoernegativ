@@ -28,7 +28,6 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: ["~/plugins/cms/cms"],
-
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: [
 		{ path: "~/components", extensions: ["vue"] },
@@ -49,6 +48,7 @@ export default {
 		"@nuxtjs/svg",
 		// https://go.nuxtjs.dev/pwa
 		"@nuxtjs/pwa",
+		"@nuxtjs/robots",
 	],
 	graphql: {
 		clients: {
@@ -76,7 +76,27 @@ export default {
 		exclude: [/LecturePage/, /ContactPage/, /ContentPage/, /CoachingPage/],
 		routes: async () => await generate(),
 	},
-
+	/*
+	 ** add robots.txt to application
+	 */
+	 robots: {
+		UserAgent: "*",
+		Disallow: process.env.ROBOTS === "false" ? "/" : "",
+		Sitemap: process.env.BASE_URL + "/sitemap.xml",
+	},
+	/*
+	 ** sitemap settings
+	 */
+	 sitemap: {
+		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
+		exclude: ["/LecturePage/", "/ContactPage/", "/ContentPage/", "/CoachingPage/"],
+		// add trailing slash to final sitemap
+		trailingSlash: true,
+		priority: 1,
+		path: "/sitemap.xml",
+		gzip: true,
+		generate: false,
+	},
 	// PWA module configuration: https://go.nuxtjs.dev/pwa
 	pwa: {
 		// workbox: {
