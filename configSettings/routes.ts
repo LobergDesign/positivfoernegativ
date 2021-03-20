@@ -51,7 +51,6 @@ export async function generate() {
 	const sitemap: ISitemapRoute[] = sitemaps.mainSitemap;
 	const routes: any = [];
 	sitemap.forEach((item: any) => {
-		console.log("item", item);
 		routes.push({
 			route: `/${item.slug}/`,
 		});
