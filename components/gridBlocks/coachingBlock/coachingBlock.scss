@@ -1,0 +1,57 @@
+@import "~/assets/scss/tools/_mixins.scss";
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+
+.list-block {
+	&__item {
+		position: relative;
+		margin-bottom: 2rem;
+		z-index: 1;
+        p{
+            opacity: .5;
+            transition: opacity $transition--fast;
+        }
+	}
+    &__item a{
+        display: block;
+        padding: 2vw 2vw;
+    }
+	&__item:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $color-gray-alabaster;
+		z-index: -1;
+	}
+    &__item-headline{
+        @include fluid-type(16px, 18px);
+        @include font-pt-sans-bold;
+    }
+}
+// modifyer
+.list-block__item--last{
+    &.list-block__item {
+        p{
+            color: $color-white;
+            opacity: 1;
+        }
+	}
+    &.list-block__item:after {
+        opacity: 1;
+        background-color: $color-yellow-corn;
+	}
+    .list-block__item-headline {
+        color: $color-white;
+	}
+}
+// hover
+@include viewport-mouse{
+    .list-block__item:hover{
+        p{
+            opacity: .9;
+        }
+    }
+}

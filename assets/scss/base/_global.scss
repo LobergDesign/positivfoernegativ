@@ -1,0 +1,53 @@
+﻿.test-div {
+	border: 1px solid gray;
+	min-height: 5rem;
+	width: 100%;
+}
+html {
+	font-size: 62.5%;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	font-size: 1.6rem;
+	margin: 0;
+	padding: 0;
+	background-color: $color-white;
+	@include font-pt-sans;
+}
+.main-content {
+	padding-top: 10rem;
+}
+img {
+	max-width: 100%;
+}
+
+@media (inverted-colors) {
+	img,
+	video,
+	picture {
+		filter: invert(100);
+	}
+}
+
+@include viewport-large {
+	html {
+		font-size: 56%;
+	}
+}
+
+@include viewport-medium {
+	html {
+		font-size: 58%;
+	}
+}
+
+@include viewport-small {
+	html {
+		font-size: 52%;
+	}
+}

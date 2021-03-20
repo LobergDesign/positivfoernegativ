@@ -1,0 +1,61 @@
+// @import "~/assets/scss/settings/_vars.scss";
+// @import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.process-list {
+	margin-top: 4vw;
+	&__item {
+		margin-bottom: 5vw;
+	}
+	&__item-img {
+		width: 100%;
+	}
+	// set order on row
+	&__item .grid-r {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "c-1 c-2";
+	}
+	&__item:nth-of-type(even) .grid-r {
+		grid-template-areas: "c-2 c-1";
+	}
+
+	// order items
+	&__item-c-1 {
+		grid-area: c-1;
+	}
+	&__item-c-2 {
+		grid-area: c-2;
+	}
+	// c-2 less width
+	&__item-c-2 > div {
+		margin: 0 4vw;
+	}
+}
+@include viewport-medium {
+	.process-list {
+		&__item {
+			margin-bottom: 6vw;
+		}
+		// c-2 less width
+		&__item-c-2 > div {
+			margin: 0;
+		}
+	}
+}
+@include viewport-small{
+	.process-list {
+		
+		// set order on row
+		&__item .grid-r {
+			grid-template-columns: 1fr;
+			grid-template-areas: "c-1" "c-2";
+		}
+		&__item:nth-of-type(even) .grid-r {
+			grid-template-areas: "c-1" "c-2";
+		}
+		// c-2 less width
+		&__item-c-2 > div {
+			margin: 0;
+		}
+	}
+}

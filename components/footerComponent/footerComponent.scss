@@ -1,0 +1,95 @@
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+$footer-padding: clamp(4rem, 8vw, 12rem);
+.footer {
+	overflow: hidden;
+	padding-top: $footer-padding;
+	padding-bottom: $footer-padding;
+	background-color: #363636;
+	position: relative;
+	// yellow bg in right site
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 38vw;
+		background-color: $color-yellow-corn;
+	}
+	// typo style
+	span,
+	p,
+	a {
+		display: block;
+		color: $color-white;
+	}
+	a {
+		display: inline-block;
+		@include font-pt-sans-bold;
+	}
+	address {
+		font-style: normal;
+		span,
+		p,
+		a {
+			line-height: 1.5;
+			font-size: 1.6rem;
+			color: $color-gray-mercury;
+		}
+		span.footer__header {
+			color: $color-white;
+			font-size: 1.8rem;
+		}
+	}
+	&__header {
+		@include font-pt-sans-bold;
+		margin-bottom: 0.3rem;
+		&:not(:first-child) {
+			margin-top: 5rem;
+		}
+	}
+	// right footer section
+	&__right-section {
+		height: 100%;
+		p {
+			@include fluid-type(18px, 24px);
+			line-height: 1.5;
+			margin-top: 0;
+		}
+		svg {
+			fill: $color-white;
+		}
+	}
+	&__social {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		li {
+			display: inline-block;
+			margin-left: 2rem;
+		}
+	}
+}
+// promotion banner
+.promotion-banner{
+	background-color: $color-gray-alabaster;
+	padding: 5vw 0;
+	&__text{
+		display: block;
+		margin-top: .6vw;
+		font-size: 1.4rem;
+		color: $color-black-tundora;
+	}
+}
+@include viewport-custom-min(2500px) {
+	.footer {
+		// yellow bg in right site
+		&:after {
+			width: 42vw;
+		}
+	}
+}

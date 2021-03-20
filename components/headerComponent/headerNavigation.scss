@@ -1,0 +1,42 @@
+@import "~/assets/scss/tools/_mixins.scss";
+@import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
+
+.header {
+	@include grid-wrap;
+	position: fixed;
+	top: 0;
+	background-color: $color-white;
+	padding: 1rem 0;
+	z-index: 10;
+	a{
+		margin: 0;
+	}
+	// logo
+	&__logo {
+		margin-top: 1rem;
+		max-width: 8.5rem;
+	}
+	// nav
+	&__nav {
+	}
+	&__nav-list {
+	}
+	&__nav-list-item {
+		display: inline-block;
+		margin: 0;
+	}
+	&__nav-list-item a {
+		display: block;
+		padding: 2rem;
+		font-size: 1.6rem;
+	}
+
+	&__nav-list-item a.is-active {
+		@include font-pt-sans-bold;
+	}
+	// cta button
+	.btn {
+		margin-left: 3rem;
+	}
+}

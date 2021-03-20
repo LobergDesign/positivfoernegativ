@@ -1,0 +1,38 @@
+// default
+$color-black: #000;
+$color-white: #fff;
+
+$color-black-tundora: #363636;
+
+$color-yellow-corn: #eab200;
+// gray
+$color-gray-mercury: #e5e5e5;
+$color-gray-silver: #c7c7c7;
+$color-gray-alabaster: #F9F9F9;
+
+//------- Transistions and animation -------//
+$transition--cubic: cubic-bezier(0.69, 0, 0.27, 0.99);
+$transition: 0.7s $transition--cubic;
+$transition--slow: 0.9s $transition--cubic;
+$transition--fast: 0.6s $transition--cubic;
+
+//------- Layout -------//
+$grid-max-width: 1920px;
+$grid-min-width: 370px;
+
+// col sizes
+$col-25: 25%;
+$col-33: 33.333333%;
+$col-43: 43%;
+$col-50: 50%;
+$col-66: 66.666667%;
+$col-75: 75%;
+$col-100: 100%;
+
+//------- Media queries -------//
+$viewport-extra-small: 350px; // 350px
+$viewport-small: 576px; // 576px
+$viewport-medium: 992px; // 992px
+$viewport-large: 1025px; // 1025px
+$viewport-extra-large: 1440px; // 1200px
+$viewport-max: 1920px; // 1920px

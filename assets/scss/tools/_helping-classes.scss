@@ -1,0 +1,35 @@
+﻿[class*="flex-"] {
+	display: flex;
+}
+.reset-ul {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.full-height {
+	height: 100%;
+}
+.flex-vertical-center {
+	align-items: center;
+}
+.flex-center {
+	justify-content: center;
+}
+.flex-center-center {
+	justify-content: center;
+	align-items: center;
+}
+.flex-bottom {
+	align-items: flex-end;
+}
+.flex-end {
+	justify-content: flex-end;
+}
+.position-realtive {
+	position: relative;
+}
+.on-top{
+  position: relative;
+  z-index: 1;
+}
