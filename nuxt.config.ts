@@ -28,7 +28,6 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: ["~/plugins/cms/cms"],
-	ssr: process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? false : true,
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: [
 		{ path: "~/components", extensions: ["vue"] },
