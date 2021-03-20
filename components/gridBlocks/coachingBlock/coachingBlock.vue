@@ -12,11 +12,15 @@
 				</nuxt-link>
 			</li>
 			<li class="grid-c-16 grid-c-sm-8 grid-c-md-4 list-block__item list-block__item--last">
-				<nuxt-link :to="'coaching/'">
+				<nuxt-link :to="'/' + blockData.link.slug + '/'" v-if="blockData.link">
 					<span class="list-block__item-headline" v-if="blockData.title">{{ blockData.title }}</span>
 					<p v-if="blockData.subtitle">{{ blockData.subtitle }}</p>
 					<SvgArrow />
 				</nuxt-link>
+				<div v-else>
+					<span class="list-block__item-headline" v-if="blockData.title">{{ blockData.title }}</span>
+					<p v-if="blockData.subtitle">{{ blockData.subtitle }}</p>
+				</div>
 			</li>
 		</ul>
 	</div>

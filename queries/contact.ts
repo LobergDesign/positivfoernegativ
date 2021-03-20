@@ -1,4 +1,4 @@
-const pageQuery = `query {
+const query = `query {
   contactPage(id: "4FaZD4NezcKvSWPrRsMJPp") {
     pageHeadline{json}
     subtitle
@@ -8,4 +8,4 @@ const pageQuery = `query {
   }
 }
 `;
-export { pageQuery };
+export { query };

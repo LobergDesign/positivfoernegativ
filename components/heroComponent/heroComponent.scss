@@ -1,7 +1,7 @@
  @import "~assets/scss/tools/_mixins.scss";
 
 .hero{
-   margin-top: 6vw;
+   margin-top: 4vw;
     &__title--large{
         @include fluid-type(40px, 90px);
         margin-bottom: 1rem;

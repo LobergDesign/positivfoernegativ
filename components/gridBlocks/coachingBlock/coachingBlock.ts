@@ -16,6 +16,7 @@ export default class CoachingBlock extends Vue {
 	public items: [] = [];
 
 	mounted() {
+		console.debug("this.blo", this.blockData);
 		this.$fetch();
 	}
 	public toHtmlString(content: any) {

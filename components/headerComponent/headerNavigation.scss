@@ -7,9 +7,12 @@
 	position: fixed;
 	top: 0;
 	background-color: $color-white;
-	padding: 1rem 0;
+	padding: 0;
 	z-index: 10;
-	a{
+	li{
+		margin: 0;
+	}
+	a {
 		margin: 0;
 	}
 	// logo
@@ -18,20 +21,18 @@
 		max-width: 8.5rem;
 	}
 	// nav
-	&__nav {
-	}
-	&__nav-list {
-	}
 	&__nav-list-item {
 		display: inline-block;
-		margin: 0;
 	}
 	&__nav-list-item a {
 		display: block;
-		padding: 2rem;
+		padding: 2rem 2.5rem;
 		font-size: 1.6rem;
+		letter-spacing: 0.05rem;
+		&::first-letter {
+			text-transform: uppercase;
+		}
 	}
-
 	&__nav-list-item a.is-active {
 		@include font-pt-sans-bold;
 	}

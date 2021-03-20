@@ -36,20 +36,19 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 		span,
 		p,
 		a {
-			line-height: 1.5;
+			margin: 0;
+			line-height: 1.6;
 			font-size: 1.6rem;
 			color: $color-gray-mercury;
 		}
 		span.footer__header {
 			color: $color-white;
 			font-size: 1.8rem;
-		}
-	}
-	&__header {
-		@include font-pt-sans-bold;
-		margin-bottom: 0.3rem;
-		&:not(:first-child) {
-			margin-top: 5rem;
+			@include font-pt-sans-bold;
+			margin-bottom: 0.9rem;
+			&:not(:first-child) {
+				margin-top: 5rem;
+			}
 		}
 	}
 	// right footer section

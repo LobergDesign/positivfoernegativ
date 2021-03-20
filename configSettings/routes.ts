@@ -21,19 +21,17 @@ const siteStructure = async () => {
 };
 
 export async function extendRoutes(routes: IRoutes[], resolve: (...param: string[]) => Vue) {
-	// api call to sitemap
-	////////////////////////////// PRODGOSODSOD   https://medium.com/js-dojo/how-i-generated-dynamic-routes-for-different-nuxt-js-pages-ce2ee6972743
 	const sitemaps = await siteStructure();
-
-	const sitemap: ISitemapRoute[] = sitemaps.mainSitemap;
+	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
+	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const sitemapRoutes: IRoutes[] = [];
 
-	sitemap.forEach((route) => {
+	sitemapMain.forEach((route) => {
 		if (route.model === "ContentPage") {
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/_slug.vue`),
-				name:route.slug,
+				name: route.slug,
 			});
 		} else {
 			sitemapRoutes.push({
@@ -41,6 +39,14 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 				component: resolve(`~/pages/${route.model}/index.vue`),
 			});
 		}
+	});
+	console.log("sitemapCoachingItems", sitemapCoachingItems);
+	sitemapCoachingItems.forEach((route) => {
+		sitemapRoutes.push({
+			path: `/coaching/${route.slug}/`,
+			component: resolve(`~/pages/CoachingPage/_slug.vue`),
+			name: route.slug,
+		});
 	});
 	return [...routes, ...sitemapRoutes];
 }

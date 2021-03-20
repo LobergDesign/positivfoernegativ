@@ -36,6 +36,20 @@ query getCoachingPage($slug: String!) {
           ... on LayoutCoachingBlok {
             title
             subtitle
+            link {
+              ... on CoachingPage {
+                slug
+              }
+              ... on ContactPage {
+                slug
+              }
+              ... on LecturePage{
+                slug
+              }
+              ... on ContentPage{
+                slug
+              }
+            }
           }
           ... on LayoutImageArea {
             imagesCollection(limit: 10) {

@@ -4,8 +4,8 @@ import { getDynamicData } from "~/queries/contentPageItem";
 
 @Component
 export default class ContentPage extends Vue {
-	async asyncData({ $dataApi, route, error, app  }: Context) {
-		const routePath = route.params.name;
+	async asyncData({ $dataApi, route, error  }: Context) {
+		const routePath = route.name as string;
 		const variables = { slug: routePath };
 		const response = await $dataApi.getDynamicData(getDynamicData, variables);
 		const responseData = response.data?.pageData?.items[0];
