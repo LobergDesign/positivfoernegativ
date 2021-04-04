@@ -22,12 +22,13 @@ const siteStructure = async () => {
 
 export async function extendRoutes(routes: IRoutes[], resolve: (...param: string[]) => Vue) {
 	const sitemaps = await siteStructure();
+	console.log("init mainItems", sitemaps);
 	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const sitemapRoutes: IRoutes[] = [];
 
 	sitemapMain.forEach((route) => {
-		if (route.model === "ContentPage") {
+		if (route.model === "ContentPage" || route.model === "CoachingEntranceItem") {
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/_slug.vue`),
@@ -40,7 +41,6 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 			});
 		}
 	});
-	console.log("sitemapCoachingItems", sitemapCoachingItems);
 	sitemapCoachingItems.forEach((route) => {
 		sitemapRoutes.push({
 			path: `/coaching/${route.slug}/`,
@@ -54,13 +54,25 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 export async function generate() {
 	const sitemaps = await siteStructure();
 
-	const sitemap: ISitemapRoute[] = sitemaps.mainSitemap;
+	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
+	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const routes: any = [];
-	sitemap.forEach((item: any) => {
+	sitemapMain.forEach((item: any) => {
+		console.log("sitemapMain", item);
 		routes.push({
 			route: `/${item.slug}/`,
 		});
-
+		if (item.model === "CoachingItem") {
+			routes.push({
+				route: "/" + item.slug + "/",
+			});
+		}
+	});
+	sitemapCoachingItems.forEach((item: any) => {
+		console.log("sitemapCoachingItems", item);
+		routes.push({
+			route: "/coaching/" + item.slug + "/",
+		});
 		// if (item.model === "ContactPage") {
 		// 	routes.push({
 		// 		route: "/" + item.slug + "/",
@@ -71,5 +83,6 @@ export async function generate() {
 		// 	});
 		// }
 	});
+	console.log("routes", routes);
 	return routes;
 }

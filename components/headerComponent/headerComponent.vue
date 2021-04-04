@@ -26,9 +26,9 @@
 								{{ item.slug.replace("-", " ") }}
 							</nuxt-link>
 						</li>
-						<li>
-							<nuxt-link to="/kontakt/" class="btn">Book foredrag</nuxt-link>
-						</li>
+						<!-- <li>
+							<nuxt-link to="/kontakt/" class="btn">Book fore</nuxt-link>
+						</li> -->
 					</ul>
 				</nav>
 			</div>

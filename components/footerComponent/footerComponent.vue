@@ -34,18 +34,36 @@
 			<div class="grid-w">
 				<div class="grid-r">
 					<div class="grid-c-11">
-						<address>
-							<span class="footer__header">Kontakt</span>
-							<span v-if="data.phonenumber"
-								>Tlf: <a :href="'tel:' + data.phonenumber">{{ data.phonenumber }}</a></span
-							>
-							<span v-if="data.email"
-								>Mail: <a :href="'mailto:' + data.email">{{ data.email }}</a></span
-							>
-							<span class="footer__header">Adresse</span>
-							<span v-if="data.adresse">{{ data.adresse }}</span>
-							<span v-if="data.zipcodeAndCity">{{ data.zipcodeAndCity }}</span>
-						</address>
+						<div class="grid-r">
+							<div class="grid-c-8">
+								<address>
+									<span class="footer__header">Kontakt</span>
+									<span v-if="data.phonenumber"
+										>Tlf: <a :href="'tel:' + data.phonenumber">{{ data.phonenumber }}</a></span
+									>
+									<span v-if="data.email"
+										>Mail: <a :href="'mailto:' + data.email">{{ data.email }}</a></span
+									>
+									<span class="footer__header">Adresse</span>
+									<span v-if="data.adresse">{{ data.adresse }}</span>
+									<span v-if="data.zipcodeAndCity">{{ data.zipcodeAndCity }}</span>
+								</address>
+							</div>
+							<div class="grid-c-8">
+								<span class="footer__header">Information</span>
+								<ul class="reset-ul footer__links">
+									<li>
+										<a href="#">Link 1 (download mit cv)</a>
+									</li>
+										<li>
+										<a href="#">Link 2 (persondatalov)</a>
+									</li>
+									<li>
+										<a href="#">Link 2 (Cookies)</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="grid-c-5">
 						<div class="on-top footer__right-section">

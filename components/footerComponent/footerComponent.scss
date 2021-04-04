@@ -51,6 +51,27 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 			}
 		}
 	}
+	&__header {
+		color: $color-white;
+		font-size: 1.8rem;
+		@include font-pt-sans-bold;
+		margin-bottom: 0.9rem;
+		&:not(:first-child) {
+			margin-top: 5rem;
+		}
+	}
+	// links
+	&__links {
+		li {
+			margin: 0;
+		}
+		a {
+			margin: 0;
+			line-height: 1.6;
+			font-size: 1.6rem;
+			color: #e5e5e5;
+		}
+	}
 	// right footer section
 	&__right-section {
 		height: 100%;
@@ -74,12 +95,12 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 	}
 }
 // promotion banner
-.promotion-banner{
+.promotion-banner {
 	background-color: $color-gray-alabaster;
 	padding: 5vw 0;
-	&__text{
+	&__text {
 		display: block;
-		margin-top: .6vw;
+		margin-top: 0.6vw;
 		font-size: 1.4rem;
 		color: $color-black-tundora;
 	}

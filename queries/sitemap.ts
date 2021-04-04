@@ -3,6 +3,9 @@ const query = `query {
       mainMenuCollection {
         items {
           model:__typename
+          ... on CoachingEntranceItem {
+            slug
+          }
           ... on ContactPage {
             slug
           }
