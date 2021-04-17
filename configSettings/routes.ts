@@ -47,6 +47,7 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 			name: route.slug,
 		});
 	});
+	// console.log("...routes, ...sitemapRoutes", [...routes, ...sitemapRoutes]);
 	return [...routes, ...sitemapRoutes];
 }
 
@@ -57,19 +58,18 @@ export async function generate() {
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const routes: any = [];
 	sitemapMain.forEach((item: any) => {
+		console.log("sitemapMain item", item);
 		routes.push({
 			route: `/${item.slug}/`,
 		});
-		if (item.model === "CoachingItem") {
-			routes.push({
-				route: "/" + item.slug + "/",
-			});
-		}
 	});
 	sitemapCoachingItems.forEach((item: any) => {
+		console.log("sitemapCoachingItems item", item);
 		routes.push({
 			route: "/coaching/" + item.slug + "/",
 		});
 	});
+
+	// console.log("routes generewat", routes);
 	return routes;
 }

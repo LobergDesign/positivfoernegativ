@@ -17,6 +17,15 @@ declare interface IImage {
 	readonly url?: string;
 }
 
+declare interface ISeo {
+	readonly metaDescription?: string;
+	readonly metaOgImage?: IImage;
+	readonly metaOgtitle?: string;
+	readonly metaOgdescription?: string;
+	readonly metaOgtype?: string;
+	readonly metaOgurl?: string;
+	readonly metaTitle?: string;
+}
 //////// global data
 declare interface IFooter {
 	readonly empowerMind?: IImage;

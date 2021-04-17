@@ -63,6 +63,7 @@ seoSection {
     metaTitle
     metaDescription
     metaOgtitle
+    metaOgdescription
     metaOgtype
     metaOgurl
     metaOgimage {
