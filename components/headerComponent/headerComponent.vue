@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="grid-r">
-			<div class="grid-c-4 flex-vertical-center">
+			<div class="grid-c-2 flex-vertical-center">
 				<nuxt-link to="/">
 					<picture>
 						<source
@@ -18,17 +18,18 @@
 					</picture>
 				</nuxt-link>
 			</div>
-			<div class="grid-c-12">
+			<div class="grid-c-14">
 				<nav class="header__nav full-height">
 					<ul class="reset-ul header__nav-list full-height flex-end flex-vertical-center">
 						<li v-for="(item, index) in menuList.items" :key="index" class="header__nav-list-item">
-							<nuxt-link :to="'/' + item.slug + '/'">
-								{{ item.slug.replace("-", " ") }}
+							<nuxt-link
+								:to="'/' + item.slug + '/'"
+								:class="{ btn: index === menuList.items.length - 1 }"
+							>
+								<span v-if="item.linkName">{{ item.linkName.replace("-", " ") }}</span>
+								<span v-else>{{ item.slug.replace("-", " ") }}</span>
 							</nuxt-link>
 						</li>
-						<!-- <li>
-							<nuxt-link to="/kontakt/" class="btn">Book fore</nuxt-link>
-						</li> -->
 					</ul>
 				</nav>
 			</div>

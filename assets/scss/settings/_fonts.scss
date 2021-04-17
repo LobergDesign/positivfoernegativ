@@ -1,49 +1,23 @@
 //-- pt serif --//
 @mixin font-pt-serif {
-	font-family: "PT Serif";
+	font-family: "PT Serif", serif;
 	font-weight: 400;
-	font-display: swap;
-}
-@mixin font-pt-serif-italic {
-	font-family: "PT Serif";
-    font-weight: 400;
-	font-style: italic;
-	font-display: swap;
 }
 @mixin font-pt-serif-bold {
-	font-family: "PT Serif";
+	font-family: "PT Serif", serif;
 	font-weight: 700;
-	font-display: swap;
-}
-@mixin font-pt-serif-bold-italic {
-	font-family: "PT Serif";
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
 }
 
 // pt sans
-@mixin font-pt-sans {
-	font-family: "PT Sans";
+@mixin font-sans-pro {
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
-	font-display: swap;
 }
-@mixin font-pt-sans-italic {
-	font-family: "PT Sans";
-    font-weight: 400;
-	font-style: italic;
-	font-display: swap;
+@mixin font-sans-pro-medium {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
 }
-@mixin font-pt-sans-bold {
-	font-family: "PT Sans";
+@mixin font-sans-pro-bold {
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 700;
-	font-display: swap;
 }
-@mixin font-pt-sans-bold-italic {
-	font-family: "PT Sans";
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-
-

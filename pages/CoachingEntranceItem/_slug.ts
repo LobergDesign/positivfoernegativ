@@ -10,7 +10,6 @@ export default class CoachingPageClass extends Vue {
 		const variables = { slug: routePath };
 		const response = await $dataApi.getDynamicData(getDynamicData, variables);
 		const responseData = response.data?.pageData?.items[0];
-		
 		if (!responseData) {
 			return error({
 				statusCode: response.status,

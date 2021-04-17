@@ -40,11 +40,11 @@ export default {
 		"@nuxt/typescript-build",
 		"nuxt-lazysizes",
 		"nuxt-graphql-request",
+		"nuxt-font-loader",
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
-		"nuxt-webfontloader",
 		"@nuxtjs/svg",
 		// https://go.nuxtjs.dev/pwa
 		"@nuxtjs/pwa",
@@ -79,7 +79,7 @@ export default {
 	/*
 	 ** add robots.txt to application
 	 */
-	 robots: {
+	robots: {
 		UserAgent: "*",
 		Disallow: process.env.ROBOTS === "false" ? "/" : "",
 		Sitemap: process.env.BASE_URL + "/sitemap.xml",
@@ -87,7 +87,7 @@ export default {
 	/*
 	 ** sitemap settings
 	 */
-	 sitemap: {
+	sitemap: {
 		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
 		exclude: ["/LecturePage/", "/ContactPage/", "/ContentPage/", "/CoachingPage/"],
 		// add trailing slash to final sitemap
@@ -112,10 +112,16 @@ export default {
 			display: "standalone",
 		},
 	},
-	webfontloader: {
-		google: {
-			families: ["PT Serif:400,700", "PT Sans:400,700"],
+	fontLoader: {
+		// Paste a google link here
+		url: {
+			google:
+				"https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
 		},
+
+		// Enable options
+		prefetch: true,
+		preconnect: true,
 	},
 	purgeCSS: {
 		// whitelist spicific classes

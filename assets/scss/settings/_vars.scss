@@ -7,19 +7,21 @@ $color-black-tundora: #363636;
 $color-yellow-corn: #eab200;
 // gray
 $color-gray-mercury: #e5e5e5;
-$color-gray-silver: #c7c7c7;
-$color-gray-alabaster: #F9F9F9;
+$color-gray-silver: #a1a1a1;
+$color-gray-alabaster: #f9f9f9;
 
 //------- Transistions and animation -------//
 $transition--cubic: cubic-bezier(0.69, 0, 0.27, 0.99);
-$transition: 0.7s $transition--cubic;
-$transition--slow: 0.9s $transition--cubic;
-$transition--fast: 0.6s $transition--cubic;
+$transition: 0.6s $transition--cubic;
+$transition--slow: 0.8s $transition--cubic;
+$transition--fast: 0.5s $transition--cubic;
+$transition--extra-fast: 0.4s $transition--cubic;
 
 //------- Layout -------//
 $grid-max-width: 1920px;
 $grid-min-width: 370px;
-
+// utils
+$box-shadow: 0px 13px 17px -12px rgba(0, 0, 0, 0.3);
 // col sizes
 $col-25: 25%;
 $col-33: 33.333333%;

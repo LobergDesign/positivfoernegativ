@@ -41,6 +41,7 @@ declare interface IMenuItems {
 declare interface IMenu{
 	readonly mainMenuCollection?: Array<IMenuItems>;
 	readonly logo?: IImage;
+	readonly linkName?: string;
 }
 
 declare interface IHero {
@@ -53,6 +54,11 @@ declare interface IHero {
 declare interface IImageBlock {
 	readonly imagesCollection?: Array<IImage>;
 	readonly fullscreen?: boolean;
+}
+declare interface IVideoBlock {
+	readonly image?: IImage;
+	readonly youTubeId?: string;
+	readonly videoCaption?:object;
 }
 declare interface ITextBlock {
 	readonly bodytext?: object;

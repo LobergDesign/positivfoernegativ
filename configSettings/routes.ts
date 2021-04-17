@@ -22,7 +22,6 @@ const siteStructure = async () => {
 
 export async function extendRoutes(routes: IRoutes[], resolve: (...param: string[]) => Vue) {
 	const sitemaps = await siteStructure();
-	console.log("init mainItems", sitemaps);
 	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const sitemapRoutes: IRoutes[] = [];
@@ -58,7 +57,6 @@ export async function generate() {
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const routes: any = [];
 	sitemapMain.forEach((item: any) => {
-		console.log("sitemapMain", item);
 		routes.push({
 			route: `/${item.slug}/`,
 		});
@@ -69,20 +67,9 @@ export async function generate() {
 		}
 	});
 	sitemapCoachingItems.forEach((item: any) => {
-		console.log("sitemapCoachingItems", item);
 		routes.push({
 			route: "/coaching/" + item.slug + "/",
 		});
-		// if (item.model === "ContactPage") {
-		// 	routes.push({
-		// 		route: "/" + item.slug + "/",
-		// 	});
-		// } else if (item.model === "ContentPage") {
-		// 	routes.push({
-		// 		route: "/" + item.slug + "/",
-		// 	});
-		// }
 	});
-	console.log("routes", routes);
 	return routes;
 }

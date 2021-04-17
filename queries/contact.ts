@@ -1,3 +1,5 @@
+import { seo } from "./queriesUtils/utils";
+
 const query = `query {
   contactPage(id: "4FaZD4NezcKvSWPrRsMJPp") {
     pageHeadline{json}
@@ -5,6 +7,7 @@ const query = `query {
     bodytext{
       json
     }
+    ${seo}
   }
 }
 `;
