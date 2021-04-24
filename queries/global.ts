@@ -1,5 +1,5 @@
-const globalQuery = `query {
-  globalSettings(id: "38onI8GbhsFteNr1exH4HG") {
+const globalQuery = `query($isPreview: Boolean!) {
+  globalSettings(id: "38onI8GbhsFteNr1exH4HG", preview:$isPreview) {
     logo {
       title
       url
