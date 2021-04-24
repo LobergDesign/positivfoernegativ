@@ -1,10 +1,16 @@
 import { Vue, Component } from "nuxt-property-decorator";
 import { Context } from "vm";
 import { getDynamicData } from "~/queries/contentPageItem";
-
+import { head } from "~/utils/seo";
+import { ISeo } from "~/interfaces/global";
 @Component
 export default class ContentPage extends Vue {
+	private seo: ISeo = {};
+	head() {
+		return head(this.seo);
+	}
 	async asyncData({ $dataApi, route, error  }: Context) {
+
 		const routePath = route.name as string;
 		const variables = { slug: routePath };
 		const response = await $dataApi.getDynamicData(getDynamicData, variables);
@@ -15,7 +21,7 @@ export default class ContentPage extends Vue {
 				message: response.errors,
 			});
 		}
-		return { data: responseData };
+		return { data: responseData, seo:responseData.seoSection };
 	}
 }
 

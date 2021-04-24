@@ -2,8 +2,8 @@ import { ISeo } from "~/interfaces/global";
 
 export function head(seoObject: ISeo) {
 
-    const type = seoObject.metaOgtype ? seoObject.metaOgtype : "website";
-
+    const type = seoObject?.metaOgtype ? seoObject?.metaOgtype : "website";
+    
 	return {
 		title: seoObject?.metaTitle,
 		htmlAttrs: {

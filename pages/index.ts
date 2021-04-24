@@ -1,14 +1,13 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 import { query } from "~/queries/frontpage";
-
+import { ISeo } from "~/interfaces/global";
+import { head } from "~/utils/seo";
 @Component
 export default class FrontpageClass extends Vue {
+	private seo: ISeo = {};
 	head() {
-		return {
-			title: "frontpage",
-			meta: [{ hid: "description", name: "description", content: "this.metaDesc" }],
-		};
+		return head(this.seo);
 	}
 
 	async asyncData({ $dataApi, error }: Context) {
@@ -20,6 +19,6 @@ export default class FrontpageClass extends Vue {
 				message: response.errors
 			});
 		}
-		return { data: responseData.frontpage };
+		return { data: responseData.frontpage, seo:responseData.frontpage.seoSection };
 	}
 }

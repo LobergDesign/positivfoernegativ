@@ -14,13 +14,19 @@ export default {
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
 	publicRuntimeConfig: {
-		graphql: {
-			clients: {
-				default: {
-					endpoint: process.env.GRAPHQL_ENDPOINT,
-				},
-			},
-		},
+		baseUrl: process.env.BASE_URL
+		// graphql: {
+		// 	clients: {
+		// 		default: {
+		// 			endpoint: process.env.GRAPHQL_ENDPOINT,
+		// 			options: {
+		// 				headers: {
+		// 					authorization: "Bearer " + (process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? process.env.GRAPHQL_PREVIEW_TOKEN: process.env.GRAPHQL_TOKEN),
+		// 				},
+		// 			},
+		// 		},
+		// 	},
+		// },
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -46,8 +52,6 @@ export default {
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		"@nuxtjs/svg",
-		// https://go.nuxtjs.dev/pwa
-		"@nuxtjs/pwa",
 		"@nuxtjs/robots",
 	],
 	graphql: {
@@ -56,12 +60,11 @@ export default {
 				endpoint: process.env.GRAPHQL_ENDPOINT,
 				options: {
 					headers: {
-						authorization: "Bearer " + process.env.GRAPHQL_TOKEN,
+						authorization: "Bearer " + (process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? process.env.GRAPHQL_PREVIEW_TOKEN: process.env.GRAPHQL_TOKEN),
 					},
 				},
 			},
 		},
-		includeNodeModules: true,
 	},
 	router: {
 		trailingSlash: true,
@@ -96,21 +99,6 @@ export default {
 		path: "/sitemap.xml",
 		gzip: true,
 		generate: false,
-	},
-	// PWA module configuration: https://go.nuxtjs.dev/pwa
-	pwa: {
-		// workbox: {
-		// 	enabled: false,
-		// },
-		manifest: {
-			name: "Positiv før negativ PWA",
-			lang: "da",
-			short_name: "PFN PWA",
-			start_url: "/",
-			background_color: "#112d47",
-			theme_color: "#112d47",
-			display: "standalone",
-		},
 	},
 	fontLoader: {
 		// Paste a google link here

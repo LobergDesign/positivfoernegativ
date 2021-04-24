@@ -1,15 +1,14 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { head } from "~/utils/seo";
 import { query } from "~/queries/contact";
+import { ISeo } from "~/interfaces/global";
 
 @Component
 export default class ContactPage extends Vue {
+	private seo: ISeo = {};
 	head() {
-		return {
-			title: "Coaching",
-			meta: [{ hid: "description", name: "description", content: "this.metaDesc" }],
-		};
+		return head(this.seo);
 	}
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(query);
@@ -20,6 +19,6 @@ export default class ContactPage extends Vue {
 				message: response.errors
 			});
 		}
-		return { data: responseData.contactPage };
+		return { data: responseData.contactPage, seo: responseData.contactPage.seoSection };
 	}
 }

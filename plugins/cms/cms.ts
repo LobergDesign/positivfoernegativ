@@ -1,9 +1,12 @@
 import { Context } from "vm";
 
 export default function (ctx: Context, inject: any) {
+	const client = ctx.app.$graphql;
+	const previewUrl = "https://pfoern-preview.netlify.app/";
+const isPreview = (process.env.BASE_URL === previewUrl || ctx.app.$config.baseUrl === previewUrl) ? true: false;
+console.debug("isPreview", isPreview);
 	// get data funciton with query paramater
 	const getData = async (query: any) => {
-		const client = ctx.app.$graphql;
 		try {
 			return handleResponse(await client.default.request(query));
 		} catch (error: any) {
@@ -11,7 +14,6 @@ export default function (ctx: Context, inject: any) {
 		}
 	};
 	const getDynamicData = async (query: any, vars:any) => {
-		const client = ctx.app.$graphql;
 		try {
 			return handleResponse(await client.default.request(query, vars));
 		} catch (error: any) {

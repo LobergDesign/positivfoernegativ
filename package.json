@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.2",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.5.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
