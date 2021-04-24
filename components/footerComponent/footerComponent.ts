@@ -21,7 +21,12 @@ import SvgYoutube from "~/assets/svg/youtube.svg?inline";
 export default class FooterComponent extends Vue {
 	@Prop({ type: Object as () => IFooterObject, required: true })
 	readonly footerData!: IFooterObject;
-	public data = this.footerData.footerObject;
+
+	public data = this.footerData.footerObject || {};
+	mounted(){
+		console.debug("footerData", this.footerData)
+		console.debug("data", this.data)
+	}
 	public toHtmlString(content: any) {
 		return documentToHtmlString(content);
 	}

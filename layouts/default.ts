@@ -10,6 +10,7 @@ export default class Default extends Vue {
 		const response = await this.$nuxt.context.$dataApi.getData(globalQuery);
 		const responseMenuCollection = await this.$nuxt.context.$dataApi.getData(query);
 		const mainMenuCollection = responseMenuCollection?.data?.globalSettings?.mainMenuCollection;
+		
 		const {
 			logo,
 			empowerMind,

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<section class="promotion-banner">
+		<section class="promotion-banner" v-if="data">
 			<div class="grid-w">
 				<div class="grid-r">
 					<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="data.empowerMind">
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 		</section>
-		<footer class="footer">
+		<footer class="footer" v-if="data">
 			<div class="grid-w">
 				<div class="grid-r">
 					<div class="grid-c-11">
