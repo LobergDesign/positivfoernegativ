@@ -14,13 +14,7 @@ export default {
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
 	publicRuntimeConfig: {
-		graphql: {
-			clients: {
-				default: {
-					endpoint: process.env.GRAPHQL_ENDPOINT,
-				},
-			},
-		},
+		baseUrl: process.env.BASE_URL,
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -40,28 +34,26 @@ export default {
 		"@nuxt/typescript-build",
 		"nuxt-lazysizes",
 		"nuxt-graphql-request",
+		"nuxt-font-loader",
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
-	modules: [
-		"nuxt-webfontloader",
-		"@nuxtjs/svg",
-		// https://go.nuxtjs.dev/pwa
-		"@nuxtjs/pwa",
-		"@nuxtjs/robots",
-	],
+	modules: ["@nuxtjs/svg", "@nuxtjs/robots"],
 	graphql: {
 		clients: {
 			default: {
 				endpoint: process.env.GRAPHQL_ENDPOINT,
 				options: {
 					headers: {
-						authorization: "Bearer " + process.env.GRAPHQL_TOKEN,
+						authorization:
+							"Bearer " +
+							(process.env.BASE_URL === "https://pfoern-preview.netlify.app/"
+								? process.env.GRAPHQL_PREVIEW_TOKEN
+								: process.env.GRAPHQL_TOKEN),
 					},
 				},
 			},
 		},
-		includeNodeModules: true,
 	},
 	router: {
 		trailingSlash: true,
@@ -79,7 +71,7 @@ export default {
 	/*
 	 ** add robots.txt to application
 	 */
-	 robots: {
+	robots: {
 		UserAgent: "*",
 		Disallow: process.env.ROBOTS === "false" ? "/" : "",
 		Sitemap: process.env.BASE_URL + "/sitemap.xml",
@@ -87,7 +79,7 @@ export default {
 	/*
 	 ** sitemap settings
 	 */
-	 sitemap: {
+	sitemap: {
 		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
 		exclude: ["/LecturePage/", "/ContactPage/", "/ContentPage/", "/CoachingPage/"],
 		// add trailing slash to final sitemap
@@ -97,25 +89,16 @@ export default {
 		gzip: true,
 		generate: false,
 	},
-	// PWA module configuration: https://go.nuxtjs.dev/pwa
-	pwa: {
-		// workbox: {
-		// 	enabled: false,
-		// },
-		manifest: {
-			name: "Positiv før negativ PWA",
-			lang: "da",
-			short_name: "PFN PWA",
-			start_url: "/",
-			background_color: "#112d47",
-			theme_color: "#112d47",
-			display: "standalone",
+	fontLoader: {
+		// Paste a google link here
+		url: {
+			google:
+				"https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
 		},
-	},
-	webfontloader: {
-		google: {
-			families: ["PT Serif:400,700", "PT Sans:400,700"],
-		},
+
+		// Enable options
+		prefetch: true,
+		preconnect: true,
 	},
 	purgeCSS: {
 		// whitelist spicific classes

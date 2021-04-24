@@ -1,7 +1,7 @@
 import { contentAreaCollection, pageHeader, seo } from "./queriesUtils/utils";
 const getDynamicData = `
-query getCoachingPage($slug: String!) {
-  pageData: coachingItemCollection(where: {slug: $slug}, limit: 1) {
+query getCoachingEntrance($slug: String!) {
+  pageData: coachingEntranceItemCollection(where: {slug: $slug}, limit: 1) {
     items {
       ${pageHeader}
       coachingProcessTitle {

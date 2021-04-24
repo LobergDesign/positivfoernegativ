@@ -12,15 +12,8 @@ $grid-gap: 2vw;
 	grid-gap: 1.8vw;
 }
 [class^="grid-c"] {
-	grid-column-end: span $columns; //Full width fallback when no column size is define for the screen size.
+	grid-column-end: span $columns;
 }
-//////// create all grid column items
-// @for $item from 1 to 17 {
-// 	.grid-c-#{$item} {
-// 		grid-column: span $item;
-// 		overflow: hidden;
-// 	}
-// }
 
 @for $i from 1 through $columns {
 	.grid-c-#{$i} {
@@ -38,22 +31,6 @@ $grid-gap: 2vw;
 		}
 	}
 }
-
-//////// grid row
-// .grid-r {
-// 	[class*="grid-c"] {
-// 		margin-left: 1.3vw;
-// 		margin-right: 1.3vw;
-// 	}
-// 	.grid-r {
-// 		margin-left: -0.8vw;
-// 		margin-right: -0.8vw;
-// 		[class*="grid-c"] {
-// 			padding-left: 0.8vw;
-// 			padding-right: 0.8vw;
-// 		}
-// 	}
-// }
 //////// offsets
 .grid-c-1-offset-1 {
 	grid-column: 2 / span 1;

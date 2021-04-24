@@ -1,14 +1,13 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 import { pageQuery } from "~/queries/lecture";
-
+import { head } from "~/utils/seo";
+import { ISeo } from "~/interfaces/global";
 @Component
 export default class LecturePageClass extends Vue {
+	private seo: ISeo = {};
 	head() {
-		return {
-			title: "LecturePage",
-			meta: [{ hid: "description", name: "description", content: "this.metaDesc" }],
-		};
+		return head(this.seo);
 	}
 
 	async asyncData({ $dataApi, error }: Context) {
@@ -20,6 +19,6 @@ export default class LecturePageClass extends Vue {
 				message: response.errors
 			});
 		}
-		return { data: responseData.lecturePage };
+		return { data: responseData.lecturePage, seo:responseData.lecturePage.seoSection };
 	}
 }

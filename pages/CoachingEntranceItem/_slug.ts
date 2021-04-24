@@ -1,15 +1,17 @@
+
+import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
-import { Context } from "vm";
-import { getDynamicData } from "~/queries/contentPageItem";
 import { head } from "~/utils/seo";
+import { getDynamicData } from "~/queries/coachingEntranceItem";
 import { ISeo } from "~/interfaces/global";
+
 @Component
-export default class ContentPage extends Vue {
+export default class CoachingPageClass extends Vue {
 	private seo: ISeo = {};
 	head() {
 		return head(this.seo);
 	}
-	async asyncData({ $dataApi, route, error  }: Context) {
+	async asyncData({ $dataApi, error, route }: Context) {
 		const routePath = route.name as string;
 		const response = await $dataApi.getDynamicData(getDynamicData, routePath);
 		const responseData = response.data?.pageData?.items[0];
@@ -22,4 +24,3 @@ export default class ContentPage extends Vue {
 		return { data: responseData, seo:responseData.seoSection };
 	}
 }
-

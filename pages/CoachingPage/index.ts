@@ -1,26 +1,26 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { ISeo } from "~/interfaces/global";
+import { head } from "~/utils/seo";
 import { query } from "~/queries/coaching";
 
 @Component
 export default class CoachingPageClass extends Vue {
+	private seo: ISeo = {};
 	head() {
-		return {
-			title: "Coaching",
-			meta: [{ hid: "description", name: "description", content: "this.metaDesc" }],
-		};
+		return head(this.seo);
 	}
 
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(query);
 		const responseData = response.data;
-		if(!responseData?.coachingPage){
+		if (!responseData?.coachingPage) {
 			return error({
 				statusCode: response.status,
-				message: response.errors
+				message: response.errors,
 			});
 		}
-		return { data: responseData.coachingPage };
+		const pageData = responseData.coachingPage;
+		return { data: pageData, seo: pageData.seoSection };
 	}
 }
