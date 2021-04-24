@@ -14,19 +14,7 @@ export default {
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
 	publicRuntimeConfig: {
-		baseUrl: process.env.BASE_URL
-		// graphql: {
-		// 	clients: {
-		// 		default: {
-		// 			endpoint: process.env.GRAPHQL_ENDPOINT,
-		// 			options: {
-		// 				headers: {
-		// 					authorization: "Bearer " + (process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? process.env.GRAPHQL_PREVIEW_TOKEN: process.env.GRAPHQL_TOKEN),
-		// 				},
-		// 			},
-		// 		},
-		// 	},
-		// },
+		baseUrl: process.env.BASE_URL,
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -50,17 +38,18 @@ export default {
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
-	modules: [
-		"@nuxtjs/svg",
-		"@nuxtjs/robots",
-	],
+	modules: ["@nuxtjs/svg", "@nuxtjs/robots"],
 	graphql: {
 		clients: {
 			default: {
 				endpoint: process.env.GRAPHQL_ENDPOINT,
 				options: {
 					headers: {
-						authorization: "Bearer " + (process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? process.env.GRAPHQL_PREVIEW_TOKEN: process.env.GRAPHQL_TOKEN),
+						authorization:
+							"Bearer " +
+							(process.env.BASE_URL === "https://pfoern-preview.netlify.app/"
+								? process.env.GRAPHQL_PREVIEW_TOKEN
+								: process.env.GRAPHQL_TOKEN),
 					},
 				},
 			},

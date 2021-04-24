@@ -10,10 +10,8 @@ export default class ContentPage extends Vue {
 		return head(this.seo);
 	}
 	async asyncData({ $dataApi, route, error  }: Context) {
-
 		const routePath = route.name as string;
-		const variables = { slug: routePath };
-		const response = await $dataApi.getDynamicData(getDynamicData, variables);
+		const response = await $dataApi.getDynamicData(getDynamicData, routePath);
 		const responseData = response.data?.pageData?.items[0];
 		if (!responseData) {
 			return error({

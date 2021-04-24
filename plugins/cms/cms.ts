@@ -1,21 +1,27 @@
+import { Inject } from "@nuxt/types/app";
 import { Context } from "vm";
 
-export default function (ctx: Context, inject: any) {
+export default function (ctx: Context, inject: Inject) {
 	const client = ctx.app.$graphql;
+
+	// handle preview
 	const previewUrl = "https://pfoern-preview.netlify.app/";
-const isPreview = (process.env.BASE_URL === previewUrl || ctx.app.$config.baseUrl === previewUrl) ? true: false;
-console.debug("isPreview", isPreview);
+	const setPreviewBool = process.env.BASE_URL === previewUrl || ctx.app.$config.baseUrl === previewUrl ? true : false;
+	const isPreview = { isPreview: setPreviewBool };
+
 	// get data funciton with query paramater
-	const getData = async (query: any) => {
+	const getData = async (query: string, preview: object = isPreview) => {
 		try {
-			return handleResponse(await client.default.request(query));
+			return handleResponse(await client.default.request(query, preview));
 		} catch (error: any) {
 			return getErrorResponse(error);
 		}
 	};
-	const getDynamicData = async (query: any, vars:any) => {
+	const getDynamicData = async (query: string, routePath: string) => {
+		// Get path from route and set isPreview boolean
+		const variables = { slug: routePath, isPreview: setPreviewBool };
 		try {
-			return handleResponse(await client.default.request(query, vars));
+			return handleResponse(await client.default.request(query, variables));
 		} catch (error: any) {
 			return getErrorResponse(error);
 		}
@@ -44,6 +50,6 @@ console.debug("isPreview", isPreview);
 	// inject get data as dataApi to use in app as this.$dataApi
 	inject("dataApi", {
 		getData,
-		getDynamicData
+		getDynamicData,
 	});
 }
