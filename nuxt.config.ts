@@ -100,6 +100,7 @@ export default {
 		prefetch: true,
 		preconnect: true,
 	},
+	ssr: process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? false : true,
 	purgeCSS: {
 		// whitelist spicific classes
 		whitelist: ["is-active"],
