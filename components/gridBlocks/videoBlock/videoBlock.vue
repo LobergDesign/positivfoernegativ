@@ -1,6 +1,6 @@
 <template>
 	<div class="grid-r">
-		<div class="grid-c-14-offset-2">
+		<div class="grid-c-14-offset-2" v-if="isReady">
 			<div class="video-block"  :class="{ 'player-is-active' : isPlayerActive}">
 				<div class="video-block__backdrop" v-on:click="toggleVideoPlayer"></div>
 				<button class="video-block__icon" v-on:click="toggleVideoPlayer">

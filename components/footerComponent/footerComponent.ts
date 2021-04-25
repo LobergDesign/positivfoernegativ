@@ -23,10 +23,6 @@ export default class FooterComponent extends Vue {
 	readonly footerData!: IFooterObject;
 
 	public data = this.footerData.footerObject || {};
-	
-	mounted(){
-		console.debug("data", this.data);
-	}
 	public toHtmlString(content: any) {
 		return documentToHtmlString(content);
 	}

@@ -6,6 +6,7 @@
 			:heroImage="data.image"
 			:heroSubtitle="data.subtitle"
 		/>
+		<SliderComponent v-if="data.slider" :blockData="data.slider" />
 		<GridBlocks :gridContent="data.contentAreaCollection" />
 	</main>
 </template>

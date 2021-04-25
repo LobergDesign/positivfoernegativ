@@ -85,6 +85,9 @@ declare interface ICoachingBlock {
 	readonly link?: object;
 	readonly listItemsCollection?: Array<object>;
 }
+declare interface ISlider {
+	readonly sliderItemsCollection?: object;
+}
 ///////// components
 export declare interface IProcessItem {
 	readonly headline?: string;

@@ -17,7 +17,8 @@
 									type="image/webp"
 								/>
 								<img
-									:src="data.empowerMind.url + '?w=175'"
+									src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+									:data-src="data.empowerMind.url + '?w=175'"
 									:alt="data.empowerMind.title"
 									class="lazyload"
 								/>
@@ -53,10 +54,11 @@
 								<span class="footer__header">Information</span>
 								<ul class="reset-ul footer__links">
 									<li v-if="data.cv">
-										<a laoding="lazy" target="_blank" :href="data.cv.url" :download="data.cv.title">Download mit CV</a>
+										<a laoding="lazy" target="_blank" :href="data.cv.url" :download="data.cv.title"
+											>Download mit CV</a
+										>
 									</li>
 									<li v-for="(item, index) in data.footerLinks.items" :key="index">
-							
 										<nuxt-link :to="'/' + item.slug + '/'">
 											<template v-if="item.linkName">
 												{{ item.linkName }}
