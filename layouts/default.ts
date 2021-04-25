@@ -10,7 +10,7 @@ export default class Default extends Vue {
 		const response = await this.$nuxt.context.$dataApi.getData(globalQuery);
 		const responseMenuCollection = await this.$nuxt.context.$dataApi.getData(query);
 		const mainMenuCollection = responseMenuCollection?.data?.globalSettings?.mainMenuCollection;
-		
+		const footerLinks = response?.data?.globalSettingsCollection?.items[0]?.footerLinksCollection;
 		const {
 			logo,
 			empowerMind,
@@ -24,12 +24,14 @@ export default class Default extends Vue {
 			phonenumber,
 			youTube,
 			zipcodeAndCity,
+			cv
 		} = response.data.globalSettings;
 		this.menuData = { mainMenuCollection, logo };
 		this.footerData = {
 			footerObject: {
 				empowerMind,
 				empowerMindText,
+				cv,
 				adresse,
 				email,
 				facebook,
@@ -39,6 +41,7 @@ export default class Default extends Vue {
 				phonenumber,
 				youTube,
 				zipcodeAndCity,
+				footerLinks
 			},
 		};
 	}

@@ -30,6 +30,7 @@ declare interface ISeo {
 declare interface IFooter {
 	readonly empowerMind?: IImage;
 	readonly empowerMindText?: string;
+	readonly cv?: IImage;
 	readonly adresse?: string;
 	readonly email?: string;
 	readonly phonenumber?: string;
@@ -39,15 +40,16 @@ declare interface IFooter {
 	readonly linkedIn?: string;
 	readonly youTube?: string;
 	readonly footerText?: object;
+	readonly footerLinks?: Array<object>;
 }
-declare interface IFooterObject{
+declare interface IFooterObject {
 	readonly footerObject?: IFooter;
 }
 declare interface IMenuItems {
 	readonly slug?: string;
 	readonly __typename?: string;
 }
-declare interface IMenu{
+declare interface IMenu {
 	readonly mainMenuCollection?: Array<IMenuItems>;
 	readonly logo?: IImage;
 	readonly linkName?: string;
@@ -67,7 +69,7 @@ declare interface IImageBlock {
 declare interface IVideoBlock {
 	readonly image?: IImage;
 	readonly youTubeId?: string;
-	readonly videoCaption?:object;
+	readonly videoCaption?: object;
 }
 declare interface ITextBlock {
 	readonly bodytext?: object;
@@ -80,6 +82,8 @@ declare interface IImageTextBlock {
 declare interface ICoachingBlock {
 	readonly title?: string;
 	readonly subtitle?: string;
+	readonly link?: object;
+	readonly listItemsCollection?: Array<object>;
 }
 ///////// components
 export declare interface IProcessItem {
@@ -97,7 +101,6 @@ declare interface IRoutes {
 	name?: string;
 	path: string;
 	component: Vue;
-
 }
 declare interface ISitemapRoute {
 	model?: string;

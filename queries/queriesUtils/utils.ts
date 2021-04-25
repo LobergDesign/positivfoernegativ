@@ -19,6 +19,31 @@ contentAreaCollection(limit: 30) {
             slug
           }
         }
+        listItemsCollection(limit: 16) {
+          items {
+            model: __typename
+            ... on CoachingEntranceItem {
+              title
+              pageHeadline {
+                json
+              }
+              bodytext {
+                json
+              }
+              slug
+            }
+            ... on CoachingItem {
+              title
+              pageHeadline {
+                json
+              }
+              bodytext {
+                json
+              }
+              slug
+            }
+          }
+        }
       }
       ... on LayoutImageArea {
         imagesCollection(limit: 10) {

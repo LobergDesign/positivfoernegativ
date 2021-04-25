@@ -4,6 +4,10 @@ const globalQuery = `query($isPreview: Boolean!) {
       title
       url
     }
+    cv {
+      title
+      url
+    }
     empowerMindText
     empowerMind {
       title,
@@ -19,6 +23,22 @@ const globalQuery = `query($isPreview: Boolean!) {
     linkedIn,
     youTube,
     instagram
+  }
+  globalSettingsCollection(limit: 1) {
+    items {
+      footerLinksCollection(limit: 10) {
+        items {
+          ... on ContactPage {
+            linkName
+            slug
+          }
+             ... on ContentPage{
+            linkName
+            slug
+          }
+        }
+      }
+    }
   }
 }
   `;

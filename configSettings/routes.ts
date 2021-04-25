@@ -16,10 +16,12 @@ const siteStructure = async () => {
 	const data = await graphQLClient.request(query, isPreview);
 	const mainItems = data.globalSettings.mainMenuCollection.items;
 	const coachItems = data.coachingItemCollection.items;
+	const contentPageItems = data.contentPageCollection.items;
 
 	return {
 		mainSitemap: mainItems,
 		coachingItems: coachItems,
+		contentPageItems: contentPageItems,
 	};
 };
 
@@ -27,16 +29,16 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 	const sitemaps = await siteStructure();
 	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
+	const sitemapContentPageItems: ISitemapRoute[] = sitemaps.contentPageItems;
 	const sitemapRoutes: IRoutes[] = [];
-
 	sitemapMain.forEach((route) => {
-		if (route.model === "ContentPage" || route.model === "CoachingEntranceItem") {
+		if (route.model === "CoachingEntranceItem") {
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/_slug.vue`),
 				name: route.slug,
 			});
-		} else {
+		} else if(route.model !== "ContentPage"){
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/index.vue`),
@@ -50,7 +52,13 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 			name: route.slug,
 		});
 	});
-	// console.log("...routes, ...sitemapRoutes", [...routes, ...sitemapRoutes]);
+	sitemapContentPageItems.forEach((route) => {
+		sitemapRoutes.push({
+			path: `/${route.slug}/`,
+			component: resolve(`~/pages/${route.model}/_slug.vue`),
+			name: route.slug,
+		});
+	});
 	return [...routes, ...sitemapRoutes];
 }
 
@@ -61,18 +69,14 @@ export async function generate() {
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
 	const routes: any = [];
 	sitemapMain.forEach((item: any) => {
-		console.log("sitemapMain item", item);
 		routes.push({
 			route: `/${item.slug}/`,
 		});
 	});
 	sitemapCoachingItems.forEach((item: any) => {
-		console.log("sitemapCoachingItems item", item);
 		routes.push({
 			route: "/coaching/" + item.slug + "/",
 		});
 	});
-
-	// console.log("routes generewat", routes);
 	return routes;
 }
