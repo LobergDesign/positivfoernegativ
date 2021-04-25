@@ -12,10 +12,10 @@ $color-gray-alabaster: #f9f9f9;
 
 //------- Transistions and animation -------//
 $transition--cubic: cubic-bezier(0.69, 0, 0.27, 0.99);
-$transition: 0.6s $transition--cubic;
-$transition--slow: 0.8s $transition--cubic;
-$transition--fast: 0.5s $transition--cubic;
-$transition--extra-fast: 0.4s $transition--cubic;
+$transition: 0.5s $transition--cubic;
+$transition--slow: 0.7s $transition--cubic;
+$transition--fast: 0.4s $transition--cubic;
+$transition--extra-fast: 0.3s $transition--cubic;
 
 //------- Layout -------//
 $grid-max-width: 1920px;

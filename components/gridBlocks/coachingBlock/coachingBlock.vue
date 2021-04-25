@@ -5,7 +5,11 @@
 			<div class="grid-c-16"></div>
 		</div>
 		<ul class="reset-ul grid-r">
-			<li v-for="(item, index) in blockData.listItemsCollection.items" :key="index" class="grid-c-16 grid-c-sm-8 grid-c-md-4 list-block__item">
+			<li
+				v-for="(item, index) in blockData.listItemsCollection.items"
+				:key="index"
+				class="grid-c-16 grid-c-sm-8 grid-c-md-4 list-block__item"
+			>
 				<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
 					<h3 class="list-block__item-headline">{{ item.title }}</h3>
 					<div v-if="item.bodytext" v-html="toHtmlString(item.bodytext.json)"></div>
@@ -23,7 +27,7 @@
 				</nuxt-link>
 				<div v-else>
 					<span class="list-block__item-headline" v-if="blockData.title">{{ blockData.title }}</span>
-					<p v-if="blockData.subtitle">{{ blockData.subtitle }}</p>
+					<div v-if="blockData.subtitle" v-html="toHtmlString(blockData.subtitle)"></div>
 				</div>
 			</li>
 		</ul>
