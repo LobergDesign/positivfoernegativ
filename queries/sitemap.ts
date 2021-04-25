@@ -33,6 +33,13 @@ const query = `query($isPreview: Boolean!) {
       linkName
     }
   }
+  contentPageCollection {
+    items {
+     model:__typename
+      slug
+      linkName
+    }
+  }
 }
   `;
 export { query };

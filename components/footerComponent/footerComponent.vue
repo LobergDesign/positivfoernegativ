@@ -52,14 +52,19 @@
 							<div class="grid-c-8">
 								<span class="footer__header">Information</span>
 								<ul class="reset-ul footer__links">
-									<li>
-										<a href="#">Link 1 (download mit cv)</a>
+									<li v-if="data.cv">
+										<a laoding="lazy" target="_blank" :href="data.cv.url" :download="data.cv.title">Download mit CV</a>
 									</li>
-										<li>
-										<a href="#">Link 2 (persondatalov)</a>
-									</li>
-									<li>
-										<a href="#">Link 2 (Cookies)</a>
+									<li v-for="(item, index) in data.footerLinks.items" :key="index">
+							
+										<nuxt-link :to="'/' + item.slug + '/'">
+											<template v-if="item.linkName">
+												{{ item.linkName }}
+											</template>
+											<template v-else>
+												{{ item.slug }}
+											</template>
+										</nuxt-link>
 									</li>
 								</ul>
 							</div>
