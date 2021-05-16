@@ -14,6 +14,15 @@ const query = `query($isPreview: Boolean!) {
               bodytext {
                 json
               }
+              image {
+                url
+                title
+              }
+              previewImage {
+                url
+                title
+              }
+              previewTeaser
             }
             ... on CoachingPage {
               pageHeadline {
@@ -23,15 +32,15 @@ const query = `query($isPreview: Boolean!) {
               bodytext {
                 json
               }
-            }
-            ... on ContactPage {
-              pageHeadline {
-                json
+              image {
+                url
+                title
               }
-              slug
-              bodytext {
-                json
+              previewImage {
+                url
+                title
               }
+              previewTeaser
             }
             __typename
             ... on LecturePage {
@@ -42,6 +51,15 @@ const query = `query($isPreview: Boolean!) {
               bodytext {
                 json
               }
+              image {
+                url
+                title
+              }
+              previewImage {
+                url
+                title
+              }
+              previewTeaser
             }
             ... on CoachingEntranceItem {
               pageHeadline {
@@ -51,6 +69,15 @@ const query = `query($isPreview: Boolean!) {
               bodytext {
                 json
               }
+              image {
+                url
+                title
+              }
+              previewImage {
+                url
+                title
+              }
+              previewTeaser
             }
           }
         }
@@ -61,5 +88,4 @@ const query = `query($isPreview: Boolean!) {
     }
   }
   `;
-  export { query };
-  
+export { query };
