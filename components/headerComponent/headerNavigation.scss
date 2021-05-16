@@ -9,9 +9,18 @@
 	background-color: $color-white;
 	padding: 0;
 	z-index: 10;
-	li{
-		margin: 0;
+	&::before {
+		content: "";
+		position: absolute;
+		left: -50vw;
+		bottom: 0;
+		width: 200vw;
+		height: 3rem;
+		z-index: -1;
+		box-shadow: $box-shadow;
 	}
+
+	li,
 	a {
 		margin: 0;
 	}
@@ -25,22 +34,47 @@
 		display: inline-block;
 	}
 	&__nav-list-item a {
+		position: relative;
 		@include font-sans-pro;
 		display: block;
 		padding: 2rem 2.2rem;
 		font-size: 1.58rem;
 		letter-spacing: 0.06rem;
+
 		&::first-letter {
 			text-transform: uppercase;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 2.2rem;
+			right:2.2rem;
+			height: .2rem;
+			background-color: $color-yellow-corn;
+			opacity: 0;
+			transform: translate3d(0, -2rem, 0);
+			transition: opacity $transition--extra-fast, transform $transition--extra-fast;
+		}
+	}
+	// hover effect
+	&__nav-list-item a:hover {
+		&:after{
+			opacity: 1;
+			transform: translate3d(0, -1.5rem, 0);
 		}
 	}
 	&__nav-list-item a.is-active {
 		@include font-sans-pro-medium;
+		&:after{
+			opacity: 1;
+			transform: translate3d(0, -1.5rem, 0);
+		}
 	}
 	// cta button
 	.btn {
 		margin-left: 1.5rem;
-		padding: .5rem 2.5rem;
+		padding: 0.5rem 2.5rem;
 		height: auto;
 	}
 }

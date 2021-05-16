@@ -7,15 +7,18 @@
 		position: relative;
 		margin-bottom: 2rem;
 		z-index: 1;
-        p{
-            opacity: .5;
-            transition: opacity $transition--fast;
-        }
+		p {
+			opacity: 0.5;
+		}
+		a {
+			display: block;
+			height: 100%;
+		}
 	}
-    &__item a{
-        display: block;
-        padding: 2vw 2vw;
-    }
+	&__item a {
+		display: block;
+		padding: 2vw 2vw;
+	}
 	&__item:after {
 		content: "";
 		position: absolute;
@@ -25,33 +28,42 @@
 		width: 100%;
 		background-color: $color-gray-alabaster;
 		z-index: -1;
+		transform: scale(1);
+		transition: background-color $transition--fast, transform $transition--extra-fast;
 	}
-    &__item-headline{
-        @include fluid-type(16px, 18px);
-        @include font-sans-pro-bold;
-    }
+	&__item-headline {
+		@include fluid-type(16px, 18px);
+		@include font-sans-pro-bold;
+	}
 }
 // modifyer
-.list-block__item--last{
-    &.list-block__item {
-        p{
-            color: $color-white;
-            opacity: 1;
-        }
+.list-block__item--last {
+	&.list-block__item {
+		p {
+			color: $color-white;
+			opacity: 1;
+		}
 	}
-    &.list-block__item:after {
-        opacity: 1;
-        background-color: $color-yellow-corn;
+	&.list-block__item:after {
+		opacity: 1;
+		background-color: $color-yellow-corn;
 	}
-    .list-block__item-headline {
-        color: $color-white;
+	.list-block__item-headline {
+		color: $color-white;
 	}
 }
 // hover
-@include viewport-mouse{
-    .list-block__item:hover{
-        p{
-            opacity: .9;
-        }
+@include viewport-mouse {
+	.list-block__item:hover {
+		&::after {
+			transform: scale(1.08);
+			background-color: #e0e0e0;
+		}
+	}
+    .list-block__item--last:hover{
+        &::after {
+			transform: scale(1.065);
+			background-color: $color-yellow-corn;
+		}
     }
 }
