@@ -4,12 +4,14 @@
 			<ul class="slider__pagination reset-ul">
 				<li v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index">
 					<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
-						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
-						<span v-else> Læs mere </span>
+						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"> </span>
+						<span v-else>Læs mere </span>
+						<ArrowIcon />
 					</nuxt-link>
 					<nuxt-link v-else :to="item.slug">
 						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
-						<span v-else> Læs mere </span>
+						<span v-else> Læs mere</span>
+						<ArrowIcon />
 					</nuxt-link>
 				</li>
 			</ul>

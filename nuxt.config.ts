@@ -32,6 +32,7 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"@nuxt/typescript-build",
+		"nuxt-gsap-module",
 		"nuxt-lazysizes",
 		"nuxt-graphql-request",
 		"nuxt-font-loader",
@@ -107,9 +108,40 @@ export default {
 		// whitelist spicific classes and all that contains that naming
 		whitelistPatterns: [/__layout/, /__nuxt/, /hooper/, /strong/, /b/, /svg/, /ol/],
 	},
-	pageTransition: {
-		name: "fade",
+	/*
+	 ** page transitions
+	 */
+	 pageTransition: {
+		name: "slide",
 		mode: "out-in",
+		css: false,
+
+		beforeEnter(el: HTMLElement) {
+			//@ts-ignore
+			this.$gsap.set(el, {
+				opacity: 0,
+			});
+		},
+
+		enter(el: HTMLElement, done: boolean) {
+			//@ts-ignore
+			this.$gsap.to(el, {
+				opacity: 1,
+				duration: 0.5,
+				ease: "power1.inOut",
+				onComplete: done,
+			});
+		},
+
+		leave(el: HTMLElement, done: boolean) {
+			//@ts-ignore
+			this.$gsap.to(el, {
+				opacity: 0,
+				duration: 0.4,
+				ease: "power1.inOut",
+				onComplete: done,
+			});
+		},
 	},
 	lazySizes: {
 		extendAssetUrls: {

@@ -2,7 +2,7 @@ import { Vue, Component, Prop } from "nuxt-property-decorator";
 import { ISlider } from "~/interfaces/global";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //@ts-ignore
-import ArrowIcon from "~/assets/svg/youtube.svg?inline";
+import ArrowIcon from "~/assets/svg/arrow--black.svg?inline";
 //@ts-ignore
 import { Hooper, Slide, Pagination as HooperPagination, } from "hooper";
 import "hooper/dist/hooper.css";
@@ -15,7 +15,8 @@ import SvgArrow from "~/assets/svg/arrow--white.svg?inline";
 		SvgArrow,
 		Hooper,
 		Slide,
-		HooperPagination
+		HooperPagination,
+		ArrowIcon
 	},
 })
 export default class Slider extends Vue {
