@@ -1,30 +1,120 @@
 // @import "~/assets/scss/tools/_mixins.scss";
-// @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_vars.scss";
 // @import "~/assets/scss/settings/_fonts.scss";
 
 .slider {
+	cursor: grab;
 	height: 80rem;
 	max-height: 80vh;
 	overflow: hidden;
 	position: relative;
-	&__image{
+	&__image {
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
 	}
-	&__teaser{
+	&__teaser {
 		position: absolute;
 		bottom: 0;
-		height: 20rem;
-		width:20rem;
-		background: red;
+		width: 45rem;
+		height: 15rem;
+		padding: 1.5rem;
+		background: $color-yellow-corn;
+		box-shadow: $box-shadow;
 		z-index: 1;
+		opacity: 0;
+		transform: translateY(100%);
+		transition: transform $transition--fast, opacity $transition--fast;
+		transition-delay: 0s;
+		p {
+			color: $color-white;
+			font-size: 1.4rem;
+		}
+	}
+	// custom pagination
+	&__pagination {
+		position: absolute;
+		top: 0.35rem;
+		right: 0;
+		padding-left: 4rem;
+		padding-bottom: 3rem;
+		z-index: 2;
+		li {
+			margin: 0;
+			width: 25rem;
+			height: 5rem;
+			a {
+				width: 100%;
+				padding: 1rem 0;
+				cursor: pointer;
+				margin: 0;
+				display: block;
+			}
+		}
+		p {
+			margin: 0;
+		}
 	}
 }
+.hooper-slide.is-active.is-current {
+	.slider__teaser {
+		transition-delay: 0.2s;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+// overwrite hooper
 .hooper {
 	height: 100%;
-	.hooper-slider{
-		position: relative;
+}
+.hooper-slider {
+	position: relative;
+}
+
+.hooper-track {
+	transition: transform $transition !important;
+}
+
+// pagination
+.hooper-pagination {
+	position: absolute;
+	bottom: auto;
+	top: 0;
+	right: 0;
+	transform: none;
+	background: $color-white;
+	box-shadow: $box-shadow;
+	padding-right: 0;
+	padding-left: 4rem;
+	padding-bottom: 3rem;
+	ol {
+		display: block;
 	}
+	li {
+		margin: 0;
+		padding: 0;
+	}
+	button {
+		position: relative;
+		z-index: 5;
+		background: rgba($color-white, 0.8);
+		border-radius: 0;
+		width: 25rem;
+		height: 5rem;
+		border-bottom: 1px solid rgba($color-gray-silver, 0.3);
+	}
+}
+.hooper-indicator {
+	cursor: pointer;
+	transition: border-bottom $transition--fast, background $transition--fast;
+	&:hover,
+	&.is-active {
+		background: none;
+		border-bottom: 1px solid $color-black;
+	}
+	&.is-active {
+		z-index: 1;
+	}
+	
 }

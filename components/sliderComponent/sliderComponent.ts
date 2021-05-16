@@ -2,7 +2,9 @@ import { Vue, Component, Prop } from "nuxt-property-decorator";
 import { ISlider } from "~/interfaces/global";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //@ts-ignore
-import { Hooper, Slide } from "hooper";
+import ArrowIcon from "~/assets/svg/youtube.svg?inline";
+//@ts-ignore
+import { Hooper, Slide, Pagination as HooperPagination, } from "hooper";
 import "hooper/dist/hooper.css";
 
 //@ts-ignore
@@ -13,6 +15,7 @@ import SvgArrow from "~/assets/svg/arrow--white.svg?inline";
 		SvgArrow,
 		Hooper,
 		Slide,
+		HooperPagination
 	},
 })
 export default class Slider extends Vue {
@@ -33,7 +36,6 @@ export default class Slider extends Vue {
 	public hooperSettings = {
 		itemsToShow: 1,
 		wheelControl: false,
-		infiniteScroll: true,
 	};
 	mounted() {
 		console.debug("blockData", this.blockData);

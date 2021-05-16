@@ -1,7 +1,21 @@
 <template>
 	<section>
 		<div class="slider">
+			<ul class="slider__pagination reset-ul">
+				<li v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index">
+					<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
+						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
+						<span v-else> Læs mere </span>
+					</nuxt-link>
+					<nuxt-link v-else :to="item.slug">
+						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
+						<span v-else> Læs mere </span>
+					</nuxt-link>
+				</li>
+			</ul>
+
 			<Hooper :settings="hooperSettings" ref="hooperSlider" class="">
+				<hooper-pagination slot="hooper-addons"></hooper-pagination>
 				<Slide v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index" :index="index">
 					<picture v-if="item.previewImage">
 						<source
@@ -40,15 +54,6 @@
 							class="lazyload lazyloaded slider__image"
 						/>
 					</picture>
-
-					<!-- <nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
-						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"> </span>
-						<span v-else> Læs mere </span>
-					</nuxt-link>
-					<nuxt-link v-else :to="item.slug">
-						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"> </span>
-						<span v-else> Læs mere </span>
-					</nuxt-link> -->
 
 					<div class="slider__teaser" v-if="item.previewTeaser || item.bodytext">
 						<p v-if="item.previewTeaser">
