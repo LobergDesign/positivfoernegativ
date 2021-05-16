@@ -33,13 +33,14 @@ export default {
 		// https://go.nuxtjs.dev/typescript
 		"@nuxt/typescript-build",
 		"nuxt-gsap-module",
+		"nuxt-purgecss",
 		"nuxt-lazysizes",
 		"nuxt-graphql-request",
 		"nuxt-font-loader",
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
-	modules: ["@nuxtjs/svg", "@nuxtjs/robots"],
+	modules: ["@nuxtjs/svg", "@nuxtjs/robots", "@nuxtjs/sitemap"],
 	graphql: {
 		clients: {
 			default: {
@@ -106,12 +107,12 @@ export default {
 		// whitelist spicific classes
 		whitelist: ["is-active"],
 		// whitelist spicific classes and all that contains that naming
-		whitelistPatterns: [/__layout/, /__nuxt/, /hooper/, /strong/, /b/, /svg/, /ol/],
+		whitelistPatterns: [/__layout/, /__nuxt/, /cls/, /hooper/, /is/, /strong/, /input/, /b/, /svg/, /ol/, /coi/],
 	},
 	/*
 	 ** page transitions
 	 */
-	 pageTransition: {
+	pageTransition: {
 		name: "slide",
 		mode: "out-in",
 		css: false,
