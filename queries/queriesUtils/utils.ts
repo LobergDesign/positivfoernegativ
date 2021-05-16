@@ -67,6 +67,7 @@ contentAreaCollection(limit: 30) {
         }
       }
       ... on LayoutTextArea {
+        title
         bodytext {
           json
         }

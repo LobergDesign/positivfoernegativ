@@ -58,13 +58,13 @@
 		}
 	}
 	// hover effect
-	&__nav-list-item a:hover {
+	&__nav-list-item a:not(.btn):hover {
 		&:after{
 			opacity: 1;
 			transform: translate3d(0, -1.5rem, 0);
 		}
 	}
-	&__nav-list-item a.is-active {
+	&__nav-list-item a:not(.btn).is-active {
 		@include font-sans-pro-medium;
 		&:after{
 			opacity: 1;
