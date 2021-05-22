@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="grid-r">
-			<div class="grid-c-2 flex-vertical-center">
+			<div class="grid-c-2 grid-c-md-16 flex-space-between-md flex-vertical-center">
 				<nuxt-link to="/">
 					<picture>
 						<source
@@ -17,10 +17,16 @@
 						<img :src="logo.url + '?w=90'" :alt="logo.title" class="lazyload lazyloaded header__logo" />
 					</picture>
 				</nuxt-link>
+				<button class="header-menu-icon" v-on:click="toggleMenu()" :class="{ 'is-active': isMenuActive }">
+					<span></span>
+				</button>
 			</div>
 			<div class="grid-c-14">
 				<nav class="header__nav full-height">
-					<ul class="reset-ul header__nav-list full-height flex-end flex-vertical-center">
+					<ul
+						class="reset-ul header__nav-list full-height flex-end flex-vertical-center"
+						:class="{ 'is-active': isMenuActive }"
+					>
 						<li v-for="(item, index) in menuList.items" :key="index" class="header__nav-list-item">
 							<nuxt-link
 								:to="'/' + item.slug + '/'"

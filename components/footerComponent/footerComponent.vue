@@ -5,6 +5,7 @@
 				<div class="grid-r">
 					<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="data.empowerMind">
 						<div v-if="data.empowerMind.url">
+							<a href="https://empowermind.dk/certificeringer/coachuddannelse" target="_blank">
 							<picture>
 								<source
 									:data-srcset="data.empowerMind.url + '?w=175&fm=webp'"
@@ -23,10 +24,9 @@
 									class="lazyload"
 								/>
 							</picture>
+							</a>
 						</div>
-						<span class="promotion-banner__text" v-if="data.empowerMindText">
-							{{ data.empowerMindText }}
-						</span>
+						<div class="promotion-banner__text" v-if="data.empowerMindBodytext" v-html="toHtmlString(data.empowerMindBodytext.json)"></div>
 					</div>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ export default class Default extends Vue {
 		const {
 			logo,
 			empowerMind,
-			empowerMindText,
+			empowerMindBodytext,
 			adresse,
 			email,
 			facebook,
@@ -30,7 +30,7 @@ export default class Default extends Vue {
 		this.footerData = {
 			footerObject: {
 				empowerMind,
-				empowerMindText,
+				empowerMindBodytext,
 				cv,
 				adresse,
 				email,

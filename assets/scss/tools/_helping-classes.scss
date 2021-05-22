@@ -16,6 +16,9 @@
 .flex-center {
 	justify-content: center;
 }
+.flex-space-between {
+	justify-content: space-between;
+}
 .flex-center-center {
 	justify-content: center;
 	align-items: center;
@@ -32,4 +35,9 @@
 .on-top{
   position: relative;
   z-index: 1;
+}
+@include viewport-large{
+	.flex-space-between-md {
+		justify-content: space-between;
+	}
 }

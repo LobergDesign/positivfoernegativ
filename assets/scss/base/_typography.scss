@@ -3,8 +3,8 @@
 	@include fluid-type(16px, 18px);
 	color: $color-black-tundora;
 	line-height: 1.7;
-	margin-top: .8rem;
-    margin-bottom: 1.8rem;
+	margin-top: 0.8rem;
+	margin-bottom: 1.8rem;
 }
 @mixin headline-1 {
 	@include fluid-type(40px, 80px);
@@ -44,8 +44,8 @@ h2,
 }
 h3,
 .headline-3 {
-	@include font-pt-serif-bold;
-	@include fluid-type(20px, 25px);
+	@include font-pt-serif;
+	@include fluid-type(20px, 24px);
 	margin-top: 0.4rem;
 	margin-bottom: 1rem;
 }
@@ -67,6 +67,12 @@ p {
 }
 p a {
 	@include default-text-style;
+	@include font-sans-pro-medium;
+	color: $color-yellow-corn;
+	transition: color $transition--extra-fast;
+	&:hover {
+		color: $color-black-tundora;
+	}
 }
 ul li,
 ol li {
@@ -78,16 +84,16 @@ ol li {
 	display: block;
 	@include font-sans-pro-bold;
 }
-.caption{
-	p{
+.caption {
+	p {
 		margin-top: 0;
-		color:$color-gray-silver;
+		color: $color-gray-silver;
 		font-size: 1.6rem;
 	}
 }
 hr {
 	border: 0.05rem solid $color-yellow-corn;
-	margin-top:1.1rem;
+	margin-top: 1.1rem;
 }
 a {
 	@include default-text-style;
