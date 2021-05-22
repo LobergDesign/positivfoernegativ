@@ -8,7 +8,7 @@ const globalQuery = `query($isPreview: Boolean!) {
       title
       url
     }
-    empowerMindText
+    empowerMindBodytext{json}
     empowerMind {
       title,
       description,

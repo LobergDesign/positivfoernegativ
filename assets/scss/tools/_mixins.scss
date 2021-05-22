@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "~/assets/scss/settings/_vars.scss";
 //-------- Layout -------//
 @mixin grid-wrap{
@@ -7,7 +8,7 @@
 }
 // font mixing
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, ($value * 0 + 1));
 }
 
 @mixin fluid-type($min-font-size, $max-font-size) {

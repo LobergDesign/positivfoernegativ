@@ -8,4 +8,9 @@ export default class HeaderComponent extends Vue {
 	readonly menuData!: IMenu;
 	public menuList: IMenuItems[] = this.menuData.mainMenuCollection || [];
 	public logo: IImage = this.menuData.logo || {};
+	public isMenuActive: boolean = false;
+
+	public toggleMenu() {
+		this.isMenuActive = !this.isMenuActive;
+	}
 }

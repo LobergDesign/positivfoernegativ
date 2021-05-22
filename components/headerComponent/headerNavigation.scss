@@ -49,8 +49,8 @@
 			position: absolute;
 			bottom: 0;
 			left: 2.2rem;
-			right:2.2rem;
-			height: .2rem;
+			right: 2.2rem;
+			height: 0.2rem;
 			background-color: $color-yellow-corn;
 			opacity: 0;
 			transform: translate3d(0, -2rem, 0);
@@ -59,14 +59,14 @@
 	}
 	// hover effect
 	&__nav-list-item a:not(.btn):hover {
-		&:after{
+		&:after {
 			opacity: 1;
 			transform: translate3d(0, -1.5rem, 0);
 		}
 	}
 	&__nav-list-item a:not(.btn).is-active {
 		@include font-sans-pro-medium;
-		&:after{
+		&:after {
 			opacity: 1;
 			transform: translate3d(0, -1.5rem, 0);
 		}
@@ -76,5 +76,178 @@
 		margin-left: 1.5rem;
 		padding: 0.5rem 2.5rem;
 		height: auto;
+	}
+}
+// menu icon
+.header-menu-icon {
+	display: none;
+}
+@include viewport-extra-large {
+	.header {
+		// nav
+		&__nav-list-item a {
+			white-space: nowrap;
+			padding: 2.2rem 1.5rem;
+			font-size: 1.52rem;
+			&:after {
+				left: 1.5rem;
+				right: 1.5rem;
+			}
+		}
+
+		// cta button
+		.btn {
+			margin-left: 1rem;
+		}
+	}
+}
+// local var
+$menu-icon-size: 6rem;
+$menu-icon-span-size: 4rem;
+$menu-icon-span-size-s: 3rem;
+$menu-icon-span-spacing: 1rem;
+$menu-icon-span-height: 0.2rem;
+
+@include viewport-large {
+	// menu icon
+	.header-menu-icon {
+		margin-top: -0.5rem;
+		position: relative;
+		display: inline-block;
+		width: $menu-icon-size;
+		height: $menu-icon-size;
+		padding: 2rem;
+		span {
+			margin: 0 auto;
+			position: relative;
+			top: $menu-icon-span-spacing;
+			width: $menu-icon-span-size;
+			height: 0.215rem;
+			background-color: $color-black-tundora;
+			display: block;
+			transition-duration: 0s;
+			transition-delay: 0.2s;
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: $menu-icon-span-size;
+				height: $menu-icon-span-height;
+				background-color: $color-black-tundora;
+				margin-top: $menu-icon-span-spacing;
+				transition-property: margin, transform;
+				transition-duration: 0.2s;
+				transition-delay: 0.2s, 0s;
+			}
+			&:before {
+				margin-top: -$menu-icon-span-spacing;
+			}
+		}
+	}
+	// active menu icon
+	.header-menu-icon.is-active {
+		span {
+			background-color: rgba($color-black, 0);
+			transition-delay: 0.2s;
+		}
+		span:before {
+			margin-top: 0;
+			transform: rotate(45deg);
+			transition-delay: 0s, 0.2s;
+		}
+		span:after {
+			margin-top: 0;
+			transform: rotate(-45deg);
+			transition-delay: 0s, 0.2s;
+		}
+	}
+
+	.header {
+		&::before {
+			left: -10vw;
+			width: 120vw;
+		}
+		// nav
+		&__nav-list {
+			position: fixed;
+			top: 8rem;
+			padding-top: 6rem;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $color-white;
+			display: block;
+			transform: translateX(100%);
+			transition: opacity $transition--extra-fast, transform $transition--extra-fast;
+		}
+		&__nav-list-item {
+			display: block;
+		}
+		&__nav-list-item a {
+			padding: 1.5rem 5vw;
+			font-size: 2rem;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -0.2rem;
+				left: 5vw;
+				width: 5rem;
+				right: auto;
+			}
+		}
+
+		// cta button
+		.btn {
+			display: inline-block;
+			margin-top: 2rem;
+			margin-left: 5vw;
+		}
+	}
+	// active menu
+	.header__nav-list.is-active {
+		transform: translateX(0);
+	}
+}
+@include viewport-small {
+	.header {
+		.grid-r {
+			grid-gap: 0;
+		}
+		&::before {
+			height: 3.5rem;
+		}
+		&__logo {
+			max-width: 7rem;
+		}
+		// nav
+		&__nav-list {
+			top: 7rem;
+			padding-top: 5rem;
+		}
+		&__nav-list-item a {
+			&:after {
+				height: 0.3rem;
+				bottom: -0.3rem;
+			}
+		}
+	}
+	// menu icon
+	// menu icon
+	.header-menu-icon {
+		margin-top: -1.5rem;
+		span {
+			width: $menu-icon-span-size-s;
+			height: 0.215rem;
+			&:before,
+			&:after {
+				width: $menu-icon-span-size-s;
+				height: $menu-icon-span-height;
+			}
+			&:after {
+				margin-top: 0.89rem;
+				height: 0.23rem;
+			}
+		}
 	}
 }

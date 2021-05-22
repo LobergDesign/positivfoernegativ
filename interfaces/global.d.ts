@@ -29,7 +29,7 @@ declare interface ISeo {
 //////// global data
 declare interface IFooter {
 	readonly empowerMind?: IImage;
-	readonly empowerMindText?: string;
+	readonly empowerMindBodytext?: object;
 	readonly cv?: IImage;
 	readonly adresse?: string;
 	readonly email?: string;

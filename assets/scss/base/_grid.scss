@@ -21,8 +21,8 @@ $grid-gap: 2vw;
 	}
 }
 
-@each $size, $abbr in (0, xs), (768px, sm), (992px, md), (1200px, lg) {
-	@media (min-width: $size) {
+@each $size, $abbr in ($viewport-small, xs), ($viewport-medium, sm), ($viewport-large, md), ($viewport-extra-large , lg) {
+	@media (max-width: $size) {
 		// Loop through col classes
 		@for $i from 1 through $columns {
 			.grid-c-#{$abbr}-#{$i} {
