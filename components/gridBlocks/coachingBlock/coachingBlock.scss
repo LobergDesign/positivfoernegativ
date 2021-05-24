@@ -32,7 +32,8 @@
 		transition: background-color $transition--fast, transform $transition--extra-fast;
 	}
 	&__item-headline {
-		@include fluid-type(16px, 18px);
+		// @include fluid-type(16px, 18px);
+		font-size: 1.8rem;
 		@include font-sans-pro-bold;
 	}
 }
