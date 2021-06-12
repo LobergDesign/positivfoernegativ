@@ -3,15 +3,13 @@
 .slider {
 	margin-top: 10rem;
 	cursor: grab;
+	min-height: 60rem;
 	height: 80rem;
 	max-height: 80vh;
 	overflow: hidden;
 	position: relative;
 	&__image {
 		position: absolute;
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
 	}
 	&__teaser {
 		position: absolute;

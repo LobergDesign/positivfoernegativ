@@ -1,10 +1,14 @@
 import { NuxtError } from "@nuxt/types";
 
+declare interface IInjectMethod{
+	getDynamicData: Function;
+	getData: Function;
+}
+
 // Context
 declare module "@nuxt/types" {
 	interface Context {
-		$dataApi: any;
-		error: (params: NuxtError) => void;
+		$dataApi: IInjectMethod;
 	}
 }
 declare interface IGraphQlClient {

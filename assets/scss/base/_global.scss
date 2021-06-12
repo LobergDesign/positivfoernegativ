@@ -23,7 +23,9 @@ body {
 	padding-top: 8.5rem;
 }
 img {
-	max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 @media (inverted-colors) {

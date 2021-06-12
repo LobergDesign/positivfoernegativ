@@ -38,7 +38,7 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 				component: resolve(`~/pages/${route.model}/_slug.vue`),
 				name: route.slug,
 			});
-		} else if(route.model !== "ContentPage"){
+		} else if (route.model !== "ContentPage") {
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/index.vue`),
@@ -79,4 +79,7 @@ export async function generate() {
 		});
 	});
 	return routes;
+}
+function $root(arg0: string, $root: any) {
+	throw new Error("Function not implemented.");
 }

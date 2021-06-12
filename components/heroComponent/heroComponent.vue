@@ -1,7 +1,7 @@
 <template>
 	<section class="hero">
 		<div class="grid-r">
-		<div class="grid-c-10-offset-2 grid-remove-offset-sm">
+			<div class="grid-c-10-offset-2 grid-remove-offset-sm">
 				<h1 v-if="heroHeadline" class="hero__title--large" v-html="toHtmlString(heroHeadline.json)"></h1>
 
 				<h2 v-if="heroSubtitle" class="hero__sub-title">{{ heroSubtitle }}</h2>
@@ -9,7 +9,7 @@
 				<div v-if="heroBodytext" v-html="toHtmlString(heroBodytext.json)"></div>
 			</div>
 			<div class="grid-c-16" v-if="heroImage">
-				<picture>
+				<!-- <picture>
 					<source
 						:data-srcset="heroImage.url + '?w=500&fm=webp'"
 						media="(max-width: 500px)"
@@ -26,7 +26,9 @@
 						:alt="heroImage.title"
 						class="lazyload lazyloaded hero__image"
 					/>
-				</picture>
+				</picture> -->
+
+				<nuxt-img format="webp" quality="80" width="200" height="100" :src="heroImage.url + '?w=500'" sizes="sm:100vw" />
 			</div>
 		</div>
 	</section>

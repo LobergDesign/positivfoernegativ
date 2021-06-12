@@ -6,27 +6,22 @@
 					<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="data.empowerMind">
 						<div v-if="data.empowerMind.url">
 							<a href="https://empowermind.dk/certificeringer/coachuddannelse" target="_blank">
-							<picture>
-								<source
-									:data-srcset="data.empowerMind.url + '?w=175&fm=webp'"
-									media="(max-width: 500px)"
-									type="image/webp"
-								/>
-								<source
-									:data-srcset="data.empowerMind.url + '?w=175&fm=webp'"
-									media="(min-width: 1000px)"
-									type="image/webp"
-								/>
-								<img
-									src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-									:data-src="data.empowerMind.url + '?w=175'"
+								<nuxt-img
+									width="175"
+									height="175"
+									format="webp"
+									loading="lazy"
+									sizes="xs:50vw md:175px"
+									:src="data.empowerMind.url +'?w=175&h=175'"
 									:alt="data.empowerMind.title"
-									class="lazyload"
 								/>
-							</picture>
 							</a>
 						</div>
-						<div class="promotion-banner__text" v-if="data.empowerMindBodytext" v-html="toHtmlString(data.empowerMindBodytext.json)"></div>
+						<div
+							class="promotion-banner__text"
+							v-if="data.empowerMindBodytext"
+							v-html="toHtmlString(data.empowerMindBodytext.json)"
+						></div>
 					</div>
 				</div>
 			</div>
