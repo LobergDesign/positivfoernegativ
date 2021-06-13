@@ -124,7 +124,20 @@ export default {
 		// whitelist spicific classes
 		whitelist: ["is-active"],
 		// whitelist spicific classes and all that contains that naming
-		whitelistPatterns: [/__layout/, /__nuxt/, /cls/, /hooper/, /is/, /strong/, /input/, /b/, /svg/, /ol/, /coi/],
+		whitelistPatterns: [
+			/__layout/,
+			/__nuxt/,
+			/cls/,
+			/hooper/,
+			/is/,
+			/img/,
+			/strong/,
+			/input/,
+			/b/,
+			/svg/,
+			/ol/,
+			/coi/,
+		],
 	},
 	/*
 	 ** page transitions

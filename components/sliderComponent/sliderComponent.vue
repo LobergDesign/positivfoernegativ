@@ -10,7 +10,7 @@
 					</nuxt-link>
 					<nuxt-link v-else :to="item.slug">
 						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
-						<span v-else> Læs mere</span>
+						<span v-else>Læs mere</span>
 						<ArrowIcon />
 					</nuxt-link>
 				</li>
@@ -20,16 +20,12 @@
 				<Slide v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index" :index="index">
 					<nuxt-img
 						v-if="item.previewImage"
-						width="800"
-						format="webp"
 						:src="item.previewImage.url"
 						:alt="item.previewImage.title"
 						class="slider__image"
 					/>
 					<nuxt-img
 						v-else-if="item.image"
-						width="800"
-						format="webp"
 						:src="item.image.url"
 						:alt="item.image.title"
 						class="slider__image"
