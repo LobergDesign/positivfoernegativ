@@ -5,24 +5,15 @@
 			<section v-for="(item, index) in processContentList" :key="index" class="process-list__item">
 				<div class="grid-r">
 					<div class="process-list__item-c-1" v-if="item.image">
-						<picture>
-							<source
-								:data-srcset="item.image.url + '?w=400&fm=webp'"
-								media="(max-width: 500px)"
-								type="image/webp"
-							/>
-							<source
-								:data-srcset="item.image.url + '?w=750&fm=webp'"
-								media="(min-width: 1000px)"
-								type="image/webp"
-							/>
-							<img
-								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-								:data-src="item.image.url + '?w=750'"
-								:alt="item.image.title"
-								class="lazyload process-list__item-img"
-							/>
-						</picture>
+						<nuxt-img
+							width="700"
+							height="700"
+							loading="lazy"
+							sizes="lg:50vw sm:100vw"
+							:src="item.image.url + '?w=700&fm=webp'"
+							:alt="item.image.title"
+							class="process-list__item-img"
+						/>
 					</div>
 					<div class="process-list__item-c-2 flex-vertical-center">
 						<div>

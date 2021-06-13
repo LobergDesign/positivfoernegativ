@@ -9,11 +9,10 @@
 								<nuxt-img
 									width="175"
 									height="175"
-									format="webp"
 									loading="lazy"
-									sizes="xs:50vw md:175px"
 									:src="data.empowerMind.url +'?w=175&h=175'"
 									:alt="data.empowerMind.title"
+									class="max-width"
 								/>
 							</a>
 						</div>

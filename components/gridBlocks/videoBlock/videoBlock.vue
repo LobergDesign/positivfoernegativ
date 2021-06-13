@@ -1,18 +1,23 @@
 <template>
 	<div class="grid-r">
 		<div class="grid-c-14-offset-2" v-if="isReady">
-			<div class="video-block"  :class="{ 'player-is-active' : isPlayerActive}">
+			<div class="video-block" :class="{ 'player-is-active': isPlayerActive }">
 				<div class="video-block__backdrop" v-on:click="toggleVideoPlayer"></div>
 				<button class="video-block__icon" v-on:click="toggleVideoPlayer">
 					<SvgPlay />
 				</button>
-				<img
-					class="video-block__item video-block__item-img lazyload"
-					src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-					:data-src="'https://img.youtube.com/vi/' + blockData.youTubeId + '/maxresdefault.jpg'"
-					alt="pfn-youtube"
+
+				<nuxt-img
+					width="700"
+					height="700"
+					loading="lazy"
+					:src="'https://img.youtube.com/vi/' + blockData.youTubeId + '/maxresdefault.jpg'"
+					alt="pfn - youtube"
+					class="video-block__item video-block__item-img"
 				/>
-				<iframe ref="youtube"
+
+				<iframe
+					ref="youtube"
 					loading="lazy"
 					v-if="blockData.youTubeId"
 					class="video-block__item video-block__item-iframe"
@@ -23,7 +28,7 @@
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen
-					 autoplay
+					autoplay
 				></iframe>
 			</div>
 		</div>

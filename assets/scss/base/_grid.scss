@@ -21,7 +21,8 @@ $grid-gap: 2vw;
 	}
 }
 
-@each $size, $abbr in ($viewport-small, xs), ($viewport-medium, sm), ($viewport-large, md), ($viewport-extra-large , lg) {
+@each $size, $abbr in ($viewport-extra-large, lg), ($viewport-large, md), ($viewport-medium, sm), ($viewport-small, xs)
+{
 	@media (max-width: $size) {
 		// Loop through col classes
 		@for $i from 1 through $columns {
@@ -43,15 +44,14 @@ $grid-gap: 2vw;
 	grid-column: 3 / span 13;
 }
 
-
-@include viewport-medium{
-	.grid-remove-offset-md{
+@include viewport-medium {
+	.grid-remove-offset-md {
 		grid-column: span 16;
 	}
 }
 @include viewport-small {
 	//////// offsets
-	.grid-remove-offset-sm{
+	.grid-remove-offset-sm {
 		grid-column: span 16;
 	}
 }
