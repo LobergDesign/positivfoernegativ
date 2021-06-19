@@ -1,12 +1,12 @@
 <template>
 	<div class="grid-r">
-		<div class="grid-c-14-offset-2" v-if="isReady">
-			<div class="video-block" :class="{ 'player-is-active': isPlayerActive }">
-				<div class="video-block__backdrop" v-on:click="toggleVideoPlayer"></div>
+		<div class="grid-c-14-offset-2" v-if="blockData.youTubeId">
+			<div class="video-block">
+				<!-- <div class="video-block__backdrop" v-on:click="toggleVideoPlayer"></div>
 				<button class="video-block__icon" v-on:click="toggleVideoPlayer">
 					<SvgPlay />
-				</button>
-
+				</button> -->
+				<!-- 
 				<nuxt-img
 					width="700"
 					height="700"
@@ -29,7 +29,18 @@
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen
 					autoplay
-				></iframe>
+				></iframe> -->
+
+				<div
+					ref="youtube"
+					class="lazyframe video-block__item video-block__item-iframe"
+					data-vendor="youtube"
+					:data-thumbnail="'https://img.youtube.com/vi/' + blockData.youTubeId + '/maxresdefault.jpg'"
+					:data-src="'https://www.youtube.com/embed/' + blockData.youTubeId"
+					data-ratio="16:9"
+					data-initinview="true"
+					data-autoplay="false"
+				></div>
 			</div>
 		</div>
 		<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="blockData.videoCaption">
