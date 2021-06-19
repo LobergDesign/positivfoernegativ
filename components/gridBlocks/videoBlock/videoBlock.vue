@@ -33,7 +33,7 @@
 
 				<div
 					ref="youtube"
-					class="lazyframe video-block__item video-block__item-iframe"
+					class="lazyframe video-block__item"
 					data-vendor="youtube"
 					:data-thumbnail="'https://img.youtube.com/vi/' + blockData.youTubeId + '/maxresdefault.jpg'"
 					:data-src="'https://www.youtube.com/embed/' + blockData.youTubeId"

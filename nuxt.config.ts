@@ -137,6 +137,7 @@ export default {
 			/svg/,
 			/ol/,
 			/coi/,
+			/hooper/,
 		],
 	},
 	/*

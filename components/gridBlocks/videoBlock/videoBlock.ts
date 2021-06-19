@@ -24,11 +24,6 @@ export default class VideoBlock extends Vue {
 
 	public mounted() {
 		const youtube = this.$refs.youtube as HTMLElement;
-
 		lazyframe(youtube);
-		setTimeout(() => {
-			const ifrmae = youtube.querySelector("iframe") as HTMLIFrameElement;
-			console.debug("lazyframe(youtube)", ifrmae);
-		}, 500);
 	}
 }
