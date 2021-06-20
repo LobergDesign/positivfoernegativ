@@ -100,7 +100,7 @@ export declare interface IProcessItem {
 }
 declare interface IProcess {
 	readonly coachingProcessCollection?: Array<IProcessItem>;
-	readonly coachingProcessTitle?: object;
+	readonly coachingProcessTitle?: string;
 }
 
 ///// routes

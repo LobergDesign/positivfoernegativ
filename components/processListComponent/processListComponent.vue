@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<h2 v-if="processContentTitle" class="flex-center" v-html="toHtmlString(processContentTitle.json)"></h2>
+		<div class="grid-r">
+			<div class="grid-c-16 flex-center">
+				<h2 v-if="processContentTitle">{{ processContentTitle }}</h2>
+			</div>
+		</div>
 		<div class="process-list">
 			<section v-for="(item, index) in processContentList" :key="index" class="process-list__item">
 				<div class="grid-r">

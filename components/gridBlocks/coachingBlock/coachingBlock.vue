@@ -1,8 +1,9 @@
 <template>
 	<div class="list-block">
-		<div class="grid-r">
-			<div class="grid-c-10-offset-2 grid-remove-offset-sm"></div>
-			<div class="grid-c-16"></div>
+		<div class="grid-r" v-if="blockData.sectionTitle">
+			<div class="grid-c-10-offset-2 grid-remove-offset-sm">
+				<h2>{{blockData.sectionTitle}}</h2>
+			</div>
 		</div>
 		<ul class="reset-ul grid-r">
 			<li
