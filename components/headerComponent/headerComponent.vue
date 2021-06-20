@@ -3,19 +3,13 @@
 		<div class="grid-r">
 			<div class="grid-c-2 grid-c-md-16 flex-space-between-md flex-vertical-center">
 				<nuxt-link to="/">
-					<picture>
-						<source
-							:data-srcset="logo.url + '?w=90&fm=webp'"
-							media="(max-width: 500px)"
-							type="image/webp"
-						/>
-						<source
-							:data-srcset="logo.url + '?w=90&fm=webp'"
-							media="(min-width: 1000px)"
-							type="image/webp"
-						/>
-						<img :src="logo.url + '?w=90'" :alt="logo.title" class="lazyload lazyloaded header__logo" />
-					</picture>
+					<nuxt-img
+						width="85"
+						height="67"
+						:src="logo.url + '?w=85&fm=webp'"
+						:alt="logo.title"
+						class="header__logo"
+					/>
 				</nuxt-link>
 				<button class="header-menu-icon" v-on:click="toggleMenu()" :class="{ 'is-active': isMenuActive }">
 					<span></span>

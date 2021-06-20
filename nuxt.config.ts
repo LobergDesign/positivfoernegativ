@@ -32,9 +32,9 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
 		"@nuxt/typescript-build",
+		"@nuxt/image",
 		"nuxt-gsap-module",
 		"nuxt-purgecss",
-		"nuxt-lazysizes",
 		"nuxt-graphql-request",
 		"nuxt-font-loader",
 	],
@@ -54,6 +54,24 @@ export default {
 								: process.env.GRAPHQL_TOKEN),
 					},
 				},
+			},
+		},
+	},
+	image: {
+		screens: {
+			xs: 350,
+			sm: 576,
+			md: 992,
+			lg: 1025,
+			xl: 1440,
+			xxl: 1920,
+			"2xl": 1920,
+		},
+		customProvider: {
+			name: "customProvider", // optional value to overrider provider name
+			provider: "~/configSettings/customProvider", // Path to custom provider
+			options: {
+				format: "webp",
 			},
 		},
 	},
@@ -94,8 +112,7 @@ export default {
 	fontLoader: {
 		// Paste a google link here
 		url: {
-			google:
-				"https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
+			google: "https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
 		},
 
 		// Enable options
@@ -107,7 +124,21 @@ export default {
 		// whitelist spicific classes
 		whitelist: ["is-active"],
 		// whitelist spicific classes and all that contains that naming
-		whitelistPatterns: [/__layout/, /__nuxt/, /cls/, /hooper/, /is/, /strong/, /input/, /b/, /svg/, /ol/, /coi/],
+		whitelistPatterns: [
+			/__layout/,
+			/__nuxt/,
+			/cls/,
+			/hooper/,
+			/is/,
+			/img/,
+			/strong/,
+			/input/,
+			/b/,
+			/svg/,
+			/ol/,
+			/coi/,
+			/hooper/,
+		],
 	},
 	/*
 	 ** page transitions
@@ -144,41 +175,12 @@ export default {
 			});
 		},
 	},
-	lazySizes: {
-		extendAssetUrls: {
-			img: "data-src",
-			source: "data-srcset",
-			// Component with custom props
-			AppImage: ["source-url", "image-url"],
-		},
-	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		// analyze: {
 		//   analyzerMode: "static",
 		// },
-		extractCSS: {
-			ignoreOrder: true,
-		},
-		html: {
-			minify: {
-				minifyCSS: false,
-				minifyJS: false,
-			},
-		},
-		optimization: {
-			splitChunks: {
-				cacheGroups: {
-					styles: {
-						name: "styles",
-						test: /\.(css|vue)$/,
-						chunks: "all",
-						enforce: true,
-					},
-				},
-			},
-		},
 	},
 	loading: false,
 	loaders: {

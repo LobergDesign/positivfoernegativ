@@ -3,6 +3,7 @@ contentAreaCollection(limit: 30) {
     items {
       __typename
       ... on LayoutCoachingBlok {
+        sectionTitle
         title
         subtitle
         link {

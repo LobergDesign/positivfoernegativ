@@ -1,10 +1,14 @@
 import { NuxtError } from "@nuxt/types";
 
+declare interface IInjectMethod{
+	getDynamicData: Function;
+	getData: Function;
+}
+
 // Context
 declare module "@nuxt/types" {
 	interface Context {
-		$dataApi: any;
-		error: (params: NuxtError) => void;
+		$dataApi: IInjectMethod;
 	}
 }
 declare interface IGraphQlClient {
@@ -96,7 +100,7 @@ export declare interface IProcessItem {
 }
 declare interface IProcess {
 	readonly coachingProcessCollection?: Array<IProcessItem>;
-	readonly coachingProcessTitle?: object;
+	readonly coachingProcessTitle?: string;
 }
 
 ///// routes
