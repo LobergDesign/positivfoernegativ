@@ -19,6 +19,7 @@ export default class FrontpageClass extends Vue {
 				message: response.errors
 			});
 		}
+		console.debug("datas", responseData);
 		return { data: responseData.frontpage, seo:responseData.frontpage.seoSection };
 	}
 }

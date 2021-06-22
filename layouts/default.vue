@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="app-wrap">
 		<div class="grid-w">
 			<LazyHeaderComponent v-if="!$fetchState.pending" :menuData="menuData" />
 			<div class="main-content">

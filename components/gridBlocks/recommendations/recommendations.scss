@@ -1,68 +1,61 @@
 @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
 @import "~/assets/scss/tools/_mixins.scss";
-.video-block {
+.recommentations {
 	position: relative;
-	cursor: pointer;
-	overflow: hidden;
-	width: 100%;
-	padding-top: 56.25%;
-	&__backdrop {
-		@include position-center;
-		background-color: $color-black-tundora;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
-		opacity: 0.4;
-		transition: opacity $transition--fast;
-	}
-	&__icon {
-		@include position-center;
-		background-color: $color-yellow-corn;
-		box-shadow: $box-shadow;
-		height: 10rem;
-		width: 10rem;
-		border-radius: 50%;
-		z-index: 2;
-		transition: transform $transition, opacity $transition;
-		svg {
-			fill: $color-white;
-			margin-left: 0.5rem;
-		}
-	}
-	&__item {
+	background-color: $color-gray-alabaster;
+	padding: 8rem 0 6rem;
+
+	&::before {
+		content: "";
 		position: absolute;
 		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
+		left: -10vw;
+		right: -10vw;
+		background-color: $color-gray-alabaster;
 		height: 100%;
-	}
-	&__item-img {
-		opacity: 1;
-		transition: opacity $transition;
-	}
-}
-// hover effect
-.video-block:hover {
-	.video-block__backdrop {
-		opacity: 0;
-	}
-	.video-block__icon {
-		transform: scale(0.9) translate(-50%, -50%);
-	}
-}
-// active state
-.video-block.player-is-active {
-	.video-block__backdrop {
-		opacity: 0;
 		z-index: -1;
 	}
-	.video-block__icon, .video-block__item-img  {
-		opacity: 0;
-		z-index: -1;
+	&__title {
+		text-align: center;
 	}
-	.video-block__item-iframe {
-		opacity: 1;
+	&__bodytext {
+		display: inline;
+		p {
+			display: inline;
+		}
+	}
+	&__list {
+		margin: 3rem 6vw;
+	}
+	&__quote-sign {
+		transform: scale(1.8);
+		display: inline-block;
+		margin-right: 1rem;
+	}
+	&__quote-sign:last-child {
+		transform: translateY(1rem) scale(1.8);
+		margin-left: 1rem;
+		margin-right: 0;
+	}
+
+	// info
+	&__info {
+		margin-top: 2rem;
+	}
+	&__name,
+	&__from {
+		font-size: 1.5rem;
+	}
+	// slider
+	&__slider {
+		margin: 3rem 6vw;
+	}
+	// slider nav
+	.hooper-prev {
+		left: -10rem;
+	}
+	.hooper-next {
+		right: -10rem;
 	}
 }

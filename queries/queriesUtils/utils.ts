@@ -82,6 +82,16 @@ contentAreaCollection(limit: 30) {
         youTubeId
         videoCaption{json}
       }
+      ... on LayoutRecommendations {
+        title
+        recommendationsItemsCollection(limit: 10) {
+          items {
+            recommendationsBodytext{json}
+            recommendationsName
+            recommendationsFrom
+          }
+        }
+      }
     }
   }
   `;
