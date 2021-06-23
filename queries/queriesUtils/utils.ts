@@ -92,6 +92,20 @@ contentAreaCollection(limit: 30) {
           }
         }
       }
+      ... on LayoutCollaborators {
+        title
+        collaboratorsCollection {
+          total
+          items {
+            title
+            image {
+              url
+              title
+            }
+            link
+          }
+        }
+      }
     }
   }
   `;
