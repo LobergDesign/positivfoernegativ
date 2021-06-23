@@ -4,14 +4,14 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Hooper, Slide,   Navigation as HooperNavigation } from "hooper";
 import "hooper/dist/hooper.css";
 @Component({
-	name: "Recommendations",
+	name: "collaborators",
 	components: {
 		Hooper,
 		Slide,
 		HooperNavigation
 	},
 })
-export default class Recommendations extends Vue {
+export default class collaborators extends Vue {
 	@Prop({ type: Object as () => {} })
 	readonly blockData!: {};
 
@@ -20,8 +20,9 @@ export default class Recommendations extends Vue {
 	}
 	// hooper slider
 	public hooperSettings = {
-		itemsToShow: 1,
+		itemsToShow: 3,
 		wheelControl: false,
+		itemsToSlide: 3
 	};
 	public mounted() {
 		console.debug("sfdsfsdf", this.blockData);

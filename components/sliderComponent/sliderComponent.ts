@@ -38,7 +38,4 @@ export default class Slider extends Vue {
 		itemsToShow: 1,
 		wheelControl: false,
 	};
-	mounted() {
-		console.debug("blockData", this.blockData);
-	}
 }

@@ -1,7 +1,65 @@
 <template>
-	<div class="grid-r">
-		<div class="grid-c-14-offset-2">
-			<h3>Anbefalinger</h3>
+	<div class="recommentations">
+		<div class="grid-r">
+			<div class="grid-c-10-offset-3 grid-remove-offset-md">
+				<h2 class="recommentations__title" v-if="blockData.title">{{ blockData.title }}</h2>
+				<div v-if="blockData.recommendationsItemsCollection">
+					<ul
+						v-if="blockData.recommendationsItemsCollection.items.length < 2"
+						class="recommentations__list reset-ul"
+					>
+						<li
+							v-for="(item, index) in blockData.recommendationsItemsCollection.items"
+							:key="index"
+							class="recommentations__list-item"
+						>
+							<div v-if="item.recommendationsBodytext">
+								<span class="recommentations__quote-sign">"</span>
+								<div
+									class="recommentations__bodytext"
+									v-html="toHtmlString(item.recommendationsBodytext.json)"
+								></div>
+								<span class="recommentations__quote-sign">"</span>
+							</div>
+							<div class="recommentations__info">
+								<span class="recommentations__name" v-if="item.recommendationsName"
+									>{{ item.recommendationsName }} -
+								</span>
+								<span class="recommentations__from" v-if="item.recommendationsFrom">{{
+									item.recommendationsFrom
+								}}</span>
+							</div>
+						</li>
+					</ul>
+					<div v-else class="recommentations__slider">
+						<Hooper :settings="hooperSettings" ref="hooperSlider">
+							<Slide
+								v-for="(item, index) in blockData.recommendationsItemsCollection.items"
+								:key="index"
+								:index="index"
+							>
+								<div v-if="item.recommendationsBodytext">
+									<span class="recommentations__quote-sign">"</span>
+									<div
+										class="recommentations__bodytext"
+										v-html="toHtmlString(item.recommendationsBodytext.json)"
+									></div>
+									<span class="recommentations__quote-sign">"</span>
+								</div>
+								<div class="recommentations__info">
+									<span class="recommentations__name" v-if="item.recommendationsName"
+										>{{ item.recommendationsName }} -
+									</span>
+									<span class="recommentations__from" v-if="item.recommendationsFrom">{{
+										item.recommendationsFrom
+									}}</span>
+								</div>
+							</Slide>
+							 <hooper-navigation slot="hooper-addons"></hooper-navigation>
+						</Hooper>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
