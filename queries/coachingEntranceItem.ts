@@ -3,6 +3,7 @@ const getDynamicData = `
 query getCoachingEntrance($slug: String!, $isPreview: Boolean!) {
   pageData: coachingEntranceItemCollection(where: {slug: $slug}, limit: 1, preview:$isPreview) {
     items {
+      showCollaborators
       ${pageHeader}
       coachingProcessTitle {
         json

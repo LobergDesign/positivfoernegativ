@@ -1,11 +1,12 @@
 <template>
-	<div class="collaborators">
+	<div class="collaborators" v-if="!$fetchState.pending">
+	
 		<div class="grid-r">
 			<div class="grid-c-13-offset-3 grid-remove-offset-sm">
-				<h2 class="collaborators__title" v-if="blockData.title">{{ blockData.title }}</h2>
-				<ul v-if="blockData.collaboratorsCollection.total < 3" class="collaborators__list reset-ul grid-r">
+				<h2 class="collaborators__title">Samarbejdspartnere</h2>
+				<ul v-if="blockData.total < 3" class="collaborators__list reset-ul grid-r">
 					<li
-						v-for="(item, index) in blockData.collaboratorsCollection.items"
+						v-for="(item, index) in blockData.items"
 						:key="index"
 						class="collaborators__list-item grid-c-4"
 					>
@@ -33,9 +34,10 @@
 				<div v-else class="collaborators__slider">
 					<Hooper :settings="hooperSettings" ref="hooperSlider">
 						<Slide
-							v-for="(item, index) in blockData.collaboratorsCollection.items"
+							v-for="(item, index) in blockData.items"
 							:key="index"
 							:index="index"
+							class="flex-vertical-center full-height"
 						>
 							<a :href="item.link" v-if="item.link" target="_blank">
 								<nuxt-img
@@ -64,5 +66,5 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./collaborators.scss"></style>
-<script src="./collaborators.ts"></script>
+<style lang="scss" src="./collaboratorsComponent.scss"></style>
+<script src="./collaboratorsComponent.ts"></script>

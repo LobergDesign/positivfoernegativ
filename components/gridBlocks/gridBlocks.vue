@@ -7,7 +7,6 @@
 			<LazyCoachingBlock v-if="item.__typename === 'LayoutCoachingBlok'" :blockData="item" />
 			<LazyRecommendations v-if="item.__typename === 'LayoutRecommendations'" :blockData="item" />
 			<LazyVideoBlock v-if="item.__typename === 'LayoutVideo'" :blockData="item" />
-			<LazyCollaborators v-if="item.__typename === 'LayoutCollaborators'" :blockData="item" />
 		</section>
 	</div>
 </template>

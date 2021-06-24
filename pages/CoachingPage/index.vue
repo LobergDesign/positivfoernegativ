@@ -11,6 +11,7 @@
 			:processContentList="data.coachingProcessCollection.items"
 		/>
 		<GridBlocks v-if="data.contentAreaCollection.items.length > 0" :gridContent="data.contentAreaCollection" />
+			<LazyCollaboratorsComponent v-if="data.showCollaborators" />
 	</main>
 </template>
 

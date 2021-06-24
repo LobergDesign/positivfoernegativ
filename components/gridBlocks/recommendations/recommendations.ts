@@ -24,6 +24,6 @@ export default class Recommendations extends Vue {
 		wheelControl: false,
 	};
 	public mounted() {
-		console.debug("sfdsfsdf", this.blockData);
+		console.debug("ss", this.blockData);
 	}
 }

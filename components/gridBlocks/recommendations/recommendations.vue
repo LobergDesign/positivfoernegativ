@@ -3,13 +3,13 @@
 		<div class="grid-r">
 			<div class="grid-c-10-offset-3 grid-remove-offset-md">
 				<h2 class="recommentations__title" v-if="blockData.title">{{ blockData.title }}</h2>
-				<div v-if="blockData.recommendationsItemsCollection">
+				<div v-if="blockData.recommendationsCollection">
 					<ul
-						v-if="blockData.recommendationsItemsCollection.items.length < 2"
+						v-if="blockData.recommendationsCollection.items.length < 2"
 						class="recommentations__list reset-ul"
 					>
 						<li
-							v-for="(item, index) in blockData.recommendationsItemsCollection.items"
+							v-for="(item, index) in blockData.recommendationsCollection.items"
 							:key="index"
 							class="recommentations__list-item"
 						>
@@ -34,7 +34,7 @@
 					<div v-else class="recommentations__slider">
 						<Hooper :settings="hooperSettings" ref="hooperSlider">
 							<Slide
-								v-for="(item, index) in blockData.recommendationsItemsCollection.items"
+								v-for="(item, index) in blockData.recommendationsCollection.items"
 								:key="index"
 								:index="index"
 							>

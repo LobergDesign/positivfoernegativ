@@ -6,8 +6,9 @@
 			:heroImage="data.image"
 			:heroSubtitle="data.subtitle"
 		/>
-		<SliderComponent v-if="data.slider" :blockData="data.slider" />
-		<GridBlocks :gridContent="data.contentAreaCollection" />
+		<LazySliderComponent v-if="data.slider" :blockData="data.slider" />
+		<LazyGridBlocks :gridContent="data.contentAreaCollection" />
+		<LazyCollaboratorsComponent v-if="data.showCollaborators" />
 	</main>
 </template>
 

@@ -18,15 +18,18 @@
 	}
 
 	// list
-	&__list{
+	&__list {
 		margin: 8rem 0;
 	}
-	&__list-item{
+	&__list-item {
 		align-items: center;
 		display: flex;
 	}
 	&__list-img {
-		max-width: 18rem;
+		width: auto;
+		max-width: 20rem;
+		max-height: 15rem;
+		object-fit: cover;
 	}
 
 	// slider
@@ -37,6 +40,12 @@
 		}
 	}
 	// slider nav
+	.hooper-track{
+		align-items: center;
+		a{
+			margin: 0;
+		}
+	}
 	.hooper-prev,
 	.hooper-next {
 		border: 1px solid $color-black-tundora;
