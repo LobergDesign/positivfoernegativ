@@ -3,4 +3,7 @@
 	&__item {
 		margin-bottom: clamp(8rem, 10vw, 15rem);
 	}
+	&__item:last-child.LayoutRecommendations {
+		margin-bottom: 0;
+	}
 }

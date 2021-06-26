@@ -1,6 +1,6 @@
 <template>
 	<div class="grid-blocks">
-		<section v-for="(item, index) in gridContent.items" :key="index" class="grid-blocks__item">
+		<section v-for="(item, index) in gridContent.items" :key="index" class="grid-blocks__item" :class="item.__typename">
 			<LazyTextBlock v-if="item.__typename === 'LayoutTextArea'" :blockData="item" />
 			<LazyImageAndTextBlock v-if="item.__typename === 'TextAndImageArea'" :blockData="item" />
 			<LazyImageBlock v-if="item.__typename === 'LayoutImageArea'" :blockData="item" />

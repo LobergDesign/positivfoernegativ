@@ -14,16 +14,20 @@
 				<div class="grid-c-sm-16 grid-c-8" v-if="bodytext">
 					<div v-html="toHtmlString(bodytext.json)"></div>
 				</div>
-				<div class="grid-c-sm-16 grid-c-8 flex-center-center" v-if="image">
-					<nuxt-img
-						width="700"
-						height="700"
-						loading="lazy"
-						sizes="lg:50vw sm:100vw"
-						:src="image.url + '?w=700&fm=webp'"
-						:alt="image.title"
-					/>
-					<span v-if="image.description">{{ image.description }}</span>
+				<div class="grid-c-sm-16 grid-c-8" v-if="image">
+					<div class="full-height flex-center-center">
+						<div>
+							<nuxt-img
+								width="700"
+								height="700"
+								loading="lazy"
+								sizes="lg:50vw sm:100vw"
+								:src="image.url + '?w=700&fm=webp'"
+								:alt="image.title"
+							/>
+							<span v-if="image.description">{{ image.description }}</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

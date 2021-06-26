@@ -5,22 +5,6 @@ query getCoachingPage($slug: String!,$isPreview: Boolean!) {
     items {
       showCollaborators
       ${pageHeader}
-      coachingProcessTitle {
-        json
-      }
-      coachingProcessCollection(limit: 30) {
-        items {
-          headline
-          bodytext {
-            json
-          }
-          image {
-            title
-            description
-            url
-          }
-        }
-      }
       ${contentAreaCollection}
       ${seo}
     }

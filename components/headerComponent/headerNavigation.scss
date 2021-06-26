@@ -19,7 +19,16 @@
 		z-index: -1;
 		box-shadow: $box-shadow;
 	}
-
+	&::after {
+		content: "";
+		position: absolute;
+		left: -50vw;
+		top: 0;
+		width: 200vw;
+		height: 100%;
+		z-index: -1;
+		background-color: $color-white;
+	}
 	li,
 	a {
 		margin: 0;
