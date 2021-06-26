@@ -26,8 +26,4 @@ export default class FooterComponent extends Vue {
 	public toHtmlString(content: any) {
 		return documentToHtmlString(content);
 	}
-
-	mounted(){
-		console.debug("data", this.data)
-	}
 }

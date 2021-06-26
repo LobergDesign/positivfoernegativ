@@ -84,25 +84,11 @@ contentAreaCollection(limit: 30) {
       }
       ... on LayoutRecommendations {
         title
-        recommendationsItemsCollection(limit: 10) {
+        recommendationsCollection(limit: 15) {
           items {
             recommendationsBodytext{json}
             recommendationsName
             recommendationsFrom
-          }
-        }
-      }
-      ... on LayoutCollaborators {
-        title
-        collaboratorsCollection {
-          total
-          items {
-            title
-            image {
-              url
-              title
-            }
-            link
           }
         }
       }

@@ -1,30 +1,5 @@
 <template>
 	<div>
-		<section class="promotion-banner">
-			<div class="grid-w">
-				<div class="grid-r">
-					<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="data.empowerMind">
-						<div v-if="data.empowerMind.url">
-							<a href="https://empowermind.dk/certificeringer/coachuddannelse" target="_blank">
-								<nuxt-img
-									width="175"
-									height="175"
-									loading="lazy"
-									:src="data.empowerMind.url +'?w=175&h=175'"
-									:alt="data.empowerMind.title"
-									class="max-width"
-								/>
-							</a>
-						</div>
-						<div
-							class="promotion-banner__text"
-							v-if="data.empowerMindBodytext"
-							v-html="toHtmlString(data.empowerMindBodytext.json)"
-						></div>
-					</div>
-				</div>
-			</div>
-		</section>
 		<footer class="footer">
 			<div class="grid-w">
 				<div class="grid-r">

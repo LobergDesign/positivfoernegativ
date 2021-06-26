@@ -6,6 +6,7 @@
 			:heroImage="data.image"
 			:heroSubtitle="data.subtitle"
 		/>
+		<LazyCollaboratorsComponent v-if="data.showCollaborators" />
 	</main>
 </template>
 <script src="./index.ts"></script>

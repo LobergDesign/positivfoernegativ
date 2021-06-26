@@ -4,6 +4,7 @@ const getDynamicData = `
   query getContentPage($slug: String, $isPreview: Boolean!){
     pageData: contentPageCollection(where: { slug: $slug }, limit:1, preview:$isPreview) {
       items {
+        showCollaborators
         ${pageHeader}
        ${contentAreaCollection}
        ${seo}

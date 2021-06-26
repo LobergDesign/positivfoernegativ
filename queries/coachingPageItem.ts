@@ -3,23 +3,8 @@ const getDynamicData = `
 query getCoachingPage($slug: String!,$isPreview: Boolean!) {
   pageData: coachingItemCollection(where: {slug: $slug}, limit: 1, preview:$isPreview) {
     items {
+      showCollaborators
       ${pageHeader}
-      coachingProcessTitle {
-        json
-      }
-      coachingProcessCollection(limit: 30) {
-        items {
-          headline
-          bodytext {
-            json
-          }
-          image {
-            title
-            description
-            url
-          }
-        }
-      }
       ${contentAreaCollection}
       ${seo}
     }

@@ -8,12 +8,6 @@ const globalQuery = `query($isPreview: Boolean!) {
       title
       url
     }
-    empowerMindBodytext{json}
-    empowerMind {
-      title,
-      description,
-      url
-    }
     phonenumber,
     email,
     adresse,
