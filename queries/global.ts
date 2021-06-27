@@ -26,7 +26,7 @@ const globalQuery = `query($isPreview: Boolean!) {
             linkName
             slug
           }
-             ... on ContentPage{
+          ... on ContentPage{
             linkName
             slug
           }

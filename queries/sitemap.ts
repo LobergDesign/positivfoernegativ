@@ -11,15 +11,19 @@ const query = `query($isPreview: Boolean!) {
             slug
             linkName
           }
-          ... on CoachingPage {
-            slug
-            linkName
-          }
           ... on LecturePage {
             slug
             linkName
           }
           ... on ContentPage {
+            slug
+            linkName
+          }
+          ... on AdvancedTextPage {
+            slug
+            linkName
+          }
+          ... on SimpleTextPage {
             slug
             linkName
           }

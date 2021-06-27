@@ -4,7 +4,7 @@ const query = `query($isPreview: Boolean!) {
     frontpage(id: "5VyBhlOzhQsJndF2GyhZ5i", preview:$isPreview) {
       showCollaborators
       slider {
-        sliderItemsCollection(limit: 6) {
+        sliderItemsCollection(limit: 12) {
           items {
             model: __typename
             ... on CoachingItem {
@@ -25,7 +25,25 @@ const query = `query($isPreview: Boolean!) {
               }
               previewTeaser
             }
-            ... on CoachingPage {
+            ... on SimpleTextPage {
+              pageHeadline {
+                json
+              }
+              slug
+              bodytext {
+                json
+              }
+              image {
+                url
+                title
+              }
+              previewImage {
+                url
+                title
+              }
+              previewTeaser
+            }
+            ... on AdvancedTextPage {
               pageHeadline {
                 json
               }

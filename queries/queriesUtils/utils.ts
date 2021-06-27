@@ -7,9 +7,6 @@ contentAreaCollection(limit: 30) {
         title
         subtitle
         link {
-          ... on CoachingPage {
-            slug
-          }
           ... on ContactPage {
             slug
           }
@@ -17,6 +14,12 @@ contentAreaCollection(limit: 30) {
             slug
           }
           ... on ContentPage{
+            slug
+          }
+          ... on AdvancedTextPage {
+            slug
+          }
+          ... on SimpleTextPage {
             slug
           }
         }
