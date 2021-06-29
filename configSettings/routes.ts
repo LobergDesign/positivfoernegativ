@@ -16,13 +16,11 @@ const siteStructure = async () => {
 	const data = await graphQLClient.request(query, isPreview);
 	const mainItems = data.globalSettings.mainMenuCollection.items;
 	const coachItems = data.coachingItemCollection.items;
-	const contentPageItems = data.contentPageCollection.items;
 	console.log("mainItems", mainItems);
 
 	return {
 		mainSitemap: mainItems,
 		coachingItems: coachItems,
-		contentPageItems: contentPageItems,
 	};
 };
 
@@ -30,16 +28,9 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 	const sitemaps = await siteStructure();
 	const sitemapMain: ISitemapRoute[] = sitemaps.mainSitemap;
 	const sitemapCoachingItems: ISitemapRoute[] = sitemaps.coachingItems;
-	const sitemapContentPageItems: ISitemapRoute[] = sitemaps.contentPageItems;
 	const sitemapRoutes: IRoutes[] = [];
 	sitemapMain.forEach((route) => {
-		if (route.model === "CoachingEntranceItem") {
-			sitemapRoutes.push({
-				path: `/${route.slug}/`,
-				component: resolve(`~/pages/${route.model}/_slug.vue`),
-				name: route.slug,
-			});
-		} else if (route.model === "AdvancedTextPage") {
+	 if (route.model === "AdvancedTextPage") {
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.model}/_slug.vue`),
@@ -57,13 +48,6 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 		sitemapRoutes.push({
 			path: `/coaching/${route.slug}/`,
 			component: resolve(`~/pages/CoachingPage/_slug.vue`),
-			name: route.slug,
-		});
-	});
-	sitemapContentPageItems.forEach((route) => {
-		sitemapRoutes.push({
-			path: `/${route.slug}/`,
-			component: resolve(`~/pages/${route.model}/_slug.vue`),
 			name: route.slug,
 		});
 	});

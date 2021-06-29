@@ -6,46 +6,30 @@ contentAreaCollection(limit: 30) {
         sectionTitle
         title
         subtitle
+        listItemsCollection(limit: 15) {
+          items {
+            ... on AdvancedTextPage {
+              title
+              slug
+              bodytext {
+                json
+              }
+            }
+            ... on SimpleTextPage {
+              title
+              slug
+              bodytext {
+                json
+              }
+            }
+          }
+        }
         link {
-          ... on ContactPage {
-            slug
-          }
-          ... on LecturePage{
-            slug
-          }
-          ... on ContentPage{
-            slug
-          }
           ... on AdvancedTextPage {
             slug
           }
           ... on SimpleTextPage {
             slug
-          }
-        }
-        listItemsCollection(limit: 16) {
-          items {
-            model: __typename
-            ... on CoachingEntranceItem {
-              title
-              pageHeadline {
-                json
-              }
-              bodytext {
-                json
-              }
-              slug
-            }
-            ... on CoachingItem {
-              title
-              pageHeadline {
-                json
-              }
-              bodytext {
-                json
-              }
-              slug
-            }
           }
         }
       }

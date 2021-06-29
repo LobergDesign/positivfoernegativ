@@ -27,7 +27,7 @@
 											>Download mit CV</a
 										>
 									</li>
-									<li v-for="(item, index) in data.footerLinks.items" :key="index">
+									<li v-for="(item, index) in data.footerLinks" :key="index">
 										<nuxt-link :to="'/' + item.slug + '/'">
 											<template v-if="item.linkName">
 												{{ item.linkName }}

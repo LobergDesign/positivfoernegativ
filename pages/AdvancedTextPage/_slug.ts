@@ -15,7 +15,6 @@ export default class AdvancedTextpage extends Vue {
 		const routePath = route.name as string;
 		const response = await $dataApi.getDynamicData(query, routePath);
 		const responseData =  response.data?.pageData?.items[0];
-		console.debug("responsesdData", responseData)
 		if (!responseData) {
 			return error({
 				statusCode: response.status,

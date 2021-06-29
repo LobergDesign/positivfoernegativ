@@ -11,7 +11,4 @@ export default class TextBlock extends Vue {
 	public toHtmlString(content: any) {
 		return documentToHtmlString(content);
 	}
-	mounted(){
-		console.debug("blockData", this.blockData);
-	}
 }

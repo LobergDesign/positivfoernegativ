@@ -11,11 +11,11 @@
 				:key="index"
 				class="grid-c-sm-16 grid-c-4 list-block__item"
 			>
-				<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
+				<!-- <nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
 					<h3 class="list-block__item-headline">{{ item.title }}</h3>
 					<div v-if="item.bodytext" v-html="toHtmlString(item.bodytext.json)"></div>
-				</nuxt-link>
-				<nuxt-link :to="'/' + item.slug + '/'" v-else>
+				</nuxt-link> -->
+				<nuxt-link :to="'/' + item.slug + '/'">
 					<h3 class="list-block__item-headline">{{ item.title }}</h3>
 					<div v-if="item.bodytext" v-html="toHtmlString(item.bodytext.json)"></div>
 				</nuxt-link>

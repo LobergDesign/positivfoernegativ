@@ -7,24 +7,6 @@ const query = `query($isPreview: Boolean!) {
         sliderItemsCollection(limit: 12) {
           items {
             model: __typename
-            ... on CoachingItem {
-              pageHeadline {
-                json
-              }
-              slug
-              bodytext {
-                json
-              }
-              image {
-                url
-                title
-              }
-              previewImage {
-                url
-                title
-              }
-              previewTeaser
-            }
             ... on SimpleTextPage {
               pageHeadline {
                 json
@@ -44,43 +26,6 @@ const query = `query($isPreview: Boolean!) {
               previewTeaser
             }
             ... on AdvancedTextPage {
-              pageHeadline {
-                json
-              }
-              slug
-              bodytext {
-                json
-              }
-              image {
-                url
-                title
-              }
-              previewImage {
-                url
-                title
-              }
-              previewTeaser
-            }
-            __typename
-            ... on LecturePage {
-              pageHeadline {
-                json
-              }
-              slug
-              bodytext {
-                json
-              }
-              image {
-                url
-                title
-              }
-              previewImage {
-                url
-                title
-              }
-              previewTeaser
-            }
-            ... on CoachingEntranceItem {
               pageHeadline {
                 json
               }
