@@ -9,4 +9,4 @@
 		<LazyCollaboratorsComponent v-if="data.showCollaborators" />
 	</main>
 </template>
-<script src="./index.ts"></script>
+<script src="./_slug.ts"></script>

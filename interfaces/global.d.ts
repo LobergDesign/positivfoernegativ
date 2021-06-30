@@ -113,6 +113,7 @@ declare interface ISitemapRoute {
 	model?: string;
 	slug: string;
 	name?: string;
+	isCoachingSubpage?: boolean;
 }
 declare interface IGenerateRoute {
 	route: string;

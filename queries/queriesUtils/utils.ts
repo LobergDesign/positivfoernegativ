@@ -18,6 +18,7 @@ contentAreaCollection(limit: 30) {
             ... on SimpleTextPage {
               title
               slug
+              isCoachingSubpage
               bodytext {
                 json
               }
@@ -30,6 +31,7 @@ contentAreaCollection(limit: 30) {
           }
           ... on SimpleTextPage {
             slug
+            isCoachingSubpage
           }
         }
       }

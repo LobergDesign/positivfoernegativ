@@ -8,6 +8,7 @@ const query = `query($isPreview: Boolean!) {
           items {
             model: __typename
             ... on SimpleTextPage {
+              isCoachingSubpage
               pageHeadline {
                 json
               }

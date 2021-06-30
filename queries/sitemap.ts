@@ -1,30 +1,25 @@
-const query = `query($isPreview: Boolean!) {
-  globalSettings(id: "38onI8GbhsFteNr1exH4HG", preview:$isPreview) {
-    mainMenuCollection {
+const query = `{
+    simpleTextPageCollection(limit: 25) {
       items {
         model: __typename
-        ... on ContactPage {
-          slug
-          linkName
-        }
-        ... on AdvancedTextPage {
-          slug
-          linkName
-        }
-        ... on SimpleTextPage {
-          slug
-          linkName
-        }
+        slug
+        linkName
+        isCoachingSubpage
       }
     }
-  }
-  coachingItemCollection {
-    items {
+    advancedTextPageCollection(limit: 25) {
+      items {
+        model: __typename
+        slug
+        linkName
+      }
+    }
+    contactPage(id: "4FaZD4NezcKvSWPrRsMJPp") {
       model: __typename
       slug
       linkName
     }
-  }
+  
 }
   `;
 export { query };
