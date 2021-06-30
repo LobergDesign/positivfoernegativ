@@ -2,19 +2,22 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 import { head } from "~/utils/seo";
-import { getDynamicData } from "~/queries/coachingEntranceItem";
+import { query } from "~/queries/simpleTextpage";
 import { ISeo } from "~/interfaces/global";
 
 @Component
-export default class CoachingPageClass extends Vue {
+export default class SimpleTextPageClass extends Vue {
 	private seo: ISeo = {};
 	head() {
 		return head(this.seo);
 	}
 	async asyncData({ $dataApi, error, route }: Context) {
 		const routePath = route.name as string;
-		const response = await $dataApi.getDynamicData(getDynamicData, routePath);
+		const response = await $dataApi.getDynamicData(query, routePath);
 		const responseData = response.data?.pageData?.items[0];
+		console.debug("routePath", routePath);
+		console.debug("response", response);
+		console.debug("responseData", responseData);
 		if (!responseData) {
 			return error({
 				statusCode: response.status,

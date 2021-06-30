@@ -6,43 +6,32 @@ contentAreaCollection(limit: 30) {
         sectionTitle
         title
         subtitle
-        link {
-          ... on CoachingPage {
-            slug
-          }
-          ... on ContactPage {
-            slug
-          }
-          ... on LecturePage{
-            slug
-          }
-          ... on ContentPage{
-            slug
+        listItemsCollection(limit: 15) {
+          items {
+            ... on AdvancedTextPage {
+              title
+              slug
+              bodytext {
+                json
+              }
+            }
+            ... on SimpleTextPage {
+              title
+              slug
+              isCoachingSubpage
+              bodytext {
+                json
+              }
+            }
           }
         }
-        listItemsCollection(limit: 16) {
-          items {
-            model: __typename
-            ... on CoachingEntranceItem {
-              title
-              pageHeadline {
-                json
-              }
-              bodytext {
-                json
-              }
-              slug
-            }
-            ... on CoachingItem {
-              title
-              pageHeadline {
-                json
-              }
-              bodytext {
-                json
-              }
-              slug
-            }
+        link {
+          ... on AdvancedTextPage {
+            slug
+          }
+          ... on SimpleTextPage {
+            slug
+            isCoachingSubpage
           }
         }
       }

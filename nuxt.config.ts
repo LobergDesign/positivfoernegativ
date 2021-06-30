@@ -85,7 +85,7 @@ export default {
 		fallback: true,
 		crawler: false,
 		// exclude pages thats unused
-		exclude: [/LecturePage/, /ContactPage/, /ContentPage/, /CoachingPage/],
+		exclude: [/LecturePage/, /ContactPage/, /ContentPage/, /AdvancedTextPage/],
 		routes: async () => await generate(),
 	},
 	/*
@@ -101,7 +101,7 @@ export default {
 	 */
 	sitemap: {
 		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
-		exclude: ["/LecturePage/", "/ContactPage/", "/ContentPage/", "/CoachingPage/"],
+		exclude: ["/LecturePage/", "/ContactPage/", "/ContentPage/, /AdvancedTextPage/"],
 		// add trailing slash to final sitemap
 		trailingSlash: true,
 		priority: 1,

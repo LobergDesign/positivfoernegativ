@@ -3,7 +3,7 @@
 		<div class="slider">
 			<ul class="slider__pagination reset-ul">
 				<li v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index">
-					<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.model === 'CoachingItem'">
+					<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.isCoachingSubpage">
 						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"> </span>
 						<span v-else>Læs mere </span>
 						<ArrowIcon />

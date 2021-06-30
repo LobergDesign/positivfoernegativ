@@ -1,5 +1,24 @@
 const globalQuery = `query($isPreview: Boolean!) {
   globalSettings(id: "38onI8GbhsFteNr1exH4HG", preview:$isPreview) {
+    mainMenuCollection {
+      items {
+        model: __typename
+        ... on ContactPage {
+          slug
+          linkName
+        }
+        ... on AdvancedTextPage {
+          slug
+          linkName
+          
+        }
+        ... on SimpleTextPage {
+          slug
+          linkName
+          isCoachingSubpage
+        }
+      }
+    }
     logo {
       title
       url
@@ -8,28 +27,22 @@ const globalQuery = `query($isPreview: Boolean!) {
       title
       url
     }
-    phonenumber,
-    email,
-    adresse,
-    zipcodeAndCity,
-    footerText{json},
-    facebook,
-    linkedIn,
-    youTube,
+    phonenumber
+    email
+    adresse
+    zipcodeAndCity
+    footerText {
+      json
+    }
+    facebook
+    linkedIn
+    youTube
     instagram
-  }
-  globalSettingsCollection(limit: 1) {
-    items {
-      footerLinksCollection(limit: 10) {
-        items {
-          ... on ContactPage {
-            linkName
-            slug
-          }
-             ... on ContentPage{
-            linkName
-            slug
-          }
+    footerLinksCollection(limit: 4) {
+      items {
+        ... on SimpleTextPage {
+          linkName
+          slug
         }
       }
     }

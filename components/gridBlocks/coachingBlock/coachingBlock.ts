@@ -19,6 +19,6 @@ export default class CoachingBlock extends Vue {
 		return htmlString.substring(0, this.maxLength) + setDots;
 	}
 	mounted(){
-		console.debug("blockData", this.blockData)
+		console.debug("blockDataa", this.blockData);
 	}
 }

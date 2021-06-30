@@ -26,6 +26,5 @@ export default class Collaborators extends Vue {
 	async fetch() {
 		const response = await this.$nuxt.context.$dataApi.getData(query);
 		this.blockData = response.data?.globalDataCollaboratorsCollection;
-		console.debug("respdosddnse", response.data?.globalDataCollaboratorsCollection)
 	}
 }
