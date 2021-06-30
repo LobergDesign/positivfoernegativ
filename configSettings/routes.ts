@@ -43,6 +43,7 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 			});
 		}
 	});
+
 	return [...routes, ...sitemapRoutes];
 }
 
@@ -50,18 +51,17 @@ export async function generate() {
 	const site = await siteStructure();
 	const sitemapMain: ISitemapRoute[] = site.sitemap;
 	const routes: any = [];
-	if (routes.isCoachingSubpage === true) {
-		sitemapMain.forEach((item: any) => {
+	sitemapMain.forEach((item: any) => {
+		if (item.isCoachingSubpage) {
 			routes.push({
 				route: `/coaching/${item.slug}/`,
 			});
-		});
-	} else {
-		sitemapMain.forEach((item: any) => {
+		} else {
 			routes.push({
 				route: `/${item.slug}/`,
 			});
-		});
-	}
+		}
+	});
+
 	return routes;
 }
