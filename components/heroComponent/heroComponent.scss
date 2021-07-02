@@ -1,24 +1,24 @@
- @import "~assets/scss/tools/_mixins.scss";
-
-.hero{
-   margin-top: 4vw;
-    &__title--large{
-        // @include fluid-type(40px, 90px);
-        font-size: 9rem;
-        margin-bottom: 1rem;
-        p{
-            // @include fluid-type(40px, 90px);
-            font-size: 9rem;
-            margin-bottom: 1rem;
-        }
-    }
-    &__sub-title{
-        // @include fluid-type(20px, 30px);
-        font-size: 3rem;
-       
-    }
-    &__image{
-        margin-top: 4rem;
-        width: 100%;
-    }
+@import "~assets/scss/tools/_mixins.scss";
+$hero-spacing: clamp(5rem, 5.5vw, 20rem);
+.hero {
+	margin-top: $hero-spacing;
+	margin-bottom: $hero-spacing;
+	&__title--large {
+		// @include fluid-type(40px, 90px);
+		font-size: 9rem;
+		margin-bottom: 1rem;
+		p {
+			// @include fluid-type(40px, 90px);
+			font-size: 9rem;
+			margin-bottom: 1rem;
+		}
+	}
+	&__sub-title {
+		// @include fluid-type(20px, 30px);
+		font-size: 3rem;
+	}
+	&__image {
+		margin-top: 4rem;
+		width: 100%;
+	}
 }

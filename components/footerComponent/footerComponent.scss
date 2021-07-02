@@ -7,7 +7,7 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 	overflow: hidden;
 	padding-top: $footer-padding;
 	padding-bottom: $footer-padding;
-	background-color: #363636;
+	background-color: $color-black-tundora;
 	position: relative;
 	// yellow bg in right site
 	&:after {
@@ -53,7 +53,7 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 	}
 	&__header {
 		color: $color-white;
-		font-size: 1.8rem;
+		font-size: 2.2rem;
 		@include font-sans-pro-bold;
 		margin-bottom: 0.9rem;
 		&:not(:first-child) {
