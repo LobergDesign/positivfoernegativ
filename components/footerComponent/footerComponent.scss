@@ -87,9 +87,10 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 	}
 	&__social {
 		position: absolute;
-		bottom: 0;
+		bottom: -10rem;
 		right: 0;
 		li {
+			margin-bottom: 0;
 			display: inline-block;
 			margin-left: 2rem;
 		}
