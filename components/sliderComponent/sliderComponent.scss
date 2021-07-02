@@ -11,7 +11,6 @@
 	&__image {
 		position: absolute;
 		width: 100%;
-		min-height: 100%;
 	}
 	&__teaser {
 		position: absolute;
@@ -50,12 +49,13 @@
 				margin: 0;
 				display: block;
 			}
-			svg, span{
+			svg,
+			span {
 				display: inline-block;
 			}
-			svg{
+			svg {
 				margin-top: 1rem;
-				margin-right: .1rem;
+				margin-right: 0.1rem;
 				float: right;
 			}
 		}
@@ -65,64 +65,65 @@
 		}
 	}
 }
-.hooper-slide.is-active.is-current {
-	.slider__teaser {
-		transition-delay: 0.2s;
-		opacity: 1;
-		transform: translateY(0);
+.slider {
+	.hooper-slide.is-active.is-current {
+		.slider__teaser {
+			transition-delay: 0.2s;
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
-}
-// overwrite hooper
-.hooper {
-	height: 100%;
-}
-.hooper-slider {
-	position: relative;
-}
-
-.hooper-track {
-	transition: transform $transition !important;
-}
-
-// pagination
-.hooper-pagination {
-	position: absolute;
-	bottom: auto;
-	top: 0;
-	right: 0;
-	transform: none;
-	background: $color-white;
-	box-shadow: $box-shadow;
-	padding-right: 0;
-	padding-left: 4rem;
-	padding-bottom: 3rem;
-	ol {
-		display: block;
+	// overwrite hooper
+	.hooper {
+		height: 100%;
 	}
-	li {
-		margin: 0;
-		padding: 0;
-	}
-	button {
+	.hooper-slider {
 		position: relative;
-		z-index: 5;
-		background: rgba($color-white, 0.8);
-		border-radius: 0;
-		width: 25rem;
-		height: 5rem;
-		border-bottom: 1px solid rgba($color-gray-silver, 0.3);
 	}
-}
-.hooper-indicator {
-	cursor: pointer;
-	transition: border-bottom $transition--fast, background $transition--fast;
-	&:hover,
-	&.is-active {
-		background: none;
-		border-bottom: 1px solid $color-black;
+
+	.hooper-track {
+		transition: transform $transition !important;
 	}
-	&.is-active {
-		z-index: 1;
+
+	// pagination
+	.hooper-pagination {
+		position: absolute;
+		bottom: auto;
+		top: 0;
+		right: 0;
+		transform: none;
+		background: $color-white;
+		box-shadow: $box-shadow;
+		padding-right: 0;
+		padding-left: 4rem;
+		padding-bottom: 3rem;
+		ol {
+			display: block;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+		}
+		button {
+			position: relative;
+			z-index: 5;
+			background: rgba($color-white, 0.8);
+			border-radius: 0;
+			width: 25rem;
+			height: 5rem;
+			border-bottom: 1px solid rgba($color-gray-silver, 0.3);
+		}
 	}
-	
+	.hooper-indicator {
+		cursor: pointer;
+		transition: border-bottom $transition--fast, background $transition--fast;
+		&:hover,
+		&.is-active {
+			background: none;
+			border-bottom: 1px solid $color-black;
+		}
+		&.is-active {
+			z-index: 1;
+		}
+	}
 }
