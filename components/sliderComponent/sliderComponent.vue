@@ -8,7 +8,7 @@
 						<span v-else>Læs mere </span>
 						<ArrowIcon />
 					</nuxt-link>
-					<nuxt-link v-else :to="item.slug">
+					<nuxt-link v-else :to="'/' + item.slug + '/'">
 						<span v-if="item.pageHeadline" v-html="toHtmlString(item.pageHeadline.json)"></span>
 						<span v-else>Læs mere</span>
 						<ArrowIcon />

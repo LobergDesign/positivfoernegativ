@@ -11,7 +11,13 @@
 						class="header__logo"
 					/>
 				</nuxt-link>
-				<button class="header-menu-icon" v-on:click="toggleMenu()" :class="{ 'is-active': isMenuActive }">
+				<button
+					aria-label="toggle menu"
+					class="header-menu-icon"
+					type="button"
+					v-on:click="toggleMenu()"
+					:class="{ 'is-active': isMenuActive }"
+				>
 					<span></span>
 				</button>
 			</div>

@@ -14,9 +14,6 @@ export default class SimpleTextPageClass extends Vue {
 		const routePath = route.name as string;
 		const response = await $dataApi.getDynamicData(query, routePath);
 		const responseData = response.data?.pageData?.items[0];
-		console.debug("routePath", routePath);
-		console.debug("response", response);
-		console.debug("responseData", responseData);
 		if (!responseData) {
 			return error({
 				statusCode: response.status,

@@ -4,7 +4,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //@ts-ignore
 import ArrowIcon from "~/assets/svg/arrow--black.svg?inline";
 //@ts-ignore
-import { Hooper, Slide, Pagination as HooperPagination, } from "hooper";
+import { Hooper, Slide, Pagination as HooperPagination } from "hooper";
 import "hooper/dist/hooper.css";
 
 //@ts-ignore
@@ -16,14 +16,14 @@ import SvgArrow from "~/assets/svg/arrow--white.svg?inline";
 		Hooper,
 		Slide,
 		HooperPagination,
-		ArrowIcon
+		ArrowIcon,
 	},
 })
 export default class Slider extends Vue {
 	@Prop({ type: Object as () => ISlider, required: true })
 	readonly blockData!: ISlider;
-	public maxLength: number = 220;
-	
+	public maxLength: number = 200;
+
 	public toHtmlStringWidthLimit(content: any) {
 		const htmlString = documentToHtmlString(content);
 		const setDots = htmlString.length > this.maxLength ? "..." : "";
