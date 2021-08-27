@@ -1,4 +1,3 @@
-
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 import { head } from "~/utils/seo";
@@ -24,6 +23,6 @@ export default class SimpleTextPageClass extends Vue {
 				message: response.errors,
 			});
 		}
-		return { data: responseData, seo:responseData.seoSection };
+		return { data: responseData, seo: responseData.seoSection };
 	}
 }

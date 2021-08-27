@@ -22,7 +22,12 @@
 						:class="{ 'is-active': isMenuActive }"
 					>
 						<li v-for="(item, index) in menuList.items" :key="index" class="header__nav-list-item">
+							<nuxt-link :to="'/coaching/' + item.slug + '/'" v-if="item.isCoachingSubpage">
+								<span v-if="item.linkName">{{ item.linkName.replace("-", " ") }}</span>
+								<span v-else>{{ item.slug.replace("-", " ") }}</span>
+							</nuxt-link>
 							<nuxt-link
+								v-else
 								:to="'/' + item.slug + '/'"
 								:class="{ btn: index === menuList.items.length - 1 }"
 							>

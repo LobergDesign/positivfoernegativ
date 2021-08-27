@@ -122,7 +122,7 @@ export default {
 	ssr: process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? false : true,
 	purgeCSS: {
 		// whitelist spicific classes
-		whitelist: ["is-active", "hooper-pagination"],
+		whitelist: ["is-active"],
 		// whitelist spicific classes and all that contains that naming
 		whitelistPatterns: [
 			/__layout/,
