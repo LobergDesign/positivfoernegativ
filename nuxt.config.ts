@@ -14,7 +14,7 @@ export default {
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
 	publicRuntimeConfig: {
-		baseUrl: process.env.BASE_URL,
+		baseUrl: process.env.BASE_URL || "http://localhost:3000/",
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -31,7 +31,6 @@ export default {
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		// https://go.nuxtjs.dev/typescript
-		"@nuxtjs/html-validator",
 		"@nuxt/typescript-build",
 		"@nuxt/image",
 		"nuxt-gsap-module",
@@ -58,26 +57,6 @@ export default {
 			},
 		},
 	},
-	// htmlValidator: {
-	// 	usePrettier: true,
-	// 	failOnError: false,
-	// 	options: {
-	// 		extends: ["html-validate:document", "html-validate:recommended", "html-validate:standard"],
-	// 		rules: {
-	// 			"svg-focusable": "off",
-	// 			"no-unknown-elements": "error",
-	// 			// Conflicts or not needed as we use prettier formatting
-	// 			"void-style": "off",
-	// 			"no-trailing-whitespace": "off",
-	// 			// Conflict with Nuxt defaults
-	// 			"require-sri": "off",
-	// 			"attribute-boolean-style": "off",
-	// 			"doctype-style": "off",
-	// 			// Unreasonable rule
-	// 			"no-inline-style": "off",
-	// 		},
-	// 	},
-	// },
 	image: {
 		screens: {
 			xs: 350,

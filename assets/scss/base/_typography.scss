@@ -2,7 +2,7 @@
 @mixin default-text-style {
 	font-size: clamp(1.8rem, 5vw, 1.9rem);
 	color: $color-black-tundora;
-	line-height: 1.9;
+	line-height: 1.6;
 	margin-top: 0.8rem;
 	margin-bottom: 1.8rem;
 }

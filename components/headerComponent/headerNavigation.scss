@@ -72,7 +72,7 @@
 			transform: translate3d(0, -1.5rem, 0);
 		}
 	}
-	&__nav-list-item a:not(.btn).is-active {
+	&__nav-list-item a:not(.btn).nuxt-link-exact-active {
 		@include font-sans-pro-medium;
 		&:after {
 			opacity: 1;
@@ -154,7 +154,7 @@ $menu-icon-span-height: 0.2rem;
 		}
 	}
 	// active menu icon
-	.header-menu-icon.is-active {
+	.header-menu-icon.nuxt-link-exact-active {
 		span {
 			background-color: rgba($color-black, 0);
 			transition-delay: 0.2s;
