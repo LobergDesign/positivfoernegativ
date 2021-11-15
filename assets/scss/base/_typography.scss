@@ -70,7 +70,7 @@ p {
 }
 p a {
 	@include default-text-style;
-	@include font-sans-pro-medium;
+	@include font-sans-pro-medium	;
 	color: $color-yellow-corn;
 	transition: color $transition--extra-fast;
 	&:hover {

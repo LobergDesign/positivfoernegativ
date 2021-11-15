@@ -3,7 +3,10 @@
 @import "~/assets/scss/settings/_fonts.scss";
 
 .header {
-	@include grid-wrap;
+	max-width: 1800px;
+	width: 92vw;
+	transform: translateX(-50%);
+	left: 50%;
 	position: fixed;
 	top: 0;
 	background-color: $color-white;
@@ -46,7 +49,7 @@
 		position: relative;
 		@include font-sans-pro;
 		display: block;
-		padding: 2rem 2.2rem;
+		padding: 2rem clamp(1.2rem, 1.5vw, 3rem);
 		font-size: 1.58rem;
 		letter-spacing: 0.06rem;
 		&::first-letter {
@@ -56,8 +59,8 @@
 			content: "";
 			position: absolute;
 			bottom: 0;
-			left: 2.2rem;
-			right: 2.2rem;
+			left:clamp(1.2rem, 1.5vw, 3rem);
+			right: clamp(1.2rem, 1.5vw, 3rem);
 			height: 0.2rem;
 			background-color: $color-yellow-corn;
 			opacity: 0;
