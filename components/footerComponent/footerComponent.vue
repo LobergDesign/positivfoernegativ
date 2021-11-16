@@ -23,7 +23,7 @@
 								<span class="footer__header">Information</span>
 								<ul class="reset-ul footer__links">
 									<li v-if="data.cv">
-										<a laoding="lazy" target="_blank" :href="data.cv.url" :download="data.cv.title"
+										<a loading="lazy" target="_blank" :href="data.cv.url" :download="data.cv.title"
 											>Download mit CV</a
 										>
 									</li>

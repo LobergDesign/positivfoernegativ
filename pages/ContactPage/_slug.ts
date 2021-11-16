@@ -3,6 +3,7 @@ import { Vue, Component } from "nuxt-property-decorator";
 import { head } from "~/utils/seo";
 import { query } from "~/queries/contact";
 import { ISeo } from "~/interfaces/global";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 @Component
 export default class ContactPage extends Vue {
@@ -10,6 +11,11 @@ export default class ContactPage extends Vue {
 	head() {
 		return head(this.seo);
 	}
+
+	public toHtmlString(content: any) {
+		return documentToHtmlString(content);
+	}
+
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(query);
 		const responseData = response.data;
@@ -19,6 +25,6 @@ export default class ContactPage extends Vue {
 				message: response.errors
 			});
 		}
-		return { data: responseData.contactPage, seo: responseData.contactPage.seoSection };
+		return { data: responseData.contactPage, seo: responseData.contactPage.seoSection, globalData: responseData.globalSettings };
 	}
 }
