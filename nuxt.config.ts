@@ -112,7 +112,7 @@ export default {
 	fontLoader: {
 		// Paste a google link here
 		url: {
-			google: "https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
+			google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
 		},
 
 		// Enable options

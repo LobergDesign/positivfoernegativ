@@ -3,7 +3,7 @@
 @import "~/assets/scss/tools/_mixins.scss";
 
 .process-list {
-	margin-top: 4vw;
+	margin-top: clamp(4rem,4vw, 6rem);
 	&__item {
 		margin-bottom: 5vw;
 	}
