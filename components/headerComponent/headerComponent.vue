@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" ref="header">
 		<div class="grid-r flex-space-between-md">
 			<div class="grid-c-2 grid-c-md-16 flex-vertical-center">
 				<nuxt-link to="/">

@@ -12,6 +12,7 @@
 	background-color: $color-white;
 	padding: 0;
 	z-index: 10;
+	will-change: transform;
 	&::before {
 		content: "";
 		position: absolute;

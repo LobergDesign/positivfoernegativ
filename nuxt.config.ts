@@ -89,6 +89,14 @@ export default {
 		routes: async () => await generate(),
 	},
 	/*
+	 ** add gsap
+	 */
+	gsap: {
+		extraPlugins: {
+			scrollTrigger: true,
+		},
+	},
+	/*
 	 ** add robots.txt to application
 	 */
 	robots: {
