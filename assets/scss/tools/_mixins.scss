@@ -99,6 +99,12 @@
 // xl screens
 @mixin viewport-max {
 	// min-width: 1920px
+	@media only screen and (max-width: $viewport-max) {
+		@content;
+	}
+}
+@mixin viewport-min {
+	// min-width: 1920px
 	@media only screen and (min-width: $viewport-max) {
 		@content;
 	}

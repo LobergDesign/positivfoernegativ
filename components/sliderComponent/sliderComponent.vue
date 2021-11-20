@@ -41,6 +41,5 @@
 		</div>
 	</section>
 </template>
-
 <style lang="scss" src="./sliderComponent.scss"></style>
 <script src="./sliderComponent.ts"></script>
