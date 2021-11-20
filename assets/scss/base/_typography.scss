@@ -72,7 +72,7 @@ p {
 }
 p a {
 	@include default-text-style;
-	@include font-sans-pro-medium	;
+	@include font-main-medium	;
 	color: $color-yellow-corn;
 	transition: color $transition--extra-fast;
 	&:hover {
@@ -94,7 +94,7 @@ ol li {
 	// @include fluid-type(16px, 18px);
 	font-size: 1.8rem;
 	display: block;
-	@include font-sans-pro-bold;
+	@include font-main-bold;
 }
 .caption {
 	p {

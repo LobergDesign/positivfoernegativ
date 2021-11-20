@@ -8,6 +8,11 @@
 	max-height: 75vh;
 	overflow: hidden;
 	position: relative;
+	width: 80vw;
+	left:-10vw;
+	&__placeholder{
+		height: clamp(40rem, 56vw,80rem)
+	}
 	&__image {
 		position: absolute;
 		width: 100%;

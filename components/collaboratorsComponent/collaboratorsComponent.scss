@@ -1,9 +1,9 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
 @import "~/assets/scss/tools/_mixins.scss";
+
 .collaborators {
 	position: relative;
-	background-color: $color-gray-alabaster;
 	padding: 8rem 0 6rem;
 
 	&::before {
@@ -12,7 +12,6 @@
 		top: 0;
 		left: -35vw;
 		right: -35vw;
-		background-color: $color-gray-alabaster;
 		height: 100%;
 		z-index: -1;
 	}
@@ -40,34 +39,11 @@
 		}
 	}
 	// slider nav
-	.hooper-track{
+	.hooper-track {
 		align-items: center;
-		a{
+		a {
 			margin: 0;
 		}
 	}
-	.hooper-prev,
-	.hooper-next {
-		border: 1px solid $color-black-tundora;
-		border-radius: 50%;
-		height: 5.5rem;
-		width: 5.5rem;
-		transition: $transition--extra-fast;
-		svg {
-			fill: $color-black-tundora;
-			transition: $transition--extra-fast;
-		}
-		&:hover {
-			background-color: $color-black-tundora;
-			svg {
-				fill: $color-white;
-			}
-		}
-	}
-	.hooper-prev {
-		left: -10rem;
-	}
-	.hooper-next {
-		right: -10rem;
-	}
+	@include sliderNav;
 }

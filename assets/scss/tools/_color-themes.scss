@@ -1,0 +1,27 @@
+
+
+.dark-section{
+  background-color: $color-black-test; 
+  &::before{
+    background-color: $color-black-test; 
+  } 
+  p,a,h2,h3,h4, span{
+    color:$color-white;
+  }
+  // slider nav
+	.hooper-prev, .hooper-next{
+		border: 1px solid $color-white;
+    &::before{
+			background-color: $color-white;
+		}
+		svg{
+			fill:$color-white;
+		}
+		&:hover{
+			background-color: $color-black-test;
+			svg{
+				fill:$color-black-test;
+			}
+		}
+	}
+}

@@ -1,5 +1,5 @@
 <template>
-	<div class="collaborators" v-if="!$fetchState.pending">
+	<div class="collaborators dark-section" v-if="!$fetchState.pending">
 		<div class="grid-r">
 			<div class="grid-c-13-offset-3 grid-remove-offset-sm">
 				<h2 class="collaborators__title">Samarbejdspartnere</h2>
@@ -65,7 +65,5 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" scoped>
-@import "./collaboratorsComponent.scss";
-</style>
+<style lang="scss" src="./collaboratorsComponent.scss"></style>
 <script src="./collaboratorsComponent.ts"></script>

@@ -3,8 +3,7 @@
 @import "~/assets/scss/tools/_mixins.scss";
 .recommentations {
 	position: relative;
-	background-color: $color-gray-alabaster;
-	padding: 8rem 0 6rem;
+	padding: clamp(8rem, 10vw, 15rem) 8rem clamp(6rem, 11vw, 12rem) 6rem;
 
 	&::before {
 		content: "";
@@ -12,7 +11,6 @@
 		top: 0;
 		left: -35vw;
 		right: -35vw;
-		background-color: $color-gray-alabaster;
 		height: 100%;
 		z-index: -1;
 	}
@@ -51,32 +49,12 @@
 	// slider
 	&__slider {
 		margin: 3rem 6vw;
-		.hooper-slide{
+		.hooper-slide {
 			cursor: pointer;
 		}
-	}
-	// slider nav
-	.hooper-prev, .hooper-next{
-		border: 1px solid $color-black-tundora;
-		border-radius: 50%;
-		height: 5.5rem;
-		width: 5.5rem;
-		transition: $transition--extra-fast;
-		svg{
-			fill:$color-black-tundora;
-			transition: $transition--extra-fast;
-		}
-		&:hover{
-			background-color: $color-black-tundora;
-			svg{
-				fill:$color-white;
-			}
+		.hooper-list {
+			width: 99%;
 		}
 	}
-	.hooper-prev {
-		left: -10rem;
-	}
-	.hooper-next {
-		right: -10rem;
-	}
+	@include sliderNav;
 }

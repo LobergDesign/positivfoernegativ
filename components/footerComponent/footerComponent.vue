@@ -73,7 +73,5 @@
 		</footer>
 	</div>
 </template>
-<style lang="scss" scoped>
-@import "./footerComponent.scss";
-</style>
+<style lang="scss" src="./footerComponent.scss"></style>
 <script src="./footerComponent.ts"></script>

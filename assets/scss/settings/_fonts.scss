@@ -12,15 +12,19 @@
 	font-family: "Work Sans", sans-serif;
 	font-weight: 300;
 }
-@mixin font-sans-pro {
+@mixin font-main-regular {
 	font-family: "Work Sans", sans-serif;
 	font-weight: 400;
 }
-@mixin font-sans-pro-medium {
+@mixin font-main-medium {
+	font-family: "Work Sans", sans-serif;
+	font-weight: 500;
+}
+@mixin font-main-semibold {
 	font-family: "Work Sans", sans-serif;
 	font-weight: 600;
 }
-@mixin font-sans-pro-bold {
+@mixin font-main-bold {
 	font-family: "Work Sans", sans-serif;
 	font-weight: 700;
 }

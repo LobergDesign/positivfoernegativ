@@ -48,7 +48,7 @@
 	}
 	&__nav-list-item a {
 		position: relative;
-		@include font-sans-pro;
+		@include font-main-regular;
 		display: block;
 		padding: 2rem clamp(1.2rem, 1.5vw, 3rem);
 		font-size: 1.6rem;
@@ -76,7 +76,7 @@
 		}
 	}
 	&__nav-list-item a:not(.btn).nuxt-link-exact-active {
-		@include font-sans-pro-medium;
+		@include font-main-semibold;
 		&:after {
 			opacity: 1;
 			transform: translate3d(0, -1.5rem, 0);
