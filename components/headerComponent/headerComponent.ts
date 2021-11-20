@@ -1,13 +1,12 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
-import { IImage, IMenu, IMenuItems } from "~/interfaces/global";
 @Component({
 	name: "headerComponent",
 })
 export default class HeaderComponent extends Vue {
-	@Prop({ type: Object as () => IMenu, required: true })
-	readonly menuData!: IMenu;
-	public menuList: IMenuItems[] = this.menuData.mainMenuCollection || [];
-	public logo: IImage = this.menuData.logo || {};
+	@Prop({ type: Object as () => NLayout.IMenu, required: true })
+	readonly menuData!: NLayout.IMenu;
+	public menuList: NLayout.IMenuItems[] = this.menuData.mainMenuCollection || [];
+	public logo: NGlobal.IImage = this.menuData.logo || {};
 	public isMenuActive: boolean = false;
 
 	public toggleMenu() {
@@ -29,13 +28,13 @@ export default class HeaderComponent extends Vue {
 				// mousewheel up
 				if (direction == -1) {
 					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { yPercent: 0, duration: 0.6, ease: "power1.out" });
+						this.$gsap.to(headerItem, { yPercent: 0, duration: 0.5, ease: "power1.out" });
 					}
 				}
 				// mousewheel down
 				if (direction === 1) {
 					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { yPercent: -100, duration: 0.6, ease: "power1.out" });
+						this.$gsap.to(headerItem, { yPercent: -100, duration: 0.5, ease: "power1.out" });
 					}
 				}
 			},

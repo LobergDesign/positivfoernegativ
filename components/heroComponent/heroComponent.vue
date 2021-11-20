@@ -22,5 +22,7 @@
 		</div>
 	</section>
 </template>
-<style lang="scss" src="./heroComponent.scss"></style>
+<style lang="scss" scoped>
+@import "./heroComponent.scss";
+</style>
 <script src="./heroComponent.ts"></script>

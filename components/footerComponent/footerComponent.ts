@@ -1,5 +1,4 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
-import { IFooterObject } from "~/interfaces/global";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //@ts-ignore
 import SvgFacebook from "~/assets/svg/facebook.svg?inline";
@@ -19,8 +18,8 @@ import SvgYoutube from "~/assets/svg/youtube.svg?inline";
 	},
 })
 export default class FooterComponent extends Vue {
-	@Prop({ type: Object as () => IFooterObject, required: true })
-	readonly footerData!: IFooterObject;
+	@Prop({ type: Object as () => NLayout.IFooterObject, required: true })
+	readonly footerData!:NLayout.IFooterObject;
 
 	public data = this.footerData.footerObject || {};
 	public toHtmlString(content: any) {

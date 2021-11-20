@@ -1,6 +1,4 @@
-import { ISeo } from "~/interfaces/global";
-
-export function head(seoObject: ISeo) {
+export function head(seoObject: NGlobal.ISeo) {
 
     const type = seoObject?.metaOgtype ? seoObject?.metaOgtype : "website";
     

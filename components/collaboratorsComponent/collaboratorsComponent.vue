@@ -65,5 +65,7 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./collaboratorsComponent.scss"></style>
+<style lang="scss" scoped>
+@import "./collaboratorsComponent.scss";
+</style>
 <script src="./collaboratorsComponent.ts"></script>

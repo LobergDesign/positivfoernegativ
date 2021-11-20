@@ -48,5 +48,7 @@
 		</div>
 	</header>
 </template>
-<style lang="scss" src="./headerNavigation.scss"></style>
+<style lang="scss" scoped>
+@import "./headerNavigation.scss";
+</style>
 <script src="./headerComponent.ts"></script>

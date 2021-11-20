@@ -13,7 +13,7 @@ export default function (ctx: Context, inject: Inject) {
 	const getData = async (query: string, preview: object = isPreview) => {
 		try {
 			return handleResponse(await client.default.request(query, preview));
-		} catch (error: any) {
+		} catch (error: NDataFetch.IError | any) {
 			return getErrorResponse(error);
 		}
 	};
@@ -22,14 +22,14 @@ export default function (ctx: Context, inject: Inject) {
 		const variables = { slug: routePath, isPreview: setPreviewBool };
 		try {
 			return handleResponse(await client.default.request(query, variables));
-		} catch (error: any) {
+		} catch (error: NDataFetch.IError | any) {
 			return getErrorResponse(error);
 		}
 	};
 
 	// create response function to handle errors
-	const handleResponse = async (response: any) => {
-		const data = await response;
+	const handleResponse = async (response: NDataFetch.IResponse) => {
+		const data = response;
 		const { errors, status } = response;
 		return {
 			data,
@@ -39,7 +39,7 @@ export default function (ctx: Context, inject: Inject) {
 	};
 
 	// catch error
-	const getErrorResponse = (error: any) => {
+	const getErrorResponse = (error: NDataFetch.IError) => {
 		return {
 			ok: false,
 			status: 500,

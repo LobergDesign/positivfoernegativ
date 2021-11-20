@@ -2,12 +2,11 @@ import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 import { head } from "~/utils/seo";
 import { query } from "~/queries/contact";
-import { ISeo } from "~/interfaces/global";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 @Component
 export default class ContactPage extends Vue {
-	private seo: ISeo = {};
+	private seo: NGlobal.ISeo = {};
 	head() {
 		return head(this.seo);
 	}
@@ -18,7 +17,7 @@ export default class ContactPage extends Vue {
 
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(query);
-		const responseData = response.data;
+		const responseData = response.data as NDataFetch.IPages;
 		if(!responseData?.contactPage){
 			return error({
 				statusCode: response.status,

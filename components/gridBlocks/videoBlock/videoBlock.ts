@@ -1,5 +1,4 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
-import { IVideoBlock } from "~/interfaces/global";
 //@ts-ignore
 import lazyframe from "lazyframe";
 //@ts-ignore
@@ -12,8 +11,8 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 	},
 })
 export default class VideoBlock extends Vue {
-	@Prop({ type: Object as () => IVideoBlock, required: true })
-	readonly blockData!: IVideoBlock;
+	@Prop({ type: Object as () => NComponents.IVideoBlock, required: true })
+	readonly blockData!: NComponents.IVideoBlock;
 
 	public isReady: boolean = false;
 	public isPlayerActive: boolean = false;
