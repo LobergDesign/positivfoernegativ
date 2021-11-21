@@ -1,5 +1,5 @@
 @import "~assets/scss/tools/_mixins.scss";
-$hero-spacing: clamp(5rem, 5.5vw, 8rem);
+$hero-spacing: clamp(5rem, 5vw, 12rem);
 .hero {
 	margin-top: $hero-spacing;
 	margin-bottom: $hero-spacing;
@@ -10,5 +10,8 @@ $hero-spacing: clamp(5rem, 5.5vw, 8rem);
 	&__image {
 		margin-top: 4rem;
 		width: 100%;
+	}
+	&__bodytext{
+		max-width: 850px;
 	}
 }

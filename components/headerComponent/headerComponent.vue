@@ -4,8 +4,8 @@
 			<div class="grid-c-2 grid-c-md-16 flex-vertical-center">
 				<nuxt-link to="/">
 					<nuxt-img
-						width="85"
-						height="67"
+						width="100"
+						height="80"
 						:src="logo.url + '?w=85&fm=webp'"
 						:alt="logo.title"
 						class="header__logo"

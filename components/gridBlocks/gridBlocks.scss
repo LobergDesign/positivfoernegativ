@@ -1,6 +1,6 @@
 .grid-blocks {
 	&__item {
-		margin-bottom: clamp(8rem, 10vw, 10rem);
+		margin-bottom: clamp(8rem, 11vw, 17rem);
 	}
 	&__item:last-child.LayoutRecommendations {
 		margin-bottom: 0;

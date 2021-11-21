@@ -30,7 +30,6 @@
 		</ul>
 	</div>
 </template>
-<style lang="scss" scoped>
-@import "./coachingBlock.scss";
+<style lang="scss" src="./coachingBlock.scss">
 </style>
 <script src="./coachingBlock.ts"></script>

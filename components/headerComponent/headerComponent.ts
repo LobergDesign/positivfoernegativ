@@ -17,6 +17,13 @@ export default class HeaderComponent extends Vue {
 	private $gsap!: any;
 	private $ScrollTrigger!: any;
 
+	// gsap settings
+	private gsapEase: string = "power3.out";
+
+
+	private gsapTo(target: HTMLElement, yPercent: number, duration: number) {
+		return this.$gsap.to(target, { yPercent: yPercent, duration: duration, ease: this.gsapEase });
+	}
 	private controlHeader() {
 		const initScrolltrigger = this.$ScrollTrigger.create({
 			start: "top",
@@ -24,18 +31,12 @@ export default class HeaderComponent extends Vue {
 				const { direction } = self;
 				// header element
 				const headerItem = this.$refs.header as HTMLElement;
+				if (!this.isMenuActive) {
+					// mousewheel down
+					direction === -1 && this.gsapTo(headerItem, 0, 0.8);
 
-				// mousewheel up
-				if (direction == -1) {
-					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { yPercent: 0, duration: 0.5, ease: "power1.out" });
-					}
-				}
-				// mousewheel down
-				if (direction === 1) {
-					if (!this.isMenuActive) {
-						this.$gsap.to(headerItem, { yPercent: -100, duration: 0.5, ease: "power1.out" });
-					}
+					// mousewheel up
+					direction === 1 && this.gsapTo(headerItem, -100, 1);
 				}
 			},
 		});
@@ -44,6 +45,10 @@ export default class HeaderComponent extends Vue {
 	}
 
 	public mounted() {
-		this.controlHeader();
+		this.$nextTick(() => {
+			setTimeout(() => {
+				this.controlHeader();
+			}, 1000);
+		})
 	}
 }

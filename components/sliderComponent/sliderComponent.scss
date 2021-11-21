@@ -1,5 +1,6 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~assets/scss/tools/_mixins.scss";
+@import "~assets/scss/settings/_fonts.scss";
 
 .slider {
 	margin-bottom: 10rem;
@@ -47,6 +48,7 @@
 			width: 25rem;
 			height: 5rem;
 			a {
+			
 				width: 100%;
 				padding: 1.25rem 0;
 				cursor: pointer;
@@ -66,6 +68,7 @@
 		p {
 			margin: 0;
 			font-size: 1.5rem;
+			@include font-main-medium;
 		}
 	}
 }

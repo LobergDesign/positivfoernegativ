@@ -40,7 +40,7 @@
 	// logo
 	&__logo {
 		margin-top: 1rem;
-		max-width: 8.5rem;
+		width: clamp(8rem, 8vw, 9rem);
 	}
 	// nav
 	&__nav-list-item {

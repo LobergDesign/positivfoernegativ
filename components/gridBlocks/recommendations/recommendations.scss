@@ -21,6 +21,7 @@
 		display: inline;
 		p {
 			display: inline;
+			font-size: clamp(1.5rem, 8vw, 1.8rem);
 		}
 	}
 	&__list {
