@@ -42,13 +42,7 @@
 							<label>Email: <input type="email" name="email" required /></label>
 						</p>
 						<p>
-							<label
-								>Emne:
-								<select name="subject[]" multiple>
-									<option value="Foredrag">Foredrag</option>
-									<option value="Mentalcoaching">Mentalcoaching</option>
-								</select></label
-							>
+							<label>Emne: <input type="text" name="Emne" /></label>
 						</p>
 						<p>
 							<label>Besked: <textarea name="message"></textarea></label>
