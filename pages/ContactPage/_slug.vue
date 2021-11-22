@@ -31,29 +31,32 @@
 
 			<div class="grid-c-12">
 				<div class="form">
-					<form name="Kontaktformular" method="POST" netlify>
+					<form name="Kontaktformular" method="POST" netlify netlify-honeypot="bot-field">
 						<p>
-							<label>Your Name: <input type="text" name="name" /></label>
+							<label>Navn: <input type="text" name="name" required /></label>
 						</p>
 						<p>
-							<label>Your Email: <input type="email" name="email" /></label>
+							<label>Telefonnummer: <input type="tel" name="phone" /></label>
+						</p>
+						<p>
+							<label>Email: <input type="email" name="email" required /></label>
 						</p>
 						<p>
 							<label
-								>Your Role:
-								<select name="role[]" multiple>
-									<option value="leader">Leader</option>
-									<option value="follower">Follower</option>
+								>Emne:
+								<select name="subject[]" multiple>
+									<option value="Foredrag">Foredrag</option>
+									<option value="Mentalcoaching">Mentalcoaching</option>
 								</select></label
 							>
 						</p>
 						<p>
-							<label>Message: <textarea name="message"></textarea></label>
+							<label>Besked: <textarea name="message"></textarea></label>
 						</p>
 						<p>
-							<button type="submit">Send</button>
+							<button type="submit">Send besked</button>
 						</p>
-						<input type="hidden" name="Kontaktformular" value="contact">
+						<input type="hidden" name="Kontaktformular" value="contact" />
 					</form>
 				</div>
 			</div>
