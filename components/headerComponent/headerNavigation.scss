@@ -3,8 +3,7 @@
 @import "~/assets/scss/settings/_fonts.scss";
 
 .header {
-	max-width: 1800px;
-	width: 92vw;
+	@include grid-wrap-max;
 	transform: translateX(-50%);
 	left: 50%;
 	position: fixed;

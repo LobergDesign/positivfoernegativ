@@ -5,6 +5,11 @@
 	width: 80vw;
 	margin: 0 auto;
 }
+@mixin grid-wrap-max {
+	max-width: 1800px;
+	width: 92vw;
+	margin: 0 auto;
+}
 
 //-------- Media queries -------//
 @mixin sliderNav {

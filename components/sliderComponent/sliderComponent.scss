@@ -3,14 +3,13 @@
 @import "~assets/scss/settings/_fonts.scss";
 
 .slider {
-	margin-bottom: 10rem;
+	
 	cursor: grab;
-	height: clamp(60rem, 80vw, 75vh);
+	height: clamp(50rem, 52vw, 75vh);
 	overflow: hidden;
 	position: relative;
-	max-width: 1800px;
-	width: 92vw;
-	left: -200px;
+	@include grid-wrap-max;
+	margin-bottom: clamp(6rem, 9vw, 10rem);
 
 	&__image {
 		position: absolute;
@@ -48,7 +47,6 @@
 			width: 25rem;
 			height: 5rem;
 			a {
-			
 				width: 100%;
 				padding: 1.25rem 0;
 				cursor: pointer;
@@ -134,9 +132,4 @@
 		}
 	}
 }
-@include viewport-max {
-	.slider {
-		left: -5vw;
-		width: 90vw;
-	}
-}
+

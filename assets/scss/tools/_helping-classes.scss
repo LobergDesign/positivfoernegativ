@@ -32,14 +32,18 @@
 .position-realtive {
 	position: relative;
 }
-.on-top{
-  position: relative;
-  z-index: 1;
+.on-top {
+	position: relative;
+	z-index: 1;
 }
-.overflow-hidden{
+.overflow-hidden {
 	overflow: hidden;
 }
-@include viewport-large{
+// spacing
+.spacing-b-medium {
+	margin-bottom: clamp(6rem, 7vw, 10rem);
+}
+@include viewport-large {
 	.flex-space-between-md {
 		justify-content: space-between;
 	}

@@ -23,7 +23,5 @@
 		</div>
 	</section>
 </template>
-<style lang="scss" scoped>
-@import "./heroSplitComponent.scss";
-</style>
+<style lang="scss" src="./heroSplitComponent.scss"></style>
 <script src="./heroSplitComponent.ts"></script>

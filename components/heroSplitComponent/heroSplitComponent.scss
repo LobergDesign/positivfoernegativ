@@ -1,6 +1,8 @@
 
 
+@import "~/assets/scss/tools/_mixins.scss";
 .hero-split {
+    @include grid-wrap-max;
     min-height: 20vh;
 	margin-bottom: 5vw;
     img{
@@ -20,8 +22,9 @@
         max-height: 80vh;
        img{
            height: 100%;
-           min-height: 100%;
            min-width: 50vw;
+           min-height: 100%;
        } 
     }
 }
+

@@ -27,7 +27,6 @@
 			margin-left: 1rem;
 			margin-bottom: -0.3rem;
 			background: $color-gray-silver;
-			opacity: .7;
 			animation: scrolldown 2.6s $transition--cubic forwards infinite;
 		}
 	}
@@ -37,7 +36,6 @@
 		font-size: clamp(1.4rem, 8vw, 1.5rem);
 		letter-spacing: 0.5px;
 		color: $color-gray-silver;
-		opacity: .7;
 	}
 }
 @keyframes scrolldown {
