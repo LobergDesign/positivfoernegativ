@@ -31,7 +31,7 @@
 
 			<div class="grid-c-12">
 				<div class="form">
-					<form name="contact" method="POST" data-netlify="true">
+					<form name="Kontaktformular" method="POST" netlify>
 						<p>
 							<label>Your Name: <input type="text" name="name" /></label>
 						</p>
@@ -53,6 +53,7 @@
 						<p>
 							<button type="submit">Send</button>
 						</p>
+						<input type="hidden" name="Kontaktformular" value="contact">
 					</form>
 				</div>
 			</div>
