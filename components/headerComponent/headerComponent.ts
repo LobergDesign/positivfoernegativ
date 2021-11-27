@@ -33,13 +33,14 @@ export default class HeaderComponent extends Vue {
 				const headerItem = this.$refs.header as HTMLElement;
 				if (!this.isMenuActive) {
 					// mousewheel down
-					direction === -1 && this.gsapTo(headerItem, 0, 0.8);
+					direction === 1 && this.gsapTo(headerItem, -100, 0.8);
 
 					// mousewheel up
-					direction === 1 && this.gsapTo(headerItem, -100, 1);
+					direction === -1 && this.gsapTo(headerItem, 0, 1);
 				}
 			},
 		});
+
 
 		initScrolltrigger.enable();
 	}

@@ -1,7 +1,7 @@
 <template>
 	<header class="header" ref="header">
 		<div class="grid-r flex-space-between-md">
-			<div class="grid-c-2 grid-c-md-16 flex-vertical-center">
+			<div class="grid-c-1 grid-c-md-16 flex-vertical-center">
 				<nuxt-link to="/">
 					<nuxt-img
 						width="100"
@@ -21,7 +21,7 @@
 					<span></span>
 				</button>
 			</div>
-			<div class="grid-c-12">
+			<div class="grid-c-14">
 				<nav class="header__nav full-height">
 					<ul
 						class="reset-ul header__nav-list full-height flex-space-around flex-center-center"
@@ -40,7 +40,7 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="grid-c-2 flex-end flex-vertical-center">
+			<div class="grid-c-1 flex-end flex-vertical-center">
 				<div class="header__nav-list-item">
 					<nuxt-link :to="'/kontakt/'" class="btn"> Kontakt </nuxt-link>
 				</div>

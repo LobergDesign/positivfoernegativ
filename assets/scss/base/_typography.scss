@@ -1,6 +1,6 @@
 ﻿// local mixinx
 @mixin default-text-style {
-	font-size: clamp(1.4rem, 8vw, 1.7rem);
+	font-size: clamp(1.4rem, 1.2vw, 1.65rem);
 	color: $color-black-tundora;
 	line-height: 1.65;
 	margin-top: 0.8rem;
@@ -15,7 +15,7 @@
 }
 @mixin headline-2 {
 	@include font-pt-serif;
-	font-size: clamp(3rem, 3vw, 4.2rem);
+	font-size: clamp(3rem, 3vw, 4rem);
 	margin-top: 0.6rem;
 	margin-bottom: 1.8rem;
 	line-height: 1.4;

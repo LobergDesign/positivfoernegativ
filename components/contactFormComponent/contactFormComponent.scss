@@ -1,0 +1,11 @@
+// @import "~/assets/scss/settings/_vars.scss";
+// @import "~/assets/scss/settings/_fonts.scss";
+// @import "~/assets/scss/tools/_mixins.scss";
+
+.contact-form {
+	padding: clamp(7rem, 6vw, 10rem);
+
+	h3 {
+		margin-bottom: clamp(4rem, 3vw, 6rem);
+	}
+}

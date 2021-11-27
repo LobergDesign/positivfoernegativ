@@ -28,32 +28,10 @@
 					>
 				</div>
 			</div>
+		</div>
 
-			<div class="grid-c-12">
-				<div class="form">
-					<form name="Kontaktformular" method="POST" netlify netlify-honeypot="bot-field">
-						<p>
-							<label>Navn: <input type="text" name="name" required /></label>
-						</p>
-						<p>
-							<label>Telefonnummer: <input type="tel" name="phone" /></label>
-						</p>
-						<p>
-							<label>Email: <input type="email" name="email" required /></label>
-						</p>
-						<p>
-							<label>Emne: <input type="text" name="Emne" /></label>
-						</p>
-						<p>
-							<label>Besked: <textarea name="message"></textarea></label>
-						</p>
-						<p>
-							<button type="submit">Send besked</button>
-						</p>
-						<input type="hidden" name="Kontaktformular" value="contact" />
-					</form>
-				</div>
-			</div>
+		<ContactFormComponent />
+		<div class="grid-w">
 			<div class="grid-r">
 				<div class="grid-c-8 spacing-b-medium">
 					<div v-if="data.pricesInformation" v-html="toHtmlString(data.pricesInformation.json)"></div>
