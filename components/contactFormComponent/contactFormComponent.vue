@@ -4,8 +4,13 @@
 			<div class="grid-r">
 				<div class="grid-c-10-offset-3">
 					<h3>Skriv en besked</h3>
-					<div id="successNoti" style="display: none">
-						<h2>in lineslkfnsdlkf sdf</h2>
+					<div id="simple-contact-form-succes" style="display: none">
+						<h2>Tak for din besked</h2>
+						<p>Jeg gennemgår din besked og vender tilbage indenfor 2-4 hverdage.</p>
+					</div>
+					<div id="simple-contact-form-error" style="display: none">
+						<h2>Ups der skette en fejl</h2>
+						<p>Prøv igen senere</p>
 					</div>
 					<form name="simpleContactForm" method="POST" data-netlify="true" id="simple-contact-form">
 						<div class="grid-r">
@@ -19,7 +24,6 @@
 							<div class="grid-c-8">
 								<input type="email" placeholder="Email" name="email" required />
 							</div>
-
 							<div class="grid-c-8">
 								<input type="text" placeholder="Emne" name="Emne" />
 							</div>
@@ -32,58 +36,6 @@
 							<input type="hidden" name="form-name" value="simpleContactForm" />
 						</div>
 					</form>
-					<!-- <form name="customcontactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-						<input type="text" placeholder="Navn" name="name" required />
-
-						<button class="btn" type="submit">Send besked</button>
-					</form> -->
-
-					<!-- <form
-						name="simpleContactForm"
-						method="POST"
-						data-netlify="true"
-						id="simple-contact-form"
-						class="contact-form"
-					>
-						<p class="form-row">
-							<label id="contact-form-name-label" for="contact-form-name" class="form-label">Name</label>
-							<input
-								type="text"
-								name="name"
-								id="contact-form-name"
-								aria-labelledby="contact-form-name-label"
-								class="form-input"
-							/>
-						</p>
-						<p class="form-row">
-							<label id="contact-form-email-label" for="contact-form-email" class="form-label"
-								>Email address</label
-							>
-							<input
-								type="email"
-								name="email"
-								id="contact-form-email"
-								aria-labelledby="contact-form-email-label"
-								class="form-input"
-							/>
-						</p>
-						<p class="form-row">
-							<label id="contact-form-message-label" for="contact-form-message" class="form-label"
-								>Message</label
-							>
-							<textarea
-								name="message"
-								id="contact-form-message"
-								aria-labelledby="contact-form-message-label"
-								class="form-textarea"
-								rows="7"
-							></textarea>
-						</p>
-						<p class="form-row form-submit">
-							<button type="submit" class="button">Send Message</button>
-						</p>
-						<input type="hidden" name="form-name" value="simpleContactForm" />
-					</form> -->
 				</div>
 			</div>
 		</div>

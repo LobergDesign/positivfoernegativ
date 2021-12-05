@@ -9,6 +9,8 @@ export default class ContactForm extends Vue {
 
 
 		const form = document.getElementById("simple-contact-form") as HTMLFormElement;
+		const formSucces = document.getElementById("simple-contact-form-succes") as HTMLFormElement;
+		const formError = document.getElementById("simple-contact-form-error") as HTMLFormElement;
 		console.log("form", form);
 		if (form) {
 			form.addEventListener("submit", (event: Event) => {
@@ -18,12 +20,16 @@ export default class ContactForm extends Vue {
 					method: 'POST',
 					headers: { "Content-Type": "multipart/form-data" },
 					body: new URLSearchParams(formData as any).toString()
-				}).then(() => ntlFormSuccess()).catch((error) =>
-					alert(error))
+				}).then(() => formSuccesHandler()).catch((error) =>
+					formErrorHandler())
 			});
-			const ntlFormSuccess = () => {
+			const formSuccesHandler = () => {
 				form.reset();
-				document.getElementById("successNoti")!.style.display = "block";
+				formSucces!.style.display = "block";
+			}
+			const formErrorHandler = () => {
+				form.reset();
+				formError!.style.display = "block";
 			}
 		}
 
