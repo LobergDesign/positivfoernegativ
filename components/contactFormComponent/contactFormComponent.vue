@@ -31,12 +31,11 @@
 						</div>
 							<input type="hidden" name="Kontaktformular" value="Kontaktformular" />
 					</form> -->
-					<form name="kontaktformular" method="POST" netlify>
-						<input type="text" placeholder="Navn" name="name" required />
+					<form name="customcontactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+						<input type="text" placeholder="Navn" name="name" required>
 
 						<button class="btn" type="submit">Send besked</button>
-						<input type="hidden" name="kontaktformular" value="kontaktformularValue" />
-
+						<input type="hidden" name="kontaktformular" value="customcontactform">
 					</form>
 				</div>
 			</div>
