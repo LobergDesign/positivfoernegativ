@@ -4,6 +4,9 @@
 			<div class="grid-r">
 				<div class="grid-c-10-offset-3">
 					<h3>Skriv en besked</h3>
+					<div id="successNoti" style="display: none">
+						<h2>in lineslkfnsdlkf sdf</h2>
+					</div>
 					<form name="simpleContactForm" method="POST" data-netlify="true" id="simple-contact-form">
 						<div class="grid-r">
 							<div class="grid-c-8">
