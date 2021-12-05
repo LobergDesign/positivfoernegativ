@@ -28,11 +28,11 @@
 							</div>
 						</div>
 					</form> -->
-					<form name="customcontactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+					<!-- <form name="customcontactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
 						<input type="text" placeholder="Navn" name="name" required />
 
 						<button class="btn" type="submit">Send besked</button>
-					</form>
+					</form> -->
 				</div>
 			</div>
 		</div>
