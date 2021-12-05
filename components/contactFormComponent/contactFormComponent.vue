@@ -32,10 +32,11 @@
 							<input type="hidden" name="Kontaktformular" value="Kontaktformular" />
 					</form> -->
 					<form name="kontaktformular" method="POST" netlify>
-						<input type="hidden" name="kontaktformular" value="kontaktformular" />
 						<input type="text" placeholder="Navn" name="name" required />
 
 						<button class="btn" type="submit">Send besked</button>
+						<input type="hidden" name="kontaktformular" value="kontaktformularValue" />
+
 					</form>
 				</div>
 			</div>
