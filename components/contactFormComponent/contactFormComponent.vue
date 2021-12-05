@@ -4,7 +4,7 @@
 			<div class="grid-r">
 				<div class="grid-c-10-offset-3">
 					<h3>Skriv en besked til mig</h3>
-					<!-- <form name="Kontaktformular" method="POST" netlify netlify-honeypot="bot-field">
+					<form name="customcontactform" method="POST" netlify netlify-honeypot="bot-field">
 						<div class="grid-r">
 							<div class="grid-c-8">
 								<input type="text" placeholder="Navn" name="name" required />
@@ -25,16 +25,8 @@
 							</div>
 							<div class="grid-c-16">
 								<button class="btn" type="submit">Send besked</button>
-
-							
 							</div>
 						</div>
-							<input type="hidden" name="Kontaktformular" value="Kontaktformular" />
-					</form> -->
-					<form name="customcontactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-						<input type="text" placeholder="Navn" name="name" required>
-
-						<button class="btn" type="submit">Send besked</button>
 					</form>
 				</div>
 			</div>
