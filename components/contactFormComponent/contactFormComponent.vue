@@ -25,10 +25,9 @@
 							</div>
 							<div class="grid-c-16">
 								<button class="btn" type="submit">Send besked</button>
-
-								<input type="hidden" name="Kontaktformular" value="contact" />
 							</div>
 						</div>
+						<input type="hidden" name="formname" value="Kontaktformular" />
 					</form>
 				</div>
 			</div>
