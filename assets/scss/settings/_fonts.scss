@@ -8,16 +8,23 @@
 	font-weight: 700;
 }
 
-// pt sans
-@mixin font-sans-pro {
-	font-family: 'Source Sans Pro', sans-serif;
+@mixin font-main-light {
+	font-family: "Work Sans", sans-serif;
+	font-weight: 300;
+}
+@mixin font-main-regular {
+	font-family: "Work Sans", sans-serif;
 	font-weight: 400;
 }
-@mixin font-sans-pro-medium {
-	font-family: 'Source Sans Pro', sans-serif;
+@mixin font-main-medium {
+	font-family: "Work Sans", sans-serif;
+	font-weight: 500;
+}
+@mixin font-main-semibold {
+	font-family: "Work Sans", sans-serif;
 	font-weight: 600;
 }
-@mixin font-sans-pro-bold {
-	font-family: 'Source Sans Pro', sans-serif;
+@mixin font-main-bold {
+	font-family: "Work Sans", sans-serif;
 	font-weight: 700;
 }

@@ -6,12 +6,14 @@
 			:heroImage="data.image"
 			:heroSubtitle="data.subtitle"
 		/>
-		<ProcessListComponent
-			:processContentTitle="data.coachingProcessTitle"
-			:processContentList="data.coachingProcessCollection.items"
-		/>
-		<GridBlocks v-if="data.contentAreaCollection.items.length > 0" :gridContent="data.contentAreaCollection" />
-			<LazyCollaboratorsComponent v-if="data.showCollaborators" />
+		<div class="grid-w">
+			<ProcessListComponent
+				:processContentTitle="data.coachingProcessTitle"
+				:processContentList="data.coachingProcessCollection.items"
+			/>
+			<GridBlocks v-if="data.contentAreaCollection.items.length > 0" :gridContent="data.contentAreaCollection" />
+		</div>
+		<LazyCollaboratorsComponent v-if="data.showCollaborators" />
 	</main>
 </template>
 

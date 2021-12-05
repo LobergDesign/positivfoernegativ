@@ -14,7 +14,7 @@ export default {
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
 	publicRuntimeConfig: {
-		baseUrl: process.env.BASE_URL,
+		baseUrl: process.env.BASE_URL || "http://localhost:3000/",
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -89,6 +89,14 @@ export default {
 		routes: async () => await generate(),
 	},
 	/*
+	 ** add gsap
+	 */
+	gsap: {
+		extraPlugins: {
+			scrollTrigger: true,
+		},
+	},
+	/*
 	 ** add robots.txt to application
 	 */
 	robots: {
@@ -112,7 +120,7 @@ export default {
 	fontLoader: {
 		// Paste a google link here
 		url: {
-			google: "https://fonts.googleapis.com/css2?&family=Source+Sans+Pro:wght@400;600;700&family=PT+Serif:wght@400;700&display=swap",
+			google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
 		},
 
 		// Enable options
@@ -122,7 +130,7 @@ export default {
 	ssr: process.env.BASE_URL === "https://pfoern-preview.netlify.app/" ? false : true,
 	purgeCSS: {
 		// whitelist spicific classes
-		whitelist: ["is-active", "hooper-pagination"],
+		whitelist: ["is-active"],
 		// whitelist spicific classes and all that contains that naming
 		whitelistPatterns: [
 			/__layout/,

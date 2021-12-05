@@ -10,5 +10,7 @@
 		</section>
 	</div>
 </template>
-<style lang="scss" src="./gridBlocks.scss"></style>
+<style lang="scss" scoped>
+@import "./gridBlocks.scss";
+</style>
 <script src="./gridBlocks.ts"></script>

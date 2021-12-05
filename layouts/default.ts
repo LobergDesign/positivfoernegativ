@@ -1,14 +1,14 @@
 import { Vue, Component } from "nuxt-property-decorator";
-import { IFooterObject, IMenu } from "~/interfaces/global";
 import { globalQuery } from "~/queries/global";
 @Component
 export default class Default extends Vue {
-	public menuData: IMenu = {};
-	public footerData: IFooterObject = {};
+	public menuData: NLayout.IMenu = {};
+	public footerData: NLayout.IFooterObject = {};
 	async fetch() {
 		const response = await this.$nuxt.context.$dataApi.getData(globalQuery);
-		const mainMenuCollection = response?.data?.globalSettings?.mainMenuCollection;
-		const footerLinks = response?.data?.globalSettings?.footerLinksCollection?.items;
+		const rsp = response.data as NDataFetch.IPages;
+		const mainMenuCollection = rsp.globalSettings?.mainMenuCollection;
+		const footerLinks = rsp.globalSettings?.footerLinksCollection?.items;
 		const {
 			logo,
 			empowerMind,
@@ -23,7 +23,7 @@ export default class Default extends Vue {
 			youTube,
 			zipcodeAndCity,
 			cv
-		} = response.data.globalSettings;
+		} = rsp.globalSettings;
 		this.menuData = { mainMenuCollection, logo };
 		this.footerData = {
 			footerObject: {

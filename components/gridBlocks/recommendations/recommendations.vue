@@ -1,8 +1,13 @@
 <template>
-	<div class="recommentations">
+	<div class="recommentations dark-section">
 		<div class="grid-r">
 			<div class="grid-c-10-offset-3 grid-remove-offset-md">
-				<h2 class="recommentations__title" v-if="blockData.title">{{ blockData.title }}</h2>
+				<h2 class="recommentations__title" v-if="blockData.title">
+					<template v-if="blockData.recommendationsCollection.items.length > 1">{{
+						blockData.title
+					}}</template>
+					<template v-else>{{ removeLastTwoStr(blockData.title) }}</template>
+				</h2>
 				<div v-if="blockData.recommendationsCollection">
 					<ul
 						v-if="blockData.recommendationsCollection.items.length < 2"
@@ -55,7 +60,7 @@
 									}}</span>
 								</div>
 							</Slide>
-							 <hooper-navigation slot="hooper-addons"></hooper-navigation>
+							<hooper-navigation slot="hooper-addons"></hooper-navigation>
 						</Hooper>
 					</div>
 				</div>

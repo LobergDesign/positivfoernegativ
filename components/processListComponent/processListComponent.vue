@@ -30,5 +30,7 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./processListComponent.scss"></style>
+<style lang="scss" scoped>
+@import "./processListComponent.scss";
+</style>
 <script src="./processListComponent.ts"></script>

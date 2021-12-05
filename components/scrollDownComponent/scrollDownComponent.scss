@@ -1,0 +1,49 @@
+@import "~/assets/scss/settings/_vars.scss";
+// @import "~/assets/scss/settings/_fonts.scss";
+@import "~/assets/scss/tools/_mixins.scss";
+
+.scroll-down {
+	position: fixed;
+	top: 50%;
+	@include position-center-y;
+	left: 5rem;
+	z-index: 99;
+	transform-origin: left top;
+	transform: rotate(90deg) translateY(-50%);
+	&__wrap {
+		display: inline-block;
+		overflow: hidden;
+		background-color: $color-white;
+		height: 2rem;
+		width: 6rem;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0.7rem;
+			left: -120%;
+			width: 6rem;
+			height: 1px;
+			margin-left: 1rem;
+			margin-bottom: -0.3rem;
+			background: $color-gray-silver;
+			animation: scrolldown 2.6s $transition--cubic forwards infinite;
+		}
+	}
+	span {
+		display: inline-block;
+		white-space: nowrap;
+		font-size: clamp(1.4rem, 8vw, 1.5rem);
+		letter-spacing: 0.5px;
+		color: $color-gray-silver;
+	}
+}
+@keyframes scrolldown {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(210%);
+	}
+}

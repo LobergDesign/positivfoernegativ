@@ -1,37 +1,57 @@
-
 @import "~/assets/scss/settings/_vars.scss";
 //-------- Layout -------//
 @mixin grid-wrap {
-	max-width: 1600px;
+	max-width: 1400px;
+	width: 80vw;
+	margin: 0 auto;
+}
+@mixin grid-wrap-max {
+	max-width: 1700px;
 	width: 90vw;
 	margin: 0 auto;
 }
-// font mixing
-// @function strip-unit($value) {
-// 	@return $value / $value * 0 + 1;
-// }
 
-// @mixin fluid-type($min-font-size, $max-font-size) {
-// 	$u1: unit($grid-min-width);
-// 	$u2: unit($grid-max-width);
-// 	$u3: unit($min-font-size);
-// 	$u4: unit($max-font-size);
-
-// 	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-// 		& {
-// 			font-size: $min-font-size;
-// 			@media screen and (min-width: $grid-min-width) {
-// 				font-size: calc(
-// 					#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
-// 						((100vw - #{$grid-min-width}) / #{strip-unit($grid-max-width - $grid-min-width)})
-// 				);
-// 			}
-// 			@media screen and (min-width: $grid-max-width) {
-// 				font-size: $max-font-size;
-// 			}
-// 		}
-// 	}
-// }
+//-------- Media queries -------//
+@mixin sliderNav {
+	// slider nav
+	.hooper-prev,
+	.hooper-next {
+		border-radius: 50%;
+		height: 5.5rem;
+		width: 5.5rem;
+		&::before {
+			z-index: -1;
+			content: "";
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			opacity: 0;
+			transform: scale(0);
+			transition: transform $transition--extra-fast, opacity $transition--extra-fast;
+		}
+		svg {
+			transition: all $transition;
+		}
+		&:hover {
+			&::before {
+				opacity: 1;
+				transform: scale(1);
+			}
+			svg {
+				transform: scale(1.4);
+			}
+		}
+	}
+	.hooper-prev {
+		left: -10rem;
+	}
+	.hooper-next {
+		right: -10rem;
+	}
+}
 
 //-------- Media queries -------//
 // estra small phones
@@ -83,6 +103,12 @@
 
 // xl screens
 @mixin viewport-max {
+	// min-width: 1920px
+	@media only screen and (max-width: $viewport-max) {
+		@content;
+	}
+}
+@mixin viewport-min {
 	// min-width: 1920px
 	@media only screen and (min-width: $viewport-max) {
 		@content;

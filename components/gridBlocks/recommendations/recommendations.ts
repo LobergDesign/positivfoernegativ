@@ -1,7 +1,7 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //@ts-ignore
-import { Hooper, Slide,   Navigation as HooperNavigation } from "hooper";
+import { Hooper, Slide, Navigation as HooperNavigation } from "hooper";
 import "hooper/dist/hooper.css";
 @Component({
 	name: "Recommendations",
@@ -22,5 +22,9 @@ export default class Recommendations extends Vue {
 	public hooperSettings = {
 		itemsToShow: 1,
 		wheelControl: false,
-	};
+	}
+
+	public removeLastTwoStr(str: string) {
+		return (str.length > 2) && str.substring(0, str.length - 2);
+	}
 }

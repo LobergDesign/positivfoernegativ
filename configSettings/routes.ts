@@ -1,5 +1,4 @@
 import { GraphQLClient } from "graphql-request";
-import { IRoutes, ISitemapRoute } from "~/interfaces/global";
 import { query } from "../queries/sitemap";
 
 const siteStructure = async () => {
@@ -23,10 +22,10 @@ const siteStructure = async () => {
 	};
 };
 
-export async function extendRoutes(routes: IRoutes[], resolve: (...param: string[]) => Vue) {
+export async function extendRoutes(routes: NGlobal.IRoutes[], resolve: (...param: string[]) => Vue) {
 	const site = await siteStructure();
-	const sitemapMain: ISitemapRoute[] = site.sitemap;
-	const sitemapRoutes: IRoutes[] = [];
+	const sitemapMain: NGlobal.ISitemapRoute[] = site.sitemap;
+	const sitemapRoutes: NGlobal.IRoutes[] = [];
 
 	sitemapMain.forEach((route) => {
 		if (route.isCoachingSubpage === true) {
@@ -49,7 +48,7 @@ export async function extendRoutes(routes: IRoutes[], resolve: (...param: string
 
 export async function generate() {
 	const site = await siteStructure();
-	const sitemapMain: ISitemapRoute[] = site.sitemap;
+	const sitemapMain: NGlobal.ISitemapRoute[] = site.sitemap;
 	const routes: any = [];
 	sitemapMain.forEach((item: any) => {
 		if (item.isCoachingSubpage) {

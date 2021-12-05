@@ -1,0 +1,31 @@
+@mixin placeholder {
+	color: $color-white;
+	@include font-main-semibold;
+	font-size: 1.3rem;
+}
+form{
+	width: 100%;
+	
+}
+input, textarea {
+	width:100%;
+	padding: clamp(1rem, 1.5vw, 1.2rem) .5rem;
+	color: $color-white;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid $color-white;
+	margin-bottom: 1.5rem;
+	&::-webkit-input-placeholder {
+		@include placeholder;
+	}
+	&::-moz-placeholder {
+		@include placeholder;
+	}
+	&:-ms-input-placeholder {
+		@include placeholder;
+	}
+	&:-moz-placeholder {
+		@include placeholder;
+	}
+}

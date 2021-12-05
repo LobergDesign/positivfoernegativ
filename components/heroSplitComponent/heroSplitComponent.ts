@@ -1,5 +1,4 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
-import { IImage } from "~/interfaces/global";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 @Component({
@@ -10,8 +9,8 @@ export default class HeroSplitComponent extends Vue {
 	readonly heroHeadline!: Object | undefined;
 	@Prop({ type: Object})
 	readonly heroBodytext!: Object | undefined;
-	@Prop({ type: Object as () => IImage })
-	readonly heroImage!: IImage;
+	@Prop({ type: Object as () => NGlobal.IImage })
+	readonly heroImage!: NGlobal.IImage;
 	@Prop({ type: String || null })
 	readonly heroSubtitle!: string | null;
 	

@@ -48,5 +48,7 @@
 		</div>
 	</div>
 </template>
-<style lang="scss" src="./videoBlock.scss"></style>
+<style lang="scss" scoped>
+@import "./videoBlock.scss";
+</style>
 <script src="./videoBlock.ts"></script>

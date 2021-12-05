@@ -1,10 +1,9 @@
 <template>
 	<div class="app-wrap">
-		<div class="grid-w">
-			<LazyHeaderComponent v-if="!$fetchState.pending" :menuData="menuData" />
-			<div class="main-content">
-				<Nuxt />
-			</div>
+		<LazyHeaderComponent v-if="!$fetchState.pending" :menuData="menuData" />
+		<ScrollDownComponent />
+		<div class="main-content">
+			<Nuxt />
 		</div>
 		<LazyFooterComponent v-if="!$fetchState.pending" :footerData="footerData" />
 	</div>
