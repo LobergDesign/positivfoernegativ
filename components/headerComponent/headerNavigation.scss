@@ -49,8 +49,8 @@
 		position: relative;
 		@include font-main-regular;
 		display: block;
-		padding: 2rem clamp(1.2rem, 1.5vw, 3rem);
-		font-size: clamp(1.2rem, 1vw, 1.6rem);
+		padding: 2rem clamp(1.2rem, 1.4vw, 3rem);
+		font-size: clamp(1.2rem, 0.85vw, 1.6rem);
 		&::first-letter {
 			text-transform: uppercase;
 		}
