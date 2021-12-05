@@ -35,7 +35,6 @@
 						<input type="text" placeholder="Navn" name="name" required>
 
 						<button class="btn" type="submit">Send besked</button>
-						<input type="hidden" name="kontaktformular" value="customcontactform">
 					</form>
 				</div>
 			</div>
