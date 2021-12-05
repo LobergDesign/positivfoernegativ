@@ -72,6 +72,7 @@
 						<p class="form-row form-submit">
 							<button type="submit" class="button">Send Message</button>
 						</p>
+						<input type="hidden" name="form-name" value="simpleContactForm">
 					</form>
 				</div>
 			</div>
