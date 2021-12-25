@@ -18,7 +18,7 @@ export default class ContactPage extends Vue {
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(query);
 		const responseData = response.data as NDataFetch.IPages;
-		if(!responseData?.contactPage){
+		if (!responseData?.contactPage) {
 			return error({
 				statusCode: response.status,
 				message: response.errors

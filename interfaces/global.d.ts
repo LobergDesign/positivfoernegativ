@@ -26,6 +26,18 @@ declare namespace NGlobal {
 		name?: string;
 		isCoachingSubpage?: boolean;
 	}
+	///// GSAP
+	export interface IGsap {
+		to: Function;
+		registerPlugin: Function;
+		set: Function;
+		timeline: Function;
+		getProperty: Function;
+		fromTo: Function;
+		from: Function;
+		utils: any;
+		quickSetter: Function;
+	}
 }
 
 

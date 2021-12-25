@@ -105,7 +105,7 @@ export default {
 		Sitemap: process.env.BASE_URL + "/sitemap.xml",
 	},
 	/*
-	 ** sitemap settings
+	//  ** sitemap settings 
 	 */
 	sitemap: {
 		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
@@ -120,7 +120,9 @@ export default {
 	fontLoader: {
 		// Paste a google link here
 		url: {
-			google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
+			// google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
+			google: "https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Spectral:wght@300;400;600&display=swap",
+
 		},
 
 		// Enable options

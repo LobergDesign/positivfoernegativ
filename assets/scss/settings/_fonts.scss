@@ -1,30 +1,32 @@
-//-- pt serif --//
-@mixin font-pt-serif {
-	font-family: "PT Serif", serif;
+$main-font: "Karla", serif;
+$secondary-font: "Spectral", sans-serif;
+// pt serif
+@mixin font-secondary {
+	font-family: $secondary-font;
+	font-weight: 300;
+}
+@mixin font-secondary-semi-bold {
+	font-family: $secondary-font;
 	font-weight: 400;
 }
-@mixin font-pt-serif-bold {
-	font-family: "PT Serif", serif;
+@mixin font-secondary-bold {
+	font-family: $secondary-font;
 	font-weight: 700;
 }
 
-@mixin font-main-light {
-	font-family: "Work Sans", sans-serif;
-	font-weight: 300;
-}
 @mixin font-main-regular {
-	font-family: "Work Sans", sans-serif;
+	font-family: $main-font;
 	font-weight: 400;
 }
 @mixin font-main-medium {
-	font-family: "Work Sans", sans-serif;
+	font-family: $main-font;
 	font-weight: 500;
 }
 @mixin font-main-semibold {
-	font-family: "Work Sans", sans-serif;
+	font-family: $main-font;
 	font-weight: 600;
 }
 @mixin font-main-bold {
-	font-family: "Work Sans", sans-serif;
+	font-family: $main-font;
 	font-weight: 700;
 }
