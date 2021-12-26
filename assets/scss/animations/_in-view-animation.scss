@@ -1,0 +1,6 @@
+[data-animate-headline] {
+	overflow: hidden;
+	[data-animate-headline-in] {
+		will-change: transform;
+	}
+}

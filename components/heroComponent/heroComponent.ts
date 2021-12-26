@@ -1,5 +1,7 @@
 import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { inviewAnimationHeadline } from "~/utils/transitions";
+import io from "~/utils/io";
 
 @Component({
 	name: "heroComponent",
@@ -22,47 +24,13 @@ export default class HeroComponent extends Vue {
 	private $gsap!: any;
 
 	private animateHeadlines() {
-		const targets = document.querySelectorAll('[data-animate-headline]');
-		const initIo = (target: any) => {
-			const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const e = entry.target as HTMLElement
 
-						setTimeout(() => {
-							e.style.backgroundColor = "red";
-							console.log("intersection observer");
-						}, 1000);
-
-					}
-				})
-			});
-			io.observe(target);
-		}
-		targets.forEach(initIo);
-	}
-
-	private animateHeader() {
-
-
-
-		// const targets = document.querySelectorAll('[data-animate-in]');
-
-		// const initIo = (target: any) => {
-		// 	const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-		// 		entries.forEach(entry => {
-		// 			if (entry.isIntersecting) {
-		// 				const e = entry.target as HTMLElement
-
-		// 				e.style.backgroundColor = "red";
-
-		// 			}
-		// 		})
-		// 	});
-		// 	io.observe(target);
-		// }
-		// targets.forEach(initIo);
-
+		const targets = document.querySelectorAll('[data-animate-headline-in]');
+		// set initial value
+		targets.forEach((entry: any) => {
+			inviewAnimationHeadline(entry, this.$gsap).init();
+		});
+		io(targets, this.$gsap);
 	}
 
 	// get global application state
@@ -74,7 +42,6 @@ export default class HeroComponent extends Vue {
 	@Watch("isApplicationReady")
 	isAppReady() {
 		this.isApplicationReady && this.animateHeadlines();
-		console.log("isAppReady watch");
 	}
 
 	@Watch('$route', { immediate: true, deep: true })
@@ -82,13 +49,7 @@ export default class HeroComponent extends Vue {
 		if (this.isApplicationReady) {
 			this.$nextTick(() => {
 				this.animateHeadlines();
-				console.log("onUrlChange watch");
 			});
 		}
-	}
-	mounted() {
-		// this.$nextTick(() => {
-		// 	this.animateHeadlines();
-		// });
 	}
 }

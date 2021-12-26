@@ -21,7 +21,7 @@ export default class Default extends Vue {
 		const hideElements = () => {
 			this.$store.commit('application/initApplication')
 			tl.to(initWrapInit, {
-				yPercent: -100,
+				visibility: "hidden",
 				duration: 0,
 			});
 		};
@@ -56,7 +56,7 @@ export default class Default extends Vue {
 				.to(initBackdropSecond, {
 					yPercent: -100,
 					duration: 1.1,
-					delay: 0.25,
+					delay: 0.2,
 					ease: this.gsapEeasing,
 					onComplete: hideElements,
 				})

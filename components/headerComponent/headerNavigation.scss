@@ -54,7 +54,7 @@ $header-a-spacing: clamp(1.2rem, 1.3vw, 2rem);
 		@include font-main-regular;
 		display: block;
 		padding: 2rem $header-a-spacing;
-		font-size: clamp(1.2rem, 0.85vw, 1.6rem);
+		font-size: clamp(1.4rem, 1vw, 1.6rem);
 		&::first-letter {
 			text-transform: uppercase;
 		}

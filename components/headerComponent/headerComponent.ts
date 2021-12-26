@@ -1,4 +1,5 @@
 import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
+import { inviewHeaderAnimmation } from "~/utils/transitions";
 @Component({
 	name: "headerComponent",
 })
@@ -21,27 +22,16 @@ export default class HeaderComponent extends Vue {
 	//
 	@Watch("isApplicationReady")
 	isAppReady() {
-		this.isApplicationReady && this.headerInitAnimmation();
+		this.isApplicationReady && inviewHeaderAnimmation(this.$refs.header, this.$gsap);
+		console.log("object", this.isApplicationReady);
 	}
 	// gsap injection instance
-	private $gsap!: any;
+	private $gsap!: NGlobal.IGsap;
 	private $ScrollTrigger!: any;
 
 	// gsap settings
 	private gsapEeasing: string = "power4.out";
 
-	// initial animation
-	private headerInitAnimmation() {
-		const header = this.$refs.header;
-		const tl = this.$gsap.timeline();
-
-		tl.fromTo(header, { yPercent: -100 }, {
-			duration: 1,
-			yPercent: 0,
-			ease: this.gsapEeasing,
-		})
-
-	}
 
 	private gsapTo(target: HTMLElement, yPercent: number) {
 		return this.$gsap.to(target, { yPercent: yPercent, duration: 1.2, ease: this.gsapEeasing });
