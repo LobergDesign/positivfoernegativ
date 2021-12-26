@@ -1,4 +1,4 @@
-import { Vue, Component, Prop } from "nuxt-property-decorator";
+import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
 @Component({
 	name: "headerComponent",
 })
@@ -13,16 +13,38 @@ export default class HeaderComponent extends Vue {
 		this.isMenuActive = !this.isMenuActive;
 	}
 
+	// get global application state
+	get isApplicationReady() {
+		return this.$store.state.application.isApplicationReady;
+	}
+
+	//
+	@Watch("isApplicationReady")
+	isAppReady() {
+		this.isApplicationReady && this.headerInitAnimmation();
+	}
 	// gsap injection instance
 	private $gsap!: any;
 	private $ScrollTrigger!: any;
 
 	// gsap settings
-	private gsapEase: string = "power3.out";
+	private gsapEeasing: string = "power4.out";
 
+	// initial animation
+	private headerInitAnimmation() {
+		const header = this.$refs.header;
+		const tl = this.$gsap.timeline();
 
-	private gsapTo(target: HTMLElement, yPercent: number, duration: number) {
-		return this.$gsap.to(target, { yPercent: yPercent, duration: duration, ease: this.gsapEase });
+		tl.fromTo(header, { yPercent: -100 }, {
+			duration: 1,
+			yPercent: 0,
+			ease: this.gsapEeasing,
+		})
+
+	}
+
+	private gsapTo(target: HTMLElement, yPercent: number) {
+		return this.$gsap.to(target, { yPercent: yPercent, duration: 1.2, ease: this.gsapEeasing });
 	}
 	private controlHeader() {
 		const initScrolltrigger = this.$ScrollTrigger.create({
@@ -33,14 +55,13 @@ export default class HeaderComponent extends Vue {
 				const headerItem = this.$refs.header as HTMLElement;
 				if (!this.isMenuActive) {
 					// mousewheel down
-					direction === 1 && this.gsapTo(headerItem, -100, 0.8);
+					direction === 1 && this.gsapTo(headerItem, -100);
 
 					// mousewheel up
-					direction === -1 && this.gsapTo(headerItem, 0, 1);
+					direction === -1 && this.gsapTo(headerItem, 0);
 				}
 			},
 		});
-
 
 		initScrolltrigger.enable();
 	}

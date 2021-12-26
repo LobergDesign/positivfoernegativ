@@ -1,8 +1,7 @@
 <template>
 	<div class="app-wrap">
-		<transition appear :css="false" v-on:before-appear="customBeforeAppear">
-			<div class="app-init-effect">
-				<div class="app-init-effect__bg" id="init-bg"></div>
+		<transition appear :css="false" v-on:after-appear="customBeforeAppear">
+			<div class="app-init-effect" id="init-app-effect">
 				<div class="app-init-effect__logo" id="init-logo" v-if="!$fetchState.pending">
 					<nuxt-img
 						width="200"

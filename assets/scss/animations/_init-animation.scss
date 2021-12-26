@@ -8,14 +8,9 @@ $logo-backdrop-size: clamp(10rem, 14vw, 20rem);
 	width: 100vw;
 	z-index: 100;
 	overflow: hidden;
-	&__logo {
-		@include position-center;
-		height: $logo-backdrop-size;
-		width: $logo-backdrop-size;
-	}
-
+	will-change: transform;
 	// transition effect
-	&__bg,
+	&__logo,
 	&__backdrop,
 	&__backdrop-second {
 		position: fixed;
@@ -27,7 +22,13 @@ $logo-backdrop-size: clamp(10rem, 14vw, 20rem);
 		background-color: white;
 		will-change: transform;
 	}
-
+	&__logo {
+		img {
+			@include position-center;
+			height: $logo-backdrop-size;
+			width: $logo-backdrop-size;
+		}
+	}
 	&__backdrop {
 		top: 100vh;
 		background-color: $color-yellow-corn;

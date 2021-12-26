@@ -1,3 +1,4 @@
+
 import { Vue, Component } from "nuxt-property-decorator";
 import { globalQuery } from "~/queries/global";
 @Component
@@ -6,90 +7,69 @@ export default class Default extends Vue {
 	public footerData: NLayout.IFooterObject = {};
 	// gsap injection instance
 	private $gsap!: NGlobal.IGsap;
-	private gsapEeasing: string = "power2.inOut";
+	private gsapEeasing: string = "power4.out";
 
 	// main gsap handler
 	private gsapOnLoadHandler() {
-
 		const tl = this.$gsap.timeline();
-		const gsap = this.$gsap;
 
-		const initBg = "#init-bg";
+		const initWrapInit = "#init-app-effect";
 		const initLogo = "#init-logo";
 		const initBackdrop = "#init-backdrop";
 		const initBackdropSecond = "#init-backdrop-second";
 
 		const hideElements = () => {
-			tl.to('.app-init-effect', {
-				visibility: "hidden"
+			this.$store.commit('application/initApplication')
+			tl.to(initWrapInit, {
+				yPercent: -100,
+				duration: 0,
 			});
-			document.body.classList.add("is-ready");
 		};
 
 		const logo = () => {
-
-			gsap.fromTo(
-				initLogo,
-				{ yPercent: -50 },
-				{
-					yPercent: -100,
-					duration: .6,
-
-					ease: this.gsapEeasing,
-					// onComplete: hideElements,
-				}
-			);
-
+			tl.to(initLogo, {
+				duration: 2.8,
+				scale: 1,
+				yPercent: -20,
+				delay: .5,
+				ease: this.gsapEeasing,
+			})
+				.to(initLogo, {
+					duration: .1,
+					scale: 0,
+				});
 		};
 		const backdrop = () => {
-
-			gsap.fromTo(
-				initBackdrop,
-				{ yPercent: 50 },
-				{
+			tl.to(initBackdrop, { yPercent: 0 }) //start sequencing
+				.to(initBackdrop, {
 					yPercent: -100,
-					duration: 1.7,
-					ease: "power4.out",
-
-				}
-			);
+					duration: 1,
+					ease: this.gsapEeasing
+				})
+				.to(initBackdrop, {
+					yPercent: -200,
+					duration: 0.5,
+				});
 		};
 		const backdropSecond = () => {
-
-			gsap.fromTo(
-				initBackdropSecond,
-				{ yPercent: 0 },
-				{
+			tl.to(initBackdropSecond, { yPercent: 0 }) //start sequencing
+				.to(initBackdropSecond, {
 					yPercent: -100,
-					duration: 1.6,
-					delay: 0.55,
-					ease: "power4.out",
+					duration: 1.1,
+					delay: 0.25,
+					ease: this.gsapEeasing,
 					onComplete: hideElements,
-				}
-			);
+				})
+				.to(initBackdropSecond, {
+					yPercent: -100,
+					duration: 0,
+				});
 		};
-
-		// const lines = () => {
-		// 	const target = ".lines-effect";
-		// 	gsap.fromTo(
-		// 		target,
-		// 		{ xPercent: -100, visibility: "visible" },
-		// 		{
-		// 			xPercent: 0,
-		// 			duration: this.isSmallDevices() ? 0.35 : 1.3,
-		// 			stagger: 0.1,
-		// 			ease: this.gsapEeasing,
-		// 			delay: 0.3,
-		// 		}
-		// 	);
-		// };
 
 		return { logo, backdrop, backdropSecond };
 	}
 	// initial state
 	public customBeforeAppear() {
-		// console.log("ss", e);
-		// e.classList.add("get-startet");
 		this.gsapOnLoadHandler().logo();
 		this.gsapOnLoadHandler().backdrop();
 		this.gsapOnLoadHandler().backdropSecond();
