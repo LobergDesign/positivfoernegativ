@@ -2,6 +2,7 @@
 @import "~/assets/scss/settings/_vars.scss";
 @import "~/assets/scss/settings/_fonts.scss";
 
+$header-a-spacing: clamp(1.2rem, 1.3vw, 2rem);
 .header {
 	@include grid-wrap-max;
 	transform: translateX(-50%);
@@ -11,18 +12,18 @@
 	background-color: $color-white;
 	padding: 0;
 	z-index: 10;
+	height: $header-height;
 	will-change: transform;
-	&::before {
+	&::after {
 		content: "";
 		position: absolute;
-		left: -50vw;
+		left: 0;
 		bottom: 0;
-		width: 200vw;
-		height: 3rem;
-		z-index: -1;
-		box-shadow: $box-shadow;
+		width: 100%;
+		height: 1px;
+		background-color: #dcdbdd;
 	}
-	&::after {
+	&::before {
 		content: "";
 		position: absolute;
 		left: -50vw;
@@ -39,9 +40,12 @@
 	// logo
 	&__logo {
 		margin-top: 1rem;
-		width: clamp(8rem, 8vw, 9rem);
+		width: clamp(6rem, 7vw, 8rem);
 	}
 	// nav
+	&__nav-list {
+		height: $header-height;
+	}
 	&__nav-list-item {
 		display: inline-block;
 	}
@@ -49,8 +53,8 @@
 		position: relative;
 		@include font-main-regular;
 		display: block;
-		padding: 2rem clamp(1.2rem, 1.4vw, 3rem);
-		font-size: clamp(1.2rem, 0.85vw, 1.6rem);
+		padding: 2rem $header-a-spacing;
+		font-size: clamp(1.4rem, 1vw, 1.6rem);
 		&::first-letter {
 			text-transform: uppercase;
 		}
@@ -58,8 +62,8 @@
 			content: "";
 			position: absolute;
 			bottom: 0;
-			left: clamp(1.2rem, 1.5vw, 3rem);
-			right: clamp(1.2rem, 1.5vw, 3rem);
+			left: $header-a-spacing;
+			right: $header-a-spacing;
 			height: 0.2rem;
 			background-color: $color-yellow-corn;
 			opacity: 0;
@@ -85,6 +89,7 @@
 	.btn {
 		margin-left: 1.5rem;
 		padding: 0.5rem 2.5rem;
+		font-weight: 500;
 	}
 }
 // menu icon

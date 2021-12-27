@@ -1,0 +1,17 @@
+[data-animate-headline] {
+	overflow: hidden;
+}
+[data-animate-bodytext],
+[data-animate-headline-in],
+[data-animate-backdrop-in],
+[data-animate-backdrop-in-element] {
+	will-change: transform;
+}
+
+[data-animate-backdrop-in] {
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	background-color: $color-white;
+}

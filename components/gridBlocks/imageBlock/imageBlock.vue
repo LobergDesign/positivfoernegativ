@@ -1,7 +1,7 @@
 <template>
 	<div class="grid-r">
 		<div :class="fullscreen ? 'grid-c-16' : 'grid-c-14-offset-2'">
-			<div class="grid-r">
+			<div class="grid-r position-realtive">
 				<template v-if="imageItems.items.length > 1">
 					<div v-for="(item, index) in imageItems.items" :key="index" class="grid-c-sm-16 grid-c-8">
 						<nuxt-img

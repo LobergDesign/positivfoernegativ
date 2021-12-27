@@ -105,7 +105,7 @@ export default {
 		Sitemap: process.env.BASE_URL + "/sitemap.xml",
 	},
 	/*
-	 ** sitemap settings
+	//  ** sitemap settings 
 	 */
 	sitemap: {
 		hostname: process.env.BASE_URL || "https://www.pfoern.dk/",
@@ -120,7 +120,9 @@ export default {
 	fontLoader: {
 		// Paste a google link here
 		url: {
-			google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
+			// google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
+			google: "https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Spectral:wght@300;400;600&display=swap",
+
 		},
 
 		// Enable options
@@ -151,38 +153,7 @@ export default {
 	/*
 	 ** page transitions
 	 */
-	pageTransition: {
-		name: "slide",
-		mode: "out-in",
-		css: false,
 
-		beforeEnter(el: HTMLElement) {
-			//@ts-ignore
-			this.$gsap.set(el, {
-				opacity: 0,
-			});
-		},
-
-		enter(el: HTMLElement, done: boolean) {
-			//@ts-ignore
-			this.$gsap.to(el, {
-				opacity: 1,
-				duration: 0.5,
-				ease: "power1.inOut",
-				onComplete: done,
-			});
-		},
-
-		leave(el: HTMLElement, done: boolean) {
-			//@ts-ignore
-			this.$gsap.to(el, {
-				opacity: 0,
-				duration: 0.4,
-				ease: "power1.inOut",
-				onComplete: done,
-			});
-		},
-	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {

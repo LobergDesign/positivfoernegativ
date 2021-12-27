@@ -20,17 +20,17 @@ body {
 	@include font-main-regular;
 }
 .main-content {
-	padding-top: 8.5rem;
+	padding-top: $header-height + 0.01rem;
 }
-.app-wrap{
+.app-wrap {
 	overflow: hidden;
 }
 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
-.max-width{
+.max-width {
 	max-width: 100%;
 	width: auto;
 }

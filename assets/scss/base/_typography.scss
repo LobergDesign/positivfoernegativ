@@ -1,20 +1,20 @@
 ﻿// local mixinx
 @mixin default-text-style {
-	font-size: clamp(1.4rem, 1.2vw, 1.7rem);
+	font-size: clamp(1.5rem, 1.2vw, 1.7rem);
 	color: $color-black-tundora;
 	line-height: 1.65;
 	margin-top: 0.8rem;
 	margin-bottom: 1.8rem;
 }
 @mixin headline-1 {
-	@include font-pt-serif;
-	font-size: clamp(5rem, 4vw, 6.8rem);
+	@include font-secondary;
+	font-size: clamp(5rem, 4vw, 8rem);
 	line-height: 1.2;
 	margin-top: 1.5rem;
 	margin-bottom: 2.5rem;
 }
 @mixin headline-2 {
-	@include font-pt-serif;
+	@include font-secondary-semi-bold;
 	font-size: clamp(3rem, 3vw, 4rem);
 	margin-top: 0.6rem;
 	margin-bottom: 1.8rem;
@@ -27,7 +27,7 @@ h2,
 h3,
 .headline-3,
 h4 {
-	@include font-pt-serif;
+	@include font-secondary;
 	color: $color-black-tundora;
 	white-space: pre-wrap;
 }
@@ -46,7 +46,7 @@ h2,
 }
 h3,
 .headline-3 {
-	@include font-pt-serif;
+	@include headline-2;
 	font-size: clamp(2rem, 2vw, 3rem);
 	margin-top: 0.4rem;
 	margin-bottom: 1rem;
@@ -69,7 +69,7 @@ p {
 }
 p a {
 	@include default-text-style;
-	@include font-main-medium	;
+	@include font-main-medium;
 	color: $color-yellow-corn;
 	transition: color $transition--extra-fast;
 	&:hover {
@@ -81,7 +81,7 @@ ol li {
 	@include default-text-style;
 	padding-bottom: 0;
 	margin-bottom: 0;
-	p{
+	p {
 		padding-bottom: 0;
 		margin-bottom: 0;
 	}

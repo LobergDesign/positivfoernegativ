@@ -1,10 +1,9 @@
 // default
 $color-black: #000;
-$color-white: #ededed;
+$color-white: #f3f3f5;
 
-$color-black-tundora: #252525;
+$color-black-tundora: #0e101e;
 $color-black-mine-shaft: #313131;
-
 
 $color-yellow-corn: #eab200;
 // gray
@@ -22,6 +21,7 @@ $transition--extra-fast: 0.3s $transition--cubic;
 //------- Layout -------//
 $grid-max-width: 1920px;
 $grid-min-width: 370px;
+$header-height: 9rem;
 // utils
 $box-shadow: 0px 13px 17px -12px rgba(0, 0, 0, 0.3);
 // col sizes

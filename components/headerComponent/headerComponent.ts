@@ -1,4 +1,5 @@
-import { Vue, Component, Prop } from "nuxt-property-decorator";
+import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
+import { inviewHeaderAnimmation } from "~/utils/transitions";
 @Component({
 	name: "headerComponent",
 })
@@ -8,21 +9,32 @@ export default class HeaderComponent extends Vue {
 	public menuList: NLayout.IMenuItems[] = this.menuData.mainMenuCollection || [];
 	public logo: NGlobal.IImage = this.menuData.logo || {};
 	public isMenuActive: boolean = false;
-
+	// gsap injection instance
+	private $gsap!: NGlobal.IGsap;
+	private $ScrollTrigger!: any;
 	public toggleMenu() {
 		this.isMenuActive = !this.isMenuActive;
 	}
 
-	// gsap injection instance
-	private $gsap!: any;
-	private $ScrollTrigger!: any;
+	// get global application state
+	get isApplicationReady() {
+		return this.$store.state.application.isApplicationReady;
+	}
+
+	// watch
+	@Watch("isApplicationReady")
+	isAppReady() {
+		this.isApplicationReady && inviewHeaderAnimmation(this.$refs.header, this.$gsap);
+		console.log("object", this.isApplicationReady);
+	}
+
 
 	// gsap settings
-	private gsapEase: string = "power3.out";
+	private gsapEeasing: string = "power4.out";
 
 
-	private gsapTo(target: HTMLElement, yPercent: number, duration: number) {
-		return this.$gsap.to(target, { yPercent: yPercent, duration: duration, ease: this.gsapEase });
+	private gsapTo(target: HTMLElement, yPercent: number) {
+		return this.$gsap.to(target, { yPercent: yPercent, duration: 1.2, ease: this.gsapEeasing });
 	}
 	private controlHeader() {
 		const initScrolltrigger = this.$ScrollTrigger.create({
@@ -33,14 +45,13 @@ export default class HeaderComponent extends Vue {
 				const headerItem = this.$refs.header as HTMLElement;
 				if (!this.isMenuActive) {
 					// mousewheel down
-					direction === 1 && this.gsapTo(headerItem, -100, 0.8);
+					direction === 1 && this.gsapTo(headerItem, -100);
 
 					// mousewheel up
-					direction === -1 && this.gsapTo(headerItem, 0, 1);
+					direction === -1 && this.gsapTo(headerItem, 0);
 				}
 			},
 		});
-
 
 		initScrolltrigger.enable();
 	}

@@ -12,7 +12,7 @@
 		<div class="grid-c-13-offset-3 grid-remove-offset-sm">
 			<div class="grid-r">
 				<div class="grid-c-sm-16 grid-c-8" v-if="bodytext">
-					<div v-html="toHtmlString(bodytext.json)"></div>
+					<SimpleUIComponentsBodytext :bodytext="bodytext" />
 				</div>
 				<div class="grid-c-sm-16 grid-c-8" v-if="image">
 					<div class="full-height flex-center-center">

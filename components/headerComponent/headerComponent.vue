@@ -22,9 +22,9 @@
 				</button>
 			</div>
 			<div class="grid-c-14">
-				<nav class="header__nav full-height">
+				<nav class="header__nav">
 					<ul
-						class="reset-ul header__nav-list full-height flex-space-around flex-center-center"
+						class="reset-ul header__nav-list flex-space-around flex-center-center"
 						:class="{ 'is-active': isMenuActive }"
 					>
 						<li v-for="(item, index) in menuList.items" :key="index" class="header__nav-list-item">

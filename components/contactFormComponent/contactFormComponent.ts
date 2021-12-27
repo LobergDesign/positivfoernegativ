@@ -4,14 +4,13 @@ import { Vue, Component } from "nuxt-property-decorator";
 	name: "ContactForm",
 })
 export default class ContactForm extends Vue {
+
+	public showSucces: boolean = false;
+	public showError: boolean = false;
+
 	mounted() {
-
-
-
 		const form = document.getElementById("simple-contact-form") as HTMLFormElement;
-		const formSucces = document.getElementById("simple-contact-form-succes") as HTMLFormElement;
-		const formError = document.getElementById("simple-contact-form-error") as HTMLFormElement;
-		console.log("form", form);
+
 		if (form) {
 			form.addEventListener("submit", (event: Event) => {
 				event.preventDefault()
@@ -25,11 +24,11 @@ export default class ContactForm extends Vue {
 			});
 			const formSuccesHandler = () => {
 				form.reset();
-				formSucces!.style.display = "block";
+				this.showSucces = true;
 			}
 			const formErrorHandler = () => {
 				form.reset();
-				formError!.style.display = "block";
+				this.showError = true;
 			}
 		}
 
