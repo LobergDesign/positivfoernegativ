@@ -1,17 +1,28 @@
 import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { ioBodytext } from "~/utils/io";
+import { ioHeadlines } from "~/utils/io";
 
 @Component({
-	name: "bodytext",
+	name: "headline",
 })
-export default class Bodytext extends Vue {
+export default class Headline extends Vue {
 
-	@Prop({ type: Object })
-	readonly bodytext!: Object | undefined;
-	private $gsap!: NGlobal.IGsap;
+	@Prop({ type: [Object, String] })
+	readonly headline!: Object | undefined | string;
+
+	@Prop({ type: Number })
+	readonly size!: null;
+
 	public toHtmlString(content: any) {
 		return documentToHtmlString(content);
+	}
+
+	// gsap injection instance
+	private $gsap!: any;
+
+	private animateHeadlines() {
+		const targets = document.querySelectorAll('[data-animate-headline-in]');
+		ioHeadlines(targets, this.$gsap);
 	}
 
 	// get global application state
@@ -19,22 +30,17 @@ export default class Bodytext extends Vue {
 		return this.$store.state.application.isApplicationReady;
 	}
 
-	private animateBodytext() {
-		const targets = document.querySelectorAll("[data-animate-bodytext]");
-		ioBodytext(targets, this.$gsap);
-	}
-
 	// watch if application is ready
 	@Watch("isApplicationReady")
 	isAppReady() {
-		this.isApplicationReady && this.animateBodytext();
+		this.isApplicationReady && this.animateHeadlines();
 	}
 
 	@Watch('$route', { immediate: true, deep: true })
 	onUrlChange() {
 		if (this.isApplicationReady) {
 			this.$nextTick(() => {
-				this.animateBodytext();
+				this.animateHeadlines();
 			});
 		}
 	}

@@ -9,7 +9,9 @@ export default class HeaderComponent extends Vue {
 	public menuList: NLayout.IMenuItems[] = this.menuData.mainMenuCollection || [];
 	public logo: NGlobal.IImage = this.menuData.logo || {};
 	public isMenuActive: boolean = false;
-
+	// gsap injection instance
+	private $gsap!: NGlobal.IGsap;
+	private $ScrollTrigger!: any;
 	public toggleMenu() {
 		this.isMenuActive = !this.isMenuActive;
 	}
@@ -19,15 +21,13 @@ export default class HeaderComponent extends Vue {
 		return this.$store.state.application.isApplicationReady;
 	}
 
-	//
+	// watch
 	@Watch("isApplicationReady")
 	isAppReady() {
 		this.isApplicationReady && inviewHeaderAnimmation(this.$refs.header, this.$gsap);
 		console.log("object", this.isApplicationReady);
 	}
-	// gsap injection instance
-	private $gsap!: NGlobal.IGsap;
-	private $ScrollTrigger!: any;
+
 
 	// gsap settings
 	private gsapEeasing: string = "power4.out";

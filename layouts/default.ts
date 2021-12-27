@@ -54,13 +54,15 @@ export default class Default extends Vue {
 		const backdropSecond = () => {
 			tl.to(initBackdropSecond, { yPercent: 0 }) //start sequencing
 				.to(initBackdropSecond, {
+					onComplete: hideElements,
 					yPercent: -100,
 					duration: 1.1,
-					delay: 0.2,
+					delay: 0.18,
 					ease: this.gsapEeasing,
-					onComplete: hideElements,
+
 				})
 				.to(initBackdropSecond, {
+
 					yPercent: -100,
 					duration: 0,
 				});

@@ -12,7 +12,7 @@ const inviewHeaderAnimmation = (target: Element | Vue | (Element | Vue)[] | unde
     return tl.fromTo(target, { yPercent: -100 }, {
         duration: 1,
         yPercent: 0,
-        delay: 0.3,
+        delay: 0.2,
         ease: gsapConfig.ease,
     });
 }
@@ -35,20 +35,68 @@ const inviewAnimationHeadline = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 }
 
 // text area animation
-const inviewAnimationBodyText = (target: HTMLElement, gsap: NGlobal.IGsap) => {
+const inviewAnimationBodytext = (target: HTMLElement, gsap: NGlobal.IGsap) => {
     const init = () => {
         gsap.set(target, {
-            x: 200,
+            y: 100,
+            autoAlpha: 0,
         })
     }
     const action = () => {
         gsap.to(target, {
-            x: 0,
-            duration: 0.4,
+            y: 0,
+            duration: 0.6,
+            delay: .08,
+            autoAlpha: 1,
+            ease: gsapConfig.ease,
+        })
+    }
+    return { init, action }
+}
+
+// SCALE UP ANIMATION
+const inviewAnimationScaleUp = (target: HTMLElement, gsap: NGlobal.IGsap) => {
+    const init = () => {
+        gsap.set(target, {
+            y: 50,
+            scale: .8,
+            autoAlpha: 0,
+        })
+    }
+    const action = () => {
+        gsap.to(target, {
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            delay: .1,
+            autoAlpha: 1,
+            ease: gsapConfig.ease,
+        })
+    }
+    return { init, action }
+}
+// BACKDROP UP ANIMATION
+const inviewAnimationBackdropUp = (target: HTMLElement, backdrop: HTMLDivElement, gsap: NGlobal.IGsap) => {
+    const init = () => {
+        gsap.set(target, {
+            y: 500,
+            scale: 3,
+        });
+    }
+    const action = () => {
+        gsap.to(target, {
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: gsapConfig.ease,
+        })
+        gsap.to(backdrop, {
+            yPercent: -100,
+            duration: .9,
             delay: .2,
             ease: gsapConfig.ease,
         })
     }
     return { init, action }
 }
-export { inviewAnimationHeadline, inviewHeaderAnimmation, inviewAnimationBodyText }
+export { inviewAnimationHeadline, inviewHeaderAnimmation, inviewAnimationBodytext, inviewAnimationScaleUp, inviewAnimationBackdropUp }

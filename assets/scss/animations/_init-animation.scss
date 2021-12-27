@@ -1,4 +1,4 @@
-$logo-backdrop-size: clamp(10rem, 14vw, 20rem);
+$logo-backdrop-size: clamp(10rem, 12vw, 14rem);
 
 .app-init-effect {
 	position: fixed;
@@ -9,6 +9,7 @@ $logo-backdrop-size: clamp(10rem, 14vw, 20rem);
 	z-index: 100;
 	overflow: hidden;
 	will-change: transform;
+	background-color: $color-white;
 	// transition effect
 	&__logo,
 	&__backdrop,
@@ -19,7 +20,6 @@ $logo-backdrop-size: clamp(10rem, 14vw, 20rem);
 		left: 0;
 		height: 100vh;
 		width: 100vw;
-		background-color: white;
 		will-change: transform;
 	}
 	&__logo {

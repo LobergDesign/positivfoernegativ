@@ -2,21 +2,20 @@
 	<section class="hero">
 		<div class="grid-r">
 			<div class="grid-c-12 grid-remove-offset-sm">
-				<div data-animate-headline>
-					<h1
-						v-if="heroHeadline"
-						class="hero__title--large"
-						data-animate-headline-in
-						v-html="toHtmlString(heroHeadline.json)"
-					></h1>
-				</div>
-				<h2 v-if="heroSubtitle" data-animate-in class="hero__sub-title">{{ heroSubtitle }}</h2>
+				<template v-if="heroHeadline">
+					<SimpleUIComponentsHeadline :headline="heroHeadline" />
+				</template>
+				<template v-if="heroSubtitle">
+					<SimpleUIComponentsHeadline :headline="heroSubtitle" :size="2" />
+				</template>
 				<div v-if="heroBodytext" class="hero__bodytext">
 					<SimpleUIComponentsBodytext :bodytext="heroBodytext" />
 				</div>
 			</div>
-			<div class="grid-c-16" v-if="heroImage">
+			<div class="grid-c-16 position-realtive overflow-hidden" v-if="heroImage">
+				<div data-animate-backdrop-in></div>
 				<nuxt-img
+					data-animate-backdrop-in-element
 					format="webp"
 					quality="80"
 					width="200"
