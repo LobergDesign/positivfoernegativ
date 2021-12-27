@@ -19,7 +19,7 @@ export default class HeroSplitComponent extends Vue {
 		return this.$store.state.application.isApplicationReady;
 	}
 	private animateScaleUp() {
-		const targets = document.querySelectorAll("[data-animate-backdrop-in-element");
+		const targets = document.querySelectorAll("[data-animate-backdrop-in-element]");
 		const backdrop = document.querySelector("[data-animate-backdrop-in]") as HTMLDivElement;
 		ioBackdropUp(targets, backdrop, this.$gsap);
 	}
@@ -30,7 +30,7 @@ export default class HeroSplitComponent extends Vue {
 		this.isApplicationReady && this.animateScaleUp();
 	}
 
-	@Watch('$route', { immediate: true, deep: true })
+	@Watch("$route", { immediate: true, deep: true })
 	onUrlChange() {
 		if (this.isApplicationReady) {
 			this.$nextTick(() => {

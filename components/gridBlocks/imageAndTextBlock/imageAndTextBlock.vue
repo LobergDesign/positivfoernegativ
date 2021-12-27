@@ -1,10 +1,10 @@
 <template>
 	<div class="grid-r">
 		<div class="grid-c-1-offset-1 grid-remove-offset-sm">
-			<hr />
+			<hr data-animate-headline-line />
 		</div>
 		<div class="grid-c-10">
-			<span class="label">
+			<span class="label" data-animate-headline-line-label>
 				{{ label }}
 			</span>
 		</div>
