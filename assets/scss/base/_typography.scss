@@ -15,7 +15,7 @@
 }
 @mixin headline-2 {
 	@include font-secondary-semi-bold;
-	font-size: clamp(3rem, 3vw, 4rem);
+	font-size: clamp(3rem, 2.5vw, 4rem);
 	margin-top: 0.6rem;
 	margin-bottom: 1.8rem;
 	line-height: 1.4;

@@ -2,7 +2,7 @@
 	<div class="list-block">
 		<div class="grid-r" v-if="blockData.sectionTitle">
 			<div class="grid-c-10-offset-2 grid-remove-offset-sm">
-				<h2>{{ blockData.sectionTitle }}</h2>
+				<SimpleUIComponentsHeadline :headline="blockData.sectionTitle" :size="2" />
 			</div>
 		</div>
 		<ul class="reset-ul grid-r">
@@ -30,6 +30,5 @@
 		</ul>
 	</div>
 </template>
-<style lang="scss" src="./coachingBlock.scss">
-</style>
+<style lang="scss" src="./coachingBlock.scss"></style>
 <script src="./coachingBlock.ts"></script>
