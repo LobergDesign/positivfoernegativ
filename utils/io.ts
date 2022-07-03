@@ -2,7 +2,7 @@ import {
 	inviewAnimationHeadline,
 	inviewAnimationBodytext,
 	inviewAnimationScaleUp,
-	inviewAnimationBackdropUp,
+	inviewAnimationImage,
 	inviewAnimationHeadlineLine,
 } from "~/utils/transitions";
 
@@ -70,10 +70,10 @@ const ioScaleUp = (targets: any, gsap: NGlobal.IGsap) => {
 };
 
 // SCALE UP
-const ioBackdropUp = (targets: any, backdrop: HTMLDivElement, gsap: NGlobal.IGsap) => {
+const ioBackdropUp = (targets: any, gsap: NGlobal.IGsap) => {
 	// set initial value
 	targets.forEach((entry: any) => {
-		inviewAnimationBackdropUp(entry, backdrop, gsap).init();
+		inviewAnimationImage(entry, gsap).init();
 	});
 
 	const initIo = (target: any) => {
@@ -81,7 +81,7 @@ const ioBackdropUp = (targets: any, backdrop: HTMLDivElement, gsap: NGlobal.IGsa
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					const e = entry.target as HTMLElement;
-					inviewAnimationBackdropUp(e, backdrop, gsap).action();
+					inviewAnimationImage(e, gsap).action();
 				}
 			});
 		});

@@ -25,13 +25,14 @@ export default class HeaderComponent extends Vue {
 	@Watch("isApplicationReady")
 	isAppReady() {
 		this.isApplicationReady && inviewHeaderAnimmation(this.$refs.header, this.$gsap);
-		console.log("object", this.isApplicationReady);
 	}
-
+	@Watch("$route")
+	routeChange() {
+		this.isMenuActive = false;
+	}
 
 	// gsap settings
 	private gsapEeasing: string = "power4.out";
-
 
 	private gsapTo(target: HTMLElement, yPercent: number) {
 		return this.$gsap.to(target, { yPercent: yPercent, duration: 1.2, ease: this.gsapEeasing });
@@ -61,6 +62,6 @@ export default class HeaderComponent extends Vue {
 			setTimeout(() => {
 				this.controlHeader();
 			}, 1000);
-		})
+		});
 	}
 }

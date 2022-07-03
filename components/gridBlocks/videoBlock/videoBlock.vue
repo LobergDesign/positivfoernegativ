@@ -7,7 +7,7 @@
 					<SvgPlay />
 				</button> -->
 				<!-- 
-				<nuxt-img
+				<NuxtImg provider="contentful"
 					width="700"
 					height="700"
 					loading="lazy"

@@ -115,3 +115,27 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 		}
 	}
 }
+@include viewport-medium {
+	.footer {
+		padding-bottom: 0;
+		// yellow bg in right site
+		&:after {
+			top: auto;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 23rem;
+			width: 100%;
+			background-color: $color-yellow-corn;
+		}
+		// right footer section
+		&__right-section {
+			margin-top: 6rem;
+		}
+		&__social {
+			text-align: right;
+			position: relative;
+			bottom: auto;
+		}
+	}
+}

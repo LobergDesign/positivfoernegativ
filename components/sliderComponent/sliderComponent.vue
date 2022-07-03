@@ -18,13 +18,15 @@
 			<Hooper :settings="hooperSettings" ref="hooperSlider" class="">
 				<hooper-pagination slot="hooper-addons"></hooper-pagination>
 				<Slide v-for="(item, index) in blockData.sliderItemsCollection.items" :key="index" :index="index">
-					<nuxt-img
+					<NuxtImg
+						provider="contentful"
 						v-if="item.previewImage"
 						:src="item.previewImage.url"
 						:alt="item.previewImage.title"
 						class="slider__image"
 					/>
-					<nuxt-img
+					<NuxtImg
+						provider="contentful"
 						v-else-if="item.image"
 						:src="item.image.url"
 						:alt="item.image.title"

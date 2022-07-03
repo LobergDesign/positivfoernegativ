@@ -3,10 +3,11 @@
 		<div class="grid-r flex-space-between-md">
 			<div class="grid-c-1 grid-c-md-16 flex-vertical-center">
 				<nuxt-link to="/">
-					<nuxt-img
+					<NuxtImg
+						provider="contentful"
 						width="100"
 						height="80"
-						:src="logo.url + '?w=85&fm=webp'"
+						:src="logo.url"
 						:alt="logo.title"
 						class="header__logo"
 					/>
@@ -37,10 +38,15 @@
 								<span v-else>{{ item.slug.replace("-", " ") }}</span>
 							</nuxt-link>
 						</li>
+						<li class="header__nav-list-item contact-link">
+							<nuxt-link :to="'/kontakt/'">
+								<span>Kontakt</span>
+							</nuxt-link>
+						</li>
 					</ul>
 				</nav>
 			</div>
-			<div class="grid-c-1 flex-end flex-vertical-center">
+			<div class="grid-c-1 flex-end flex-vertical-center contact-link-desktop">
 				<div class="header__nav-list-item">
 					<nuxt-link :to="'/kontakt/'" class="btn"> Kontakt </nuxt-link>
 				</div>

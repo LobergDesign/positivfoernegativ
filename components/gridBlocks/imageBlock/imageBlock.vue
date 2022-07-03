@@ -4,7 +4,8 @@
 			<div class="grid-r position-realtive">
 				<template v-if="imageItems.items.length > 1">
 					<div v-for="(item, index) in imageItems.items" :key="index" class="grid-c-sm-16 grid-c-8">
-						<nuxt-img
+						<NuxtImg
+							provider="contentful"
 							loading="lazy"
 							width="800"
 							format="webp"
@@ -17,7 +18,8 @@
 				</template>
 				<template v-else-if="imageItems.items.length === 1">
 					<div class="grid-c-16">
-						<nuxt-img
+						<NuxtImg
+							provider="contentful"
 							loading="lazy"
 							width="1600"
 							:src="imageItems.items[0].url"

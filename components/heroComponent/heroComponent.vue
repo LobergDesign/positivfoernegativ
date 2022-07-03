@@ -13,14 +13,10 @@
 				</div>
 			</div>
 			<div class="grid-c-16 position-realtive overflow-hidden" v-if="heroImage">
-				<div data-animate-backdrop-in></div>
-				<nuxt-img
-					data-animate-backdrop-in-element
-					format="webp"
-					quality="80"
-					width="200"
-					height="100"
-					:src="heroImage.url + '?w=1600&fm=webp'"
+				<NuxtImg
+					provider="contentful"
+					data-animate-image-in-element
+					:src="heroImage.url"
 					:alt="heroImage.title"
 					class="hero__image"
 				/>

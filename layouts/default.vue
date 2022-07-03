@@ -3,10 +3,11 @@
 		<transition appear :css="false" v-on:before-appear="customBeforeAppear">
 			<div class="app-init-effect" id="init-app-effect">
 				<div class="app-init-effect__logo" id="init-logo" v-if="!$fetchState.pending">
-					<nuxt-img
+					<NuxtImg
+						provider="contentful"
 						width="200"
 						height="200"
-						:src="menuData.logo.url + '?w=200&fm=webp'"
+						:src="menuData.logo.url"
 						:alt="menuData.logo.title"
 						class="header__logo"
 					/>

@@ -19,9 +19,8 @@ export default class HeroSplitComponent extends Vue {
 		return this.$store.state.application.isApplicationReady;
 	}
 	private animateScaleUp() {
-		const targets = document.querySelectorAll("[data-animate-backdrop-in-element]");
-		const backdrop = document.querySelector("[data-animate-backdrop-in]") as HTMLDivElement;
-		ioBackdropUp(targets, backdrop, this.$gsap);
+		const targets = document.querySelectorAll("[data-animate-image-in-element]");
+		ioBackdropUp(targets, this.$gsap);
 	}
 
 	// watch if application is ready

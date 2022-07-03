@@ -29,7 +29,7 @@ const inviewAnimationHeadline = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 	const action = () => {
 		gsap.to(target, {
 			yPercent: 0,
-			duration: 0.55,
+			duration: 1,
 			ease: gsapConfig.ease,
 		});
 	};
@@ -40,15 +40,17 @@ const inviewAnimationHeadline = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 const inviewAnimationBodytext = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 	const init = () => {
 		gsap.set(target, {
-			y: 100,
+			y: 50,
+			opacity: 0,
 			autoAlpha: 0,
 		});
 	};
 	const action = () => {
 		gsap.to(target, {
+			opacity: 1,
 			y: 0,
-			duration: 0.6,
-			delay: 0.08,
+			duration: 1.1,
+			delay: 0.14,
 			autoAlpha: 1,
 			ease: gsapConfig.ease,
 		});
@@ -78,24 +80,18 @@ const inviewAnimationScaleUp = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 	return { init, action };
 };
 // BACKDROP UP ANIMATION
-const inviewAnimationBackdropUp = (target: HTMLElement, backdrop: HTMLDivElement, gsap: NGlobal.IGsap) => {
+const inviewAnimationImage = (target: HTMLElement, gsap: NGlobal.IGsap) => {
 	const init = () => {
 		gsap.set(target, {
-			y: 300,
-			scale: 2.5,
+			opacity: 0,
+			scale: 0.9,
 		});
 	};
 	const action = () => {
 		gsap.to(target, {
-			y: 0,
+			opacity: 1,
 			scale: 1,
-			duration: 1.5,
-			ease: gsapConfig.ease,
-		});
-		gsap.to(backdrop, {
-			yPercent: -100,
-			duration: 0.9,
-			delay: 0.2,
+			duration: 1.2,
 			ease: gsapConfig.ease,
 		});
 	};
@@ -135,6 +131,6 @@ export {
 	inviewHeaderAnimmation,
 	inviewAnimationBodytext,
 	inviewAnimationScaleUp,
-	inviewAnimationBackdropUp,
+	inviewAnimationImage,
 	inviewAnimationHeadlineLine,
 };
