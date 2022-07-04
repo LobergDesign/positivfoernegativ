@@ -17,7 +17,8 @@
 				<div class="grid-c-sm-16 grid-c-8" v-if="image">
 					<div class="full-height flex-center-center">
 						<div>
-							<nuxt-img
+							<NuxtImg
+								provider="contentful"
 								width="700"
 								height="700"
 								loading="lazy"

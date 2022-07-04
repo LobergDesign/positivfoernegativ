@@ -33,7 +33,7 @@
 
 	// slider
 	&__slider {
-		margin: 8rem 0;
+		margin: clamp(4rem, 6vw, 8rem) 0;
 		.hooper-slide {
 			cursor: pointer;
 		}
@@ -46,4 +46,14 @@
 		}
 	}
 	@include sliderNav;
+}
+
+@include viewport-small {
+	.collaborators {
+		// slider
+		&__slider {
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+	}
 }

@@ -11,7 +11,8 @@
 							class="collaborators__list-item grid-c-4"
 						>
 							<a :href="item.link" v-if="item.link" target="_blank">
-								<nuxt-img
+								<NuxtImg
+									provider="contentful"
 									class="collaborators__list-img"
 									loading="lazy"
 									width="250"
@@ -21,7 +22,8 @@
 								/>
 							</a>
 							<div v-else>
-								<nuxt-img
+								<NuxtImg
+									provider="contentful"
 									class="collaborators__list-img"
 									v-if="item.image"
 									loading="lazy"
@@ -42,7 +44,8 @@
 								class="flex-vertical-center full-height"
 							>
 								<a :href="item.link" v-if="item.link" target="_blank">
-									<nuxt-img
+									<NuxtImg
+										provider="contentful"
 										class="collaborators__list-img"
 										loading="lazy"
 										width="250"
@@ -52,7 +55,8 @@
 									/>
 								</a>
 								<div v-else>
-									<nuxt-img
+									<NuxtImg
+										provider="contentful"
 										class="collaborators__list-img"
 										v-if="item.image"
 										loading="lazy"

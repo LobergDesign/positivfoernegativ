@@ -3,7 +3,7 @@
 @import "~/assets/scss/tools/_mixins.scss";
 .recommentations {
 	position: relative;
-	padding: clamp(8rem, 10vw, 15rem) 8rem clamp(6rem, 11vw, 12rem) 6rem;
+	padding: clamp(6rem, 10vw, 15rem) clamp(2rem, 6vw, 8rem) clamp(1rem, 9vw, 12rem) clamp(2rem, 6vw, 8rem);
 
 	&::before {
 		content: "";

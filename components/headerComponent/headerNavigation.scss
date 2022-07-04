@@ -93,7 +93,8 @@ $header-a-spacing: clamp(1.2rem, 1.3vw, 2rem);
 	}
 }
 // menu icon
-.header-menu-icon {
+.header-menu-icon,
+.contact-link {
 	display: none;
 }
 @include viewport-extra-large {
@@ -116,18 +117,28 @@ $header-a-spacing: clamp(1.2rem, 1.3vw, 2rem);
 	}
 }
 // local var
-$menu-icon-size: 6rem;
-$menu-icon-span-size: 4rem;
+$menu-icon-size: 5rem;
+$menu-icon-span-size: 3rem;
 $menu-icon-span-size-s: 3rem;
 $menu-icon-span-spacing: 1rem;
 $menu-icon-span-height: 0.2rem;
 
-@include viewport-large {
+@include viewport-custom-max(1280px) {
+	.contact-link-desktop {
+		display: none;
+	}
+	.contact-link {
+		display: block;
+	}
+	.header__logo {
+		margin-top: 2rem;
+	}
 	// menu icon
 	.header-menu-icon {
-		margin-top: -0.5rem;
-		position: relative;
-		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 0.9rem;
+		display: block;
 		width: $menu-icon-size;
 		height: $menu-icon-size;
 		padding: 2rem;
@@ -178,22 +189,21 @@ $menu-icon-span-height: 0.2rem;
 	}
 
 	.header {
-		&::before {
-			left: -10vw;
-			width: 120vw;
-		}
 		// nav
 		&__nav-list {
 			position: fixed;
-			top: 8rem;
+			top: 9rem;
 			padding-top: 6rem;
-			left: 0;
-			right: 0;
+			left: -5vw;
 			bottom: 0;
+			width: 100vw;
+			height: 100vh;
 			background-color: $color-white;
 			display: block;
-			transform: translateX(100%);
-			transition: opacity $transition--extra-fast, transform $transition--extra-fast;
+			transform: translateX(100vw);
+			z-index: 15;
+			opacity: 0;
+			transition: opacity $transition--fast, transform $transition--fast;
 		}
 		&__nav-list-item {
 			display: block;
@@ -220,6 +230,7 @@ $menu-icon-span-height: 0.2rem;
 	}
 	// active menu
 	.header__nav-list.is-active {
+		opacity: 1;
 		transform: translateX(0);
 	}
 }
@@ -227,9 +238,6 @@ $menu-icon-span-height: 0.2rem;
 	.header {
 		.grid-r {
 			grid-gap: 0;
-		}
-		&::before {
-			height: 3.5rem;
 		}
 		&__logo {
 			max-width: 7rem;
@@ -247,9 +255,7 @@ $menu-icon-span-height: 0.2rem;
 		}
 	}
 	// menu icon
-	// menu icon
 	.header-menu-icon {
-		margin-top: -1.5rem;
 		span {
 			width: $menu-icon-span-size-s;
 			height: 0.215rem;

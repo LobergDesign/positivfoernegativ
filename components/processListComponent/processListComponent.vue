@@ -9,7 +9,8 @@
 			<section v-for="(item, index) in processContentList" :key="index" class="process-list__item">
 				<div class="grid-r">
 					<div class="process-list__item-c-1" v-if="item.image">
-						<nuxt-img
+						<NuxtImg
+							provider="contentful"
 							width="700"
 							height="700"
 							loading="lazy"

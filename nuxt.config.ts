@@ -58,6 +58,7 @@ export default {
 		},
 	},
 	image: {
+		domains: ["contentful"],
 		screens: {
 			xs: 350,
 			sm: 576,
@@ -67,12 +68,8 @@ export default {
 			xxl: 1920,
 			"2xl": 1920,
 		},
-		customProvider: {
-			name: "customProvider", // optional value to overrider provider name
-			provider: "~/configSettings/customProvider", // Path to custom provider
-			options: {
-				format: "webp",
-			},
+		contentful: {
+			baseURL: "https://images.ctfassets.net/",
 		},
 	},
 	router: {
@@ -122,7 +119,6 @@ export default {
 		url: {
 			// google: "https://fonts.googleapis.com/css2?&family=Work+Sans:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&display=swap",
 			google: "https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Spectral:wght@300;400;600&display=swap",
-
 		},
 
 		// Enable options
@@ -153,7 +149,6 @@ export default {
 	/*
 	 ** page transitions
 	 */
-
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {

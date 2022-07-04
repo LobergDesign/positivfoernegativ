@@ -1,32 +1,35 @@
-
-
 @mixin theme-colors($main, $adverse) {
-  background-color: $main; 
-  &::before{
-    background-color: $main; 
-  } 
-  p,a,h2,h3,h4, span{
-    color:$adverse;
-  }
-  // slider nav
-	.hooper-prev, .hooper-next{
+	background-color: $main;
+	&::before {
+		background-color: $main;
+	}
+	p,
+	a,
+	h2,
+	h3,
+	h4,
+	span {
+		color: $adverse;
+	}
+	// slider nav
+	.hooper-prev,
+	.hooper-next {
 		border: 1px solid $adverse;
-    &::before{
+		&::before {
 			background-color: $adverse;
 		}
-		svg{
-			fill:$adverse;
+		svg {
+			fill: $adverse;
 		}
-		&:hover{
+		&:hover {
 			background-color: $main;
-			svg{
-				fill:$main;
+			svg {
+				fill: $main;
 			}
 		}
 	}
 }
 
-
-.dark-section{
-	@include theme-colors($color-black-mine-shaft, $color-white);
+.dark-section {
+	@include theme-colors($color-black-tundora, $color-white);
 }

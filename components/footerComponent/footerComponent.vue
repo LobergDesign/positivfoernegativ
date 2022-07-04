@@ -3,9 +3,9 @@
 		<footer class="footer">
 			<div class="grid-w">
 				<div class="grid-r">
-					<div class="grid-c-11">
+					<div class="grid-c-sm-16 grid-c-11">
 						<div class="grid-r">
-							<div class="grid-c-8">
+							<div class="grid-c-8 grid-c-xs-16">
 								<address>
 									<span class="footer__header">Kontakt</span>
 									<span v-if="data.phonenumber"
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="grid-c-5">
+					<div class="grid-c-xs-16 grid-c-sm-10 grid-c-md-8 grid-c-5">
 						<div class="on-top footer__right-section">
 							<div v-if="data.footerText" v-html="toHtmlString(data.footerText.json)"></div>
 							<ul class="ul-reset footer__social">
