@@ -1,4 +1,3 @@
-
 import { Vue, Component } from "nuxt-property-decorator";
 import { globalQuery } from "~/queries/global";
 @Component
@@ -19,7 +18,7 @@ export default class Default extends Vue {
 		const initBackdropSecond = "#init-backdrop-second";
 
 		const hideElements = () => {
-			this.$store.commit('application/initApplication')
+			this.$store.commit("application/initApplication");
 			tl.to(initWrapInit, {
 				visibility: "hidden",
 				duration: 0,
@@ -31,20 +30,19 @@ export default class Default extends Vue {
 				duration: 2.8,
 				scale: 1,
 				yPercent: -20,
-				delay: .5,
+				delay: 0.5,
 				ease: this.gsapEeasing,
-			})
-				.to(initLogo, {
-					duration: .1,
-					scale: 0,
-				});
+			}).to(initLogo, {
+				duration: 0.1,
+				scale: 0,
+			});
 		};
 		const backdrop = () => {
 			tl.to(initBackdrop, { yPercent: 0 }) //start sequencing
 				.to(initBackdrop, {
 					yPercent: -100,
 					duration: 1,
-					ease: this.gsapEeasing
+					ease: this.gsapEeasing,
 				})
 				.to(initBackdrop, {
 					yPercent: -200,
@@ -59,10 +57,8 @@ export default class Default extends Vue {
 					duration: 1.1,
 					delay: 0.18,
 					ease: this.gsapEeasing,
-
 				})
 				.to(initBackdropSecond, {
-
 					yPercent: -100,
 					duration: 0,
 				});
@@ -75,7 +71,6 @@ export default class Default extends Vue {
 		this.gsapOnLoadHandler().logo();
 		this.gsapOnLoadHandler().backdrop();
 		this.gsapOnLoadHandler().backdropSecond();
-
 	}
 
 	async fetch() {
@@ -96,7 +91,7 @@ export default class Default extends Vue {
 			phonenumber,
 			youTube,
 			zipcodeAndCity,
-			cv
+			cv,
 		} = rsp.globalSettings;
 		this.menuData = { mainMenuCollection, logo };
 		this.footerData = {
@@ -113,7 +108,7 @@ export default class Default extends Vue {
 				phonenumber,
 				youTube,
 				zipcodeAndCity,
-				footerLinks
+				footerLinks,
 			},
 		};
 	}

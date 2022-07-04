@@ -19,9 +19,17 @@ export default class Collaborators extends Vue {
 	}
 	// hooper slider
 	public hooperSettings = {
-		itemsToShow: 3,
 		wheelControl: false,
-		itemsToSlide: 3,
+		breakpoints: {
+			200: {
+				itemsToShow: 1,
+				itemsToSlide: 1,
+			},
+			1000: {
+				itemsToShow: 3,
+				itemsToSlide: 3,
+			},
+		},
 	};
 	async fetch() {
 		const response = await this.$nuxt.context.$dataApi.getData(query);

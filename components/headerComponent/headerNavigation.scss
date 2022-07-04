@@ -189,16 +189,12 @@ $menu-icon-span-height: 0.2rem;
 	}
 
 	.header {
-		&::before {
-			left: 0;
-			width: 100vw;
-		}
 		// nav
 		&__nav-list {
 			position: fixed;
 			top: 9rem;
 			padding-top: 6rem;
-			left: 0;
+			left: -5vw;
 			bottom: 0;
 			width: 100vw;
 			height: 100vh;
@@ -242,9 +238,6 @@ $menu-icon-span-height: 0.2rem;
 	.header {
 		.grid-r {
 			grid-gap: 0;
-		}
-		&::before {
-			height: 3.5rem;
 		}
 		&__logo {
 			max-width: 7rem;

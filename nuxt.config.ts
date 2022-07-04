@@ -69,7 +69,7 @@ export default {
 			"2xl": 1920,
 		},
 		contentful: {
-			baseURL: process.env.BASE_URL,
+			baseURL: "https://images.ctfassets.net/",
 		},
 	},
 	router: {

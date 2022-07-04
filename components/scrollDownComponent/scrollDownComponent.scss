@@ -12,7 +12,6 @@
 	&__wrap {
 		display: inline-block;
 		overflow: hidden;
-		background-color: $color-white;
 		height: 2rem;
 		width: 6rem;
 		position: relative;
@@ -46,7 +45,7 @@
 		transform: translateX(210%);
 	}
 }
-@include viewport-medium {
+@include viewport-custom-max(1280px) {
 	.scroll-down {
 		display: none;
 	}
